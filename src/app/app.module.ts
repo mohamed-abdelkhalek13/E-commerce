@@ -13,7 +13,8 @@ import { CartComponent } from './Components/Pages/cart/cart.component';
 import { OrdersComponent } from './Components/Pages/orders/orders.component';
 import { LoginComponent } from './Components/Pages/login/login.component';
 import { RegisterComponent } from './Components/Pages/register/register.component';
-
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { SliderComponent } from './Components/Pages/slider/slider.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,11 +27,13 @@ import { RegisterComponent } from './Components/Pages/register/register.componen
     CartComponent,
     OrdersComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    SliderComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
