@@ -2,9 +2,13 @@
 * {
   box-sizing: border-box;
   margin: 0;
+<<<<<<< HEAD
+  padding: 0;
+=======
   font-family: "Montserrat", sans-serif;
   font-family: "Roboto", sans-serif;
   font-family: "Work Sans", sans-serif;
+>>>>>>> 73ed8f3b55fb32069460877c4d44613dca3930cc
 }
 
 /* body {
