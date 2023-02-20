@@ -13,6 +13,8 @@ import { CartComponent } from './Components/Pages/cart/cart.component';
 import { OrdersComponent } from './Components/Pages/orders/orders.component';
 import { LoginComponent } from './Components/Pages/login/login.component';
 import { RegisterComponent } from './Components/Pages/register/register.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
@@ -26,11 +28,15 @@ import { RegisterComponent } from './Components/Pages/register/register.componen
     CartComponent,
     OrdersComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]
