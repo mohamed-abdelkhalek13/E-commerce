@@ -14,6 +14,7 @@ import { OrdersComponent } from './Components/Pages/orders/orders.component';
 import { LoginComponent } from './Components/Pages/login/login.component';
 import { RegisterComponent } from './Components/Pages/register/register.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CategoriesComponent } from './Components/Pages/categories/categories.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     OrdersComponent,
     LoginComponent,
     RegisterComponent,
+    CategoriesComponent,
 
   ],
   imports: [
