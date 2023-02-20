@@ -17,7 +17,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SliderComponent } from './Components/Pages/slider/slider.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { CategoriesComponent } from './Components/Pages/categories/categories.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +31,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     OrdersComponent,
     LoginComponent,
     RegisterComponent,
-    SliderComponent
+    SliderComponent,
+    CategoriesComponent,
   ],
   imports: [
     BrowserModule,
