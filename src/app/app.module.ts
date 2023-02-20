@@ -14,8 +14,12 @@ import { OrdersComponent } from './Components/Pages/orders/orders.component';
 import { LoginComponent } from './Components/Pages/login/login.component';
 import { RegisterComponent } from './Components/Pages/register/register.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+<<<<<<< HEAD
 import { CategoriesComponent } from './Components/Pages/categories/categories.component';
 
+=======
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+>>>>>>> 73ed8f3b55fb32069460877c4d44613dca3930cc
 
 @NgModule({
   declarations: [
@@ -37,6 +41,8 @@ import { CategoriesComponent } from './Components/Pages/categories/categories.co
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule
 
 
   ],
