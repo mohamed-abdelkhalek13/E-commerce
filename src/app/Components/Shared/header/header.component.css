@@ -1,7 +1,136 @@
-* {
+/* * {
   color: white;
   background-color: red;
   margin: 0;
   padding: 0;
+} */
+
+
+/* Basic Code */
+body {
+  font-family: "Open sans", sans-serif;
+  color: #341097;
 }
 
+a {
+  color: #5c9f24;
+}
+
+a:hover {
+  color: #74c92d;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Roboto", sans-serif;
+}
+
+
+#header {
+  background: #2e2b2b;
+  padding: 15px;
+}
+
+#header .logo {
+  font-size: 25px;
+  margin: 10;
+  padding: 10;
+  line-height: 1;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+
+#header .logo a {
+  color: #ffffff;
+  margin: 10;
+  padding: 10;
+}
+
+/* navigation Menu */
+.nav-menu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-menu>ul {
+  display: flex;
+}
+
+.nav-menu>ul>li {
+  position: relative;
+  white-space: nowrap;
+  padding: 10px 0 10px 22px;
+}
+
+.nav-menu a {
+  display: block;
+  position: relative;
+  color: rgba(255, 255, 255, 0.7);
+  transition: 0.3s;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: "Roboto", sans-serif;
+  padding: 4px;
+  text-transform: uppercase;
+}
+
+
+.nav-menu>ul>li a::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 6px;
+  left: 0;
+  background-color: #71e215;
+  visibility: hidden;
+  width: 0px;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-menu a:hover::before,
+.nav-menu li:hover>a::before,
+.nav-menu .active>a::before {
+  visibility: visible;
+  width: 100px;
+}
+
+.nav-menu a:hover,
+.nav-menu .active>a,
+.nav-menu li:hover>a {
+  color: #fff;
+}
+
+.get-started-btn {
+  margin-left: 25px;
+  color: #fff;
+  border-radius: 4px;
+  padding: 6px 25px 8px 25px;
+  white-space: nowrap;
+  transition: 0.3s;
+  font-size: 13px;
+  display: inline-block;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+  border: 2px solid #7ae721;
+}
+
+.get-started-btn:hover {
+  background: #7ae721;
+  color: #fff;
+}
+
+@media (max-width:768px) {
+  .get-started-btn {
+    margin: 0 48px 0 0;
+    padding: 6px 18px;
+  }
+}
