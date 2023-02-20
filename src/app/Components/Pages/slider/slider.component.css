@@ -1,19 +1,18 @@
-section{
+section {
   width: 60%;
   margin: auto;
-
 }
-.content{
+.content {
   height: 350px;
   position: relative;
 }
-button{
+button {
   font-size: 1.25rem;
   color: #fff;
-   background: transparent; 
-   border: transparent;
+  background: transparent;
+  border: transparent;
 }
-button.left{
+button.left {
   position: absolute;
   top: 50%;
   right: 5%;
@@ -21,7 +20,7 @@ button.left{
   border-radius: 50%;
   padding: 5px;
 }
-button.right{
+button.right {
   position: absolute;
   top: 50%;
   left: 5%;
@@ -29,32 +28,40 @@ button.right{
   border-radius: 50%;
   padding: 5px;
 }
-button.stop{
+button.stop {
   position: absolute;
   top: 90%;
   left: 45%;
   transform: translateX(-50%);
 }
-button.play{
+button.play {
   position: absolute;
   top: 90%;
   left: 55%;
-  transform: translateX(-50%)
+  transform: translateX(-50%);
 }
-img{
+img {
   width: 100%;
   height: 100%;
   background-size: cover;
 }
 @media (min-width: 576px) {
   .slider {
-    max-width: 540px; } }
+    max-width: 540px;
+  }
+}
 @media (min-width: 768px) {
   .slider {
-    max-width: 720px; } }
+    max-width: 720px;
+  }
+}
 @media (min-width: 992px) {
   .slider {
-    max-width: 960px; } }
+    max-width: 960px;
+  }
+}
 @media (min-width: 1200px) {
   .slider {
-    max-width: 1140px; } }
+    max-width: 1140px;
+  }
+}
