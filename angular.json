@@ -25,16 +25,16 @@
               "src/assets"
             ],
             "styles": [
-<<<<<<< HEAD
+
               "node_modules/font-awesome/css/font-awesome.min.css",
-              
-=======
+
+
               "src/custom-theme.scss",
-<<<<<<< HEAD
+
               "node_modules/normalize.css/normalize.css",
-=======
+
               "./node_modules/normalize.css/normalize.css",
->>>>>>> 73ed8f3b55fb32069460877c4d44613dca3930cc
+
               "src/styles.css"
             ],
             "scripts": [
@@ -99,11 +99,11 @@
               "src/assets"
             ],
             "styles": [
-<<<<<<< HEAD
+
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
-=======
+
               "node_modules/normalize.css/normalize.css",
->>>>>>> 73ed8f3b55fb32069460877c4d44613dca3930cc
+
               "src/styles.css"
             ],
             "scripts": [

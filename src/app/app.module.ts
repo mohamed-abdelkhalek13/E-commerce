@@ -13,14 +13,14 @@ import { CartComponent } from './Components/Pages/cart/cart.component';
 import { OrdersComponent } from './Components/Pages/orders/orders.component';
 import { LoginComponent } from './Components/Pages/login/login.component';
 import { RegisterComponent } from './Components/Pages/register/register.component';
-<<<<<<< HEAD
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
+// import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SliderComponent } from './Components/Pages/slider/slider.component';
-=======
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
->>>>>>> 73ed8f3b55fb32069460877c4d44613dca3930cc
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,24 +34,23 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     OrdersComponent,
     LoginComponent,
     RegisterComponent,
-<<<<<<< HEAD
-    SliderComponent
-=======
 
->>>>>>> 73ed8f3b55fb32069460877c4d44613dca3930cc
+    SliderComponent
+
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-<<<<<<< HEAD
-    FontAwesomeModule
-=======
+
+    // FontAwesomeModule,
+
     BrowserAnimationsModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
 
 
->>>>>>> 73ed8f3b55fb32069460877c4d44613dca3930cc
+
   ],
   providers: [],
   bootstrap: [AppComponent]
