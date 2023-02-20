@@ -1,12 +1,11 @@
 .page_container {
   min-height: 100vh;
-  min-width: 100vw;
 
   display: grid;
   grid-template-rows: auto 1fr auto;
 }
 
 .page_container main {
-  color: white;
-  background-color: black;
+  /* color: white;
+  background-color: black; */
 }
