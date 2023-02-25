@@ -25,14 +25,16 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/font-awesome/css/font-awesome.min.css",
+              "./node_modules/font-awesome/css/font-awesome.min.css",
               "src/custom-theme.scss",
-              "node_modules/normalize.css/normalize.css",
               "./node_modules/normalize.css/normalize.css",
-              "src/styles.css"
+              "./node_modules/normalize.css/normalize.css",
+              "src/styles.css",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css"
+
             ],
             "scripts": [
-              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+              "./node_modules/bootstrap/dist/js/bootstrap.min.js"
             ]
           },
           "configurations": {
@@ -93,15 +95,12 @@
               "src/assets"
             ],
             "styles": [
-<<<<<<< HEAD
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
-=======
-              "node_modules/normalize.css/normalize.css",
->>>>>>> 73ed8f3b55fb32069460877c4d44613dca3930cc
-              "src/styles.css"
+              "./node_modules/normalize.css/normalize.css",
+              "src/styles.css",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": [
-              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+              "./node_modules/bootstrap/dist/js/bootstrap.min.js"
             ]
           }
         }

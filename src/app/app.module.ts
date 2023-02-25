@@ -18,6 +18,15 @@ import { SliderComponent } from './Components/Pages/slider/slider.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CategoriesComponent } from './Components/Pages/categories/categories.component';
+import { AdminDashBoardComponent } from './Components/Pages/admin-dash-board/admin-dash-board.component';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatTreeModule} from '@angular/material/tree';
+import {MatIconModule} from '@angular/material/icon';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatSidenavModule} from '@angular/material/sidenav'; 
+import {MatFormFieldModule} from '@angular/material/form-field'; 
+import {MatSelectModule} from '@angular/material/select'; 
+import { AddProductComponent } from './Components/Pages/add-product/add-product.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,6 +42,8 @@ import { CategoriesComponent } from './Components/Pages/categories/categories.co
     RegisterComponent,
     SliderComponent,
     CategoriesComponent,
+    AdminDashBoardComponent,
+    AddProductComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,7 +51,14 @@ import { CategoriesComponent } from './Components/Pages/categories/categories.co
     FontAwesomeModule,
     BrowserAnimationsModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatExpansionModule,
+    MatTreeModule,
+    MatIconModule,
+    MatMenuModule,
+    MatSidenavModule,
+    MatFormFieldModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
