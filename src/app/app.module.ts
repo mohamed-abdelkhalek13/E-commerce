@@ -17,9 +17,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CategoriesComponent } from './Components/Pages/categories/categories.component';
+
 import { HttpClientModule } from '@angular/common/http';
 import { ShippingComponent } from './Components/Pages/shipping/shipping.component';
 import { CheckoutComponent } from './Components/Pages/checkout/checkout.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
+import { ModalDismissReasons, NgbDatepickerModule, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+
 
 
 
@@ -51,7 +58,12 @@ import { CheckoutComponent } from './Components/Pages/checkout/checkout.componen
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
+
     HttpClientModule,
+
+    NgbModule,
+    NgbCarouselModule
+
 
   ],
   providers: [],
