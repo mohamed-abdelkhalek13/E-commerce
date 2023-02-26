@@ -17,7 +17,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CategoriesComponent } from './Components/Pages/categories/categories.component';
-
+import { HttpClientModule } from '@angular/common/http';
+import { ShippingComponent } from './Components/Pages/shipping/shipping.component';
+import { CheckoutComponent } from './Components/Pages/checkout/checkout.component';
 
 
 
@@ -36,6 +38,8 @@ import { CategoriesComponent } from './Components/Pages/categories/categories.co
     RegisterComponent,
     SliderComponent,
     CategoriesComponent,
+    ShippingComponent,
+    CheckoutComponent,
 
   ],
   imports: [
@@ -46,7 +50,8 @@ import { CategoriesComponent } from './Components/Pages/categories/categories.co
     FontAwesomeModule,
     BrowserAnimationsModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
 
   ],
   providers: [],

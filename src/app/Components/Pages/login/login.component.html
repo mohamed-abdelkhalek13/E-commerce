@@ -1,4 +1,3 @@
-
 <div class="container pb-5">
   <div class="d-flex justify-content-center">
     <img class="logo" src="assets/Images/Tidal-Logo.wine.svg" alt="Logo" />
@@ -11,13 +10,18 @@
     >
       <h3 class="text-center pb-3 fw-bold">Log in</h3>
       <h5 class="pb-2">Welcome back :)</h5>
-      <div
+      <!-- <div
         *ngIf="loginForm.submitted && loginForm.invalid"
         class="alert alert-danger"
       >
         Email and password are required.
+      </div> -->
+
+      <div class="alert alert-danger mt-3" *ngIf="errorMessage">
+        {{ errorMessage }}
       </div>
-      <label for="email"><strong>Email</strong></label>
+      <label for="email"><strong>Email</strong></label
+      ><span class="text-danger"> *</span>
       <input
         type="email"
         name="email"
@@ -38,7 +42,8 @@
         </div>
       </div>
 
-      <label class="mt-2" for="password"><strong>Password</strong></label>
+      <label class="mt-2" for="password"><strong>Password</strong></label
+      ><span class="text-danger"> *</span>
       <input
         type="password"
         name="password"
@@ -56,12 +61,16 @@
         <div *ngIf="passwordInput?.errors?.['required']">
           Password is required.
         </div>
-        <div *ngIf="passwordInput?.errors?.['minlength']">
+        <!-- <div *ngIf="passwordInput?.errors?.['minlength']">
           Password should be at least 8 characters long.
-        </div>
+        </div> -->
       </div>
 
-      <button type="submit" class="btn btn-primary mt-4 w-100 loginbtn">
+      <button
+        type="submit"
+        [disabled]="loginForm.invalid"
+        class="btn btn-primary mt-4 w-100 loginbtn"
+      >
         Log in
       </button>
     </form>
@@ -84,4 +93,3 @@
     </div>
   </div>
 </div>
-
