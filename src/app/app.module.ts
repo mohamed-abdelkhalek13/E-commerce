@@ -24,11 +24,7 @@ import { CheckoutComponent } from './Components/Pages/checkout/checkout.componen
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
-import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
-import { ModalDismissReasons, NgbDatepickerModule, NgbModal } from '@ng-bootstrap/ng-bootstrap';
-
-
-
+import { NgbAccordionModule, NgbDatepickerModule, NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -56,17 +52,13 @@ import { ModalDismissReasons, NgbDatepickerModule, NgbModal } from '@ng-bootstra
     ReactiveFormsModule,
     FontAwesomeModule,
     BrowserAnimationsModule,
-    FormsModule,
-    ReactiveFormsModule,
-
+    NgbAccordionModule,
     HttpClientModule,
-
+    NgbDatepickerModule,
     NgbModule,
-    NgbCarouselModule
-
-
+    NgbCarouselModule,
   ],
-  providers: [],
+  providers: [NgbModal],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
