@@ -1,0 +1,32 @@
+.filter{
+  font-family: "Roboto","Arial",sans-serif;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: #fff;
+  border: 1px solid #252525;
+  border-radius: 10px;
+  padding: 5px;
+}
+.star{
+  color: rgba(255,164,28,255);
+
+}
+label{
+  width: 90%;
+}
+li{
+  border-radius: 5px;
+  margin: 2px 0;
+}
+li:hover{
+  background-color: #272727;
+  cursor: pointer;
+}
+label:hover{
+  cursor: pointer;
+}
+
+ul:not(:last-child)
+{
+  border-bottom: 2px solid #252525;
+}

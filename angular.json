@@ -106,7 +106,10 @@
               "src/styles.css",
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
+<<<<<<< HEAD
               "node_modules/normalize.css/normalize.css",
+=======
+>>>>>>> ffbde576d91fefaf3362626c2055779f26d72c31
               "src/styles.css"
             ],
             "scripts": [

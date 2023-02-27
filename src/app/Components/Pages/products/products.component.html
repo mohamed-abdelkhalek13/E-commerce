@@ -1,1 +1,26 @@
 <p>products works!</p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="row">
+      <div class="col-2">
+        <h1>Filter <i class="fa-solid fa-filter filterIcon"></i></h1>
+      </div>
+      <div class="col-9">
+        <select class="form-select" aria-label="Disabled select example" >
+          <option selected>Sort by</option>
+          <option value="lowToHigh">price low to high <i class="fa-solid fa-arrow-up-wide-short lowToHigh" ></i></option>
+          <option value="highToLow">price high to low</option>
+        </select>
+      </div>
+      <div class="col-1">
+        <i class="fa-solid fa-arrow-down-wide-short  sortIcon"></i>
+      </div>
+    </div>
+    <div class="row">
+    <app-filter class="col-2"></app-filter>
+    <app-product-card class="col-10"></app-product-card>
+    </div>
+  </div>
+
+</div>
+

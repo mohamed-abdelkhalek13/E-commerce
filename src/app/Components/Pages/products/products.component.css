@@ -1,0 +1,25 @@
+.sortIcon{
+  color: #fff;
+}
+select{
+  background-color: #252525;
+  color: #fff;
+  border-radius: 10px;
+}
+select:hover{
+  cursor: pointer;
+  background-color: #272727;
+}
+.lowToHigh{
+  color: #252525;
+}
+h1{
+  color: #fff;
+}
+.filterIcon{
+font-size: 1.5rem; ;
+}
+.sortIcon{
+  color: #fff;
+  font-size: 1.5rem; ;
+}

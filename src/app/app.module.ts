@@ -18,6 +18,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CategoriesComponent } from './Components/Pages/categories/categories.component';
+<<<<<<< HEAD
 import { AdminDashBoardComponent } from './Components/Pages/admin-dash-board/admin-dash-board.component';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatTreeModule} from '@angular/material/tree';
@@ -35,8 +36,37 @@ import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
 import { ModalDismissReasons, NgbDatepickerModule, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { CustomersComponent } from './Components/Pages/customers/customers.component';
 import { EditUserComponent } from './Components/Shared/edit-user/edit-user.component';
+=======
+
+import { HttpClientModule } from '@angular/common/http';
+import { ShippingComponent } from './Components/Pages/shipping/shipping.component';
+import { CheckoutComponent } from './Components/Pages/checkout/checkout.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+
+import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbAccordionModule, NgbDatepickerModule, NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import { TransactionsComponent } from './Components/Pages/transactions/transactions.component';
+import {MatTableModule} from '@angular/material/table';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSortModule } from '@angular/material/sort';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { ProductCardComponent } from './Components/Shared/product-card/product-card.component';
+import { ProductReviewsComponent } from './Components/Shared/product-reviews/product-reviews.component';
+import { ProductDetailsCardComponent } from './Components/Shared/product-details-card/product-details-card.component';
+
+
+
+
+import { ReviewsComponent } from './Components/Pages/reviews/reviews.component';
+
+>>>>>>> ffbde576d91fefaf3362626c2055779f26d72c31
 @NgModule({
   declarations: [
+    ProductCardComponent,
+    ProductDetailsCardComponent,
+    ProductReviewsComponent,
     AppComponent,
     HeaderComponent,
     FooterComponent,
@@ -50,11 +80,23 @@ import { EditUserComponent } from './Components/Shared/edit-user/edit-user.compo
     RegisterComponent,
     SliderComponent,
     CategoriesComponent,
+<<<<<<< HEAD
     AdminDashBoardComponent,
     AddProductComponent,
     CustomersComponent,
     EditUserComponent,
     
+=======
+    ShippingComponent,
+    CheckoutComponent,
+
+    ReviewsComponent,
+
+
+
+    TransactionsComponent
+
+>>>>>>> ffbde576d91fefaf3362626c2055779f26d72c31
   ],
   imports: [
     BrowserModule,
@@ -63,6 +105,7 @@ import { EditUserComponent } from './Components/Shared/edit-user/edit-user.compo
     ReactiveFormsModule,
     FontAwesomeModule,
     BrowserAnimationsModule,
+<<<<<<< HEAD
     FormsModule,
     ReactiveFormsModule,
     MatExpansionModule,
@@ -77,8 +120,22 @@ import { EditUserComponent } from './Components/Shared/edit-user/edit-user.compo
     MatTableModule,
     MatButtonModule,
     HttpClientModule
+=======
+    NgbAccordionModule,
+    HttpClientModule,
+    NgbDatepickerModule,
+    NgbModule,
+    NgbCarouselModule,
+    MatTableModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSortModule,
+    MatPaginatorModule,
+
+
+>>>>>>> ffbde576d91fefaf3362626c2055779f26d72c31
   ],
-  providers: [],
+  providers: [NgbModal],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
