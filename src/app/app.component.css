@@ -1,13 +1,10 @@
-.page_container{
+.page_container {
   min-height: 100vh;
-  min-height: 100dvh;
-
   display: grid;
   grid-template-rows: auto 1fr auto;
 }
 
-main{
-  background-color: rgba(15,15,15,255)
+.page_container main {
+  color: white;
+  background-color: black;
 }
-
-

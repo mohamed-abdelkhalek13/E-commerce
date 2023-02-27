@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './Components/Shared/header/header.component';
@@ -13,11 +12,6 @@ import { CartComponent } from './Components/Pages/cart/cart.component';
 import { OrdersComponent } from './Components/Pages/orders/orders.component';
 import { LoginComponent } from './Components/Pages/login/login.component';
 import { RegisterComponent } from './Components/Pages/register/register.component';
-import { ProductCardComponent } from './Components/Shared/product-card/product-card.component';
-import { FormsModule } from '@angular/forms';
-import { ProductDetailsCardComponent } from './Components/Shared/product-details-card/product-details-card.component';
-import { ProductReviewsComponent } from './Components/Shared/product-reviews/product-reviews.component';
-
 
 @NgModule({
   declarations: [
@@ -31,17 +25,13 @@ import { ProductReviewsComponent } from './Components/Shared/product-reviews/pro
     CartComponent,
     OrdersComponent,
     LoginComponent,
-    RegisterComponent,
-    ProductCardComponent,
-    ProductDetailsCardComponent,
-    ProductReviewsComponent
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    FormsModule
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [NgbModal],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

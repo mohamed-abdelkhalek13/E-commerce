@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent {
-
+  onBackToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 }
