@@ -26,16 +26,26 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbAccordionModule, NgbDatepickerModule, NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
-
+import { TransactionsComponent } from './Components/Pages/transactions/transactions.component';
 import {MatTableModule} from '@angular/material/table';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { ProductCardComponent } from './Components/Shared/product-card/product-card.component';
+import { ProductReviewsComponent } from './Components/Shared/product-reviews/product-reviews.component';
+import { ProductDetailsCardComponent } from './Components/Shared/product-details-card/product-details-card.component';
+
+
+
+
 import { ReviewsComponent } from './Components/Pages/reviews/reviews.component';
 
 @NgModule({
   declarations: [
+    ProductCardComponent,
+    ProductDetailsCardComponent,
+    ProductReviewsComponent,
     AppComponent,
     HeaderComponent,
     FooterComponent,
@@ -51,8 +61,12 @@ import { ReviewsComponent } from './Components/Pages/reviews/reviews.component';
     CategoriesComponent,
     ShippingComponent,
     CheckoutComponent,
+
     ReviewsComponent,
 
+
+
+    TransactionsComponent
 
   ],
   imports: [

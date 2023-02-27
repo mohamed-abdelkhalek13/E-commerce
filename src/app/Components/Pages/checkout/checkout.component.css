@@ -1,4 +1,7 @@
 .container {
-  height: 100vh;
-  padding-top: 3rem;
+  padding: 2rem 0;
+}
+
+.pay-method {
+  width: 4rem;
 }
