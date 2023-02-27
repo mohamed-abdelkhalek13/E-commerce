@@ -37,9 +37,12 @@ import { ProductReviewsComponent } from './Components/Shared/product-reviews/pro
 import { ProductDetailsCardComponent } from './Components/Shared/product-details-card/product-details-card.component';
 
 
-
+import {MatDialogModule} from '@angular/material/dialog';
 
 import { ReviewsComponent } from './Components/Pages/reviews/reviews.component';
+import { ManageCategoriesComponent } from './Components/Pages/manage-categories/manage-categories.component';
+import { CatdialogComponent } from './Components/dialogs/catdialog/catdialog.component';
+
 
 @NgModule({
   declarations: [
@@ -63,10 +66,13 @@ import { ReviewsComponent } from './Components/Pages/reviews/reviews.component';
     CheckoutComponent,
 
     ReviewsComponent,
+    CatdialogComponent,
 
 
+    TransactionsComponent,
+          ManageCategoriesComponent,
 
-    TransactionsComponent
+
 
   ],
   imports: [
@@ -86,6 +92,8 @@ import { ReviewsComponent } from './Components/Pages/reviews/reviews.component';
     MatInputModule,
     MatSortModule,
     MatPaginatorModule,
+    MatDialogModule
+
 
 
   ],
