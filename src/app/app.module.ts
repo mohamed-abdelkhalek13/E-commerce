@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './Components/Shared/header/header.component';
@@ -13,10 +12,11 @@ import { CartComponent } from './Components/Pages/cart/cart.component';
 import { OrdersComponent } from './Components/Pages/orders/orders.component';
 import { LoginComponent } from './Components/Pages/login/login.component';
 import { RegisterComponent } from './Components/Pages/register/register.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SliderComponent } from './Components/Pages/slider/slider.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { CategoriesComponent } from './Components/Pages/categories/categories.component';
 import { AdminDashBoardComponent } from './Components/Pages/admin-dash-board/admin-dash-board.component';
 import {MatExpansionModule} from '@angular/material/expansion';
@@ -26,7 +26,15 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatSidenavModule} from '@angular/material/sidenav'; 
 import {MatFormFieldModule} from '@angular/material/form-field'; 
 import {MatSelectModule} from '@angular/material/select'; 
+import {MatTableModule} from '@angular/material/table'; 
 import { AddProductComponent } from './Components/Pages/add-product/add-product.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {MatButtonModule} from '@angular/material/button';
+import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
+import { ModalDismissReasons, NgbDatepickerModule, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { CustomersComponent } from './Components/Pages/customers/customers.component';
+import { EditUserComponent } from './Components/Shared/edit-user/edit-user.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,10 +52,15 @@ import { AddProductComponent } from './Components/Pages/add-product/add-product.
     CategoriesComponent,
     AdminDashBoardComponent,
     AddProductComponent,
+    CustomersComponent,
+    EditUserComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
     FontAwesomeModule,
     BrowserAnimationsModule,
     FormsModule,
@@ -58,7 +71,12 @@ import { AddProductComponent } from './Components/Pages/add-product/add-product.
     MatMenuModule,
     MatSidenavModule,
     MatFormFieldModule,
-    MatSelectModule
+    MatSelectModule,
+    NgbModule,
+    NgbCarouselModule ,
+    MatTableModule,
+    MatButtonModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,6 @@
-<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+<nav class="sb-topnav navbar navbar-expand navbar-dark">
     <a class="navbar-brand ps-3" href="index.html">DashBoard</a>
-        <button mat-button class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+        <button class="d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
             <i class="fa-solid fa-user" [matMenuTriggerFor]="menu"></i>
             Admin
         </button>
@@ -54,7 +54,7 @@
                     </mat-nested-tree-node>
                 </mat-tree>
               </mat-drawer-container>
-                <div id="layoutSidenav_content">
+                <div class="layoutSidenav_content">
                     <main>
                         <div class="container-fluid px-4">
                             <router-outlet></router-outlet>

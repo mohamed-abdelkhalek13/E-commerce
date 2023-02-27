@@ -2,7 +2,6 @@ import { Component,Injectable } from '@angular/core';
 import {NestedTreeControl} from '@angular/cdk/tree';
 import {MatTreeNestedDataSource} from '@angular/material/tree';
 import {BehaviorSubject, Observable, of as observableOf} from 'rxjs'
-// import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 export class Dashboard {
   name: string ="";
   Path:string ="";
@@ -34,8 +33,8 @@ export class AdminDashBoardComponent {
       {name: 'Orders',Path:"/Orders",icon:"shopping_cart",children:[]},
       {name:'Customers',Path:"/Customers",icon:"group",children:[]},
       {name:'Reviews',Path:"/Reviews",icon:"reviews",children:[]},
-      {name:'Hot offers',Path:"HotOffers",children:[]},
-      {name:'Settings',Path:"Settings",children:[]}
+      {name:'Hot offers',Path:"/HotOffers",children:[]},
+      {name:'Settings',Path:"/EditUser",children:[]}
     ]);
   }
   private _getChildren = (node: Dashboard) => { return observableOf(node.children); };

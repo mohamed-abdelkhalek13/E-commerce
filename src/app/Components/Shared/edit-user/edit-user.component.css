@@ -1,0 +1,70 @@
+*{
+    font-weight: 600;
+    font-size: 18px;
+}
+h3{
+    font-size: 25px;
+}
+.form-control{
+    margin-bottom: 10px;
+}
+.AddProduct{
+    color: #fff;
+    margin: 10px 50px;
+}
+[type="submit"]{
+    color: #fff;
+    background-color: #272727;
+    border: none;
+}
+[type="submit"]:hover{
+    background-color: #fff;
+    color:#272727 ;
+}
+.group{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+.form-horizontal{
+    display: flex;
+    gap: 10%;
+}
+.imageContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.upload{
+    border: 2px solid #ddd;
+}
+.passAndaccount{
+    display: flex;
+    gap: 5%;
+}
+.sec{
+    background-color: #272727;
+    color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+}
+.passwordContainer button{
+    color: #ffc107;
+}
+.AccountContainer button{
+    color: #dc3545;
+}
+.sec h4{
+    color: black;
+}
+.sec p{
+    color: #ccc;
+    font-size: 16px;
+}
