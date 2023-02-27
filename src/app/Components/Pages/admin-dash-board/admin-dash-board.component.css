@@ -1,0 +1,64 @@
+.navbar{
+    background-color: #0f0f0f;
+    color: white;
+}
+.example-tree-progress-bar {
+    margin-left: 30px;
+}
+mat-tree-node{
+    background-color: #0f0f0f;
+    color: #fff;
+}
+mat-icon{
+    color: #fff;
+    font-size: 20px;
+}
+button{
+    background-color: #0f0f0f;
+    border: none;
+    color: #fff;
+}
+.navbar-brand{
+    font-weight: bold;
+}
+i{
+    height: 30px;
+    font-size: 20px;
+}
+.adminDropDown{
+    background-color: #0f0f0f;
+    color: #fff;
+}
+.example-tree-invisible {
+    display: none;
+}
+.example-tree ul,
+.example-tree li {
+    background-color: #0f0f0f;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 0;
+    list-style-type: none;
+}
+.example-tree li a{
+    color: #ddd;
+}
+.example-container {
+    width: fit-content;
+    height: 80%;
+}
+mat-tree-node {  
+    padding: 0 20px;
+}
+.contain{
+    display: flex;
+}
+.contain .layoutSidenav_content{
+    flex-basis: 70%;
+}
+.productDropDown{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 70px;
+}
