@@ -23,6 +23,7 @@ import { ShippingComponent } from './Components/Pages/shipping/shipping.componen
 import { CheckoutComponent } from './Components/Pages/checkout/checkout.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+
 import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbAccordionModule, NgbDatepickerModule, NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { TransactionsComponent } from './Components/Pages/transactions/transactions.component';
