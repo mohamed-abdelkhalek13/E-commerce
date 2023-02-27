@@ -6,9 +6,8 @@
   grid-template-rows: auto 1fr auto;
 }
 
-.page_container main {
-  color: white;
-  background-color: black;
+main{
+  background-color: rgba(15,15,15,255)
 }
 
 
