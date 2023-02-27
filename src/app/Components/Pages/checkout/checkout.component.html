@@ -1,11 +1,185 @@
 <div class="container">
+  <div class="row">
+    <h2>Check out your order <i class="fa-solid fa-cart-shopping"></i></h2>
+  </div>
   <div class="row d-flex">
-    <div class="col-6">
-      <div class="row">
-        <h2>Your Shipping Cart <i class="fa-solid fa-cart-shopping"></i></h2>
+    <div class="col-lg-6 col-sm-12 pt-3">
+      <div class="row pb-2">
+        <div>
+          <p>
+            <button
+              class="btn btn-primary w-100 text-start"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseExample"
+              aria-expanded="false"
+              aria-controls="collapseExample"
+            >
+              1. Shipping address
+            </button>
+          </p>
+          <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+              <div class="row align-items-center">
+                <div class="col-auto">
+                  <label for="inputPassword6" class="col-form-label"
+                    >Address</label
+                  >
+                </div>
+                <div class="col-10">
+                  <input type="text" id="" class="form-control" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row pb-2">
+        <div>
+          <p>
+            <button
+              class="btn btn-primary text-start w-100"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#payment"
+              aria-expanded="true"
+              aria-controls="payment"
+            >
+              2. Payment method
+            </button>
+          </p>
+          <div class="collapse show w-100" id="payment">
+            <div class="card card-body">
+              <h2>Payment Method</h2>
+              <div class="form-group">
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="paymentMethod"
+                    id="payOnDelivery"
+                    value="payOnDelivery"
+                    [(ngModel)]="paymentMethod"
+                    (change)="toggleForm()"
+                    checked
+                  />
+                  <label class="form-check-label" for="payOnDelivery">
+                    Pay on Delivery
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="paymentMethod"
+                    id="payOnline"
+                    value="payOnline"
+                    [(ngModel)]="paymentMethod"
+                    (change)="toggleForm()"
+                  />
+                  <label class="form-check-label" for="payOnline">
+                    Pay Online
+                  </label>
+                  <div class="d-flex justify-content-center">
+                    <img
+                      class="pay-method mx-2"
+                      src="assets/Images/Mastercard-Logo.wine.svg"
+                      alt="mastercard"
+                    />
+                    <img
+                      class="pay-method mx-2"
+                      src="assets/Images/Visa_Inc.-Logo.wine.svg"
+                      alt="Visa"
+                    />
+                    <img
+                      class="pay-method mx-2"
+                      src="assets/Images/PayPal-Logo.wine.svg"
+                      alt="paypal"
+                    />
+                    <img
+                      src="assets/Images/vodafone-cash-logo.png"
+                      class="pay-method mx-2"
+                      alt="vodafone cash"
+                    />
+                  </div>
+                  <form>
+                    <div class="form-group">
+                      <label for="card-number">Card Number</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="card-number"
+                        disabled
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="name-on-card">Name on Card</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="name-on-card"
+                        disabled
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="expiry-date">Expiry Date</label>
+                      <div class="row">
+                        <div class="col-6">
+                          <select
+                            class="form-control"
+                            id="expiry-month"
+                            disabled
+                          >
+                            <option>01</option>
+                            <option>02</option>
+                            <option>03</option>
+                            <option>04</option>
+                            <option>05</option>
+                            <option>06</option>
+                            <option>07</option>
+                            <option>08</option>
+                            <option>09</option>
+                            <option>10</option>
+                            <option>11</option>
+                            <option>12</option>
+                          </select>
+                        </div>
+                        <div class="col-6">
+                          <select
+                            class="form-control"
+                            id="expiry-year"
+                            disabled
+                          >
+                            <option>2023</option>
+                            <option>2024</option>
+                            <option>2025</option>
+                            <option>2026</option>
+                            <option>2027</option>
+                            <option>2028</option>
+                            <option>2029</option>
+                            <option>2030</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="cvv">CVV</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="cvv"
+                        disabled
+                      />
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="col-6">
+    <div class="col-lg-6 col-sm-12">
       <div>
         <table class="table">
           <thead class="thead-light">
@@ -15,81 +189,97 @@
               <th>Price</th>
               <th>Quantity</th>
               <th>Total</th>
+              <th>Delete</th>
             </tr>
           </thead>
           <tbody>
             <tr *ngFor="let item of cartItems">
-              <td>{{ item.name }}</td>
-              <th><img src="https://via.placeholder.com/70" alt="" /></th>
-              <td>{{ item.price | currency }}</td>
-              <td>
-                <button
-                  class="btn btn-sm btn-outline-secondary"
-                  (click)="decrementQuantity(item)"
-                >
-                  -
-                </button>
+              <td class="align-middle">{{ item.name }}</td>
+              <td class="align-middle">
+                <img src="https://via.placeholder.com/70" alt="" />
+              </td>
+              <td class="align-middle">
+                {{ item.price | currency }}
+              </td>
+              <td class="align-middle ps-5">
                 {{ item.quantity }}
-                <button
-                  class="btn btn-sm btn-outline-secondary"
-                  (click)="incrementQuantity(item)"
-                >
-                  +
+              </td>
+              <td class="align-middle">
+                {{ item.price * item.quantity | currency }}
+              </td>
+              <td class="align-middle">
+                <button class="btn btn-danger" (click)="deleteItem(item)">
+                  Delete
                 </button>
               </td>
-              <td>{{ item.price * item.quantity | currency }}</td>
             </tr>
           </tbody>
-          <tfoot>
-            <tr>
-              <td colspan="3"></td>
-              <!-- <td>{{ getTotal() | currency }}</td> -->
-            </tr>
-          </tfoot>
         </table>
-        <div class="row">
-          <div class="col-md-6">
-            <h4>Subtotal</h4>
-          </div>
-          <div class="col-md-6 text-right">
-            <h4>{{ subtotal() | currency }}</h4>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-md-6">
-            <h4>Discount</h4>
-          </div>
-          <div class="col-md-6 text-right">
-            <h4>
-              <input type="number" [(ngModel)]="discount" min="0" step="0.5" />
-            </h4>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-md-6">
-            <h4>Shipping</h4>
-          </div>
-          <div class="col-md-6 text-right">
-            <h4>{{ shipping | currency }}</h4>
-          </div>
-        </div>
-
-        <hr />
-
-        <div class="row">
-          <div class="col-md-6">
-            <h3>Total</h3>
-          </div>
-          <div class="col-md-6 text-right">
-            <h3>{{ total() | currency }}</h3>
-          </div>
+        <div
+          class="text-center text-danger fw-semibold w-100 pt-5"
+          *ngIf="cartItems.length == 0"
+        >
+          No Products in your cart, please add products
         </div>
       </div>
-      <div class="col-md-4">
-        <!-- Payment form goes here -->
-      </div>
+      <ng-container *ngIf="cartItems.length > 0">
+        <div class="price d-flex flex-column pt-4 justify-content-end">
+          <div class="row">
+            <div class="col-md-6">
+              <p>Subtotal:</p>
+            </div>
+            <div class="col-md-6 text-right">
+              <p>{{ subtotal() | currency }}</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <p>Discount:</p>
+            </div>
+            <div class="col-md-6 text-right">
+              <p>
+                <input
+                  type="number"
+                  [(ngModel)]="discount"
+                  min="0"
+                  step="0.5"
+                  class="w-50"
+                />
+              </p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <p>Shipping:</p>
+            </div>
+            <div class="col-md-6 text-right">
+              <p>{{ shipping | currency }}</p>
+            </div>
+          </div>
+          <hr />
+
+          <div class="row">
+            <div class="col-md-6">
+              <h4>Total:</h4>
+            </div>
+            <div class="col-md-6 text-right">
+              <h4>{{ total() | currency }}</h4>
+            </div>
+          </div>
+          <div class="row">
+            <div class="pt-5 d-flex justify-content-center">
+              <a
+                name="order"
+                id="order"
+                class="btn btn-primary w-25"
+                href="#"
+                role="button"
+                >Order Now</a
+              >
+            </div>
+          </div>
+        </div>
+      </ng-container>
     </div>
   </div>
 </div>

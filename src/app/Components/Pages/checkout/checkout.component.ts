@@ -7,6 +7,34 @@ import { Component } from '@angular/core';
 })
 export class CheckoutComponent {
 
+  paymentMethod: string = 'payOnDelivery';
+  isPayOnline: boolean = false;
+  toggleForm(): void {
+    const cardNumberInput = document.getElementById('card-number') as HTMLInputElement;
+    const nameOnCardInput = document.getElementById('name-on-card') as HTMLInputElement;
+    const expiryMonthSelect = document.getElementById('expiry-month') as HTMLSelectElement;
+    const expiryYearSelect = document.getElementById('expiry-year') as HTMLSelectElement;
+    const cvvInput = document.getElementById('cvv') as HTMLInputElement;
+    const submitButton = document.getElementById('submit-button') as HTMLButtonElement;
+
+    if (this.paymentMethod === 'payOnline') {
+      this.isPayOnline = true;
+      cardNumberInput.disabled = false;
+      nameOnCardInput.disabled = false;
+      expiryMonthSelect.disabled = false;
+      expiryYearSelect.disabled = false;
+      cvvInput.disabled = false;
+    } else {
+      this.isPayOnline = false;
+      cardNumberInput.disabled = true;
+      nameOnCardInput.disabled = true;
+      expiryMonthSelect.disabled = true;
+      expiryYearSelect.disabled = true;
+      cvvInput.disabled = true;
+    }
+  }
+
+  // ----------
   id!: number;
   name!: string;
   price!: number;
@@ -18,6 +46,13 @@ export class CheckoutComponent {
     { id: 2, name: 'Product 2', price: 19.99, quantity: 2, stock: 5 },
     { id: 3, name: 'Product 3', price: 29.99, quantity: 1, stock: 5 }
   ];
+
+  deleteItem(item: any) {
+    const index = this.cartItems.indexOf(item);
+    if (index >= 0) {
+      this.cartItems.splice(index, 1);
+    }
+  }
 
   subtotal(): number {
     let subtotal = 0;

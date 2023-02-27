@@ -3,4 +3,5 @@ export interface Shipment {
   carrier: string;
   status: 'pending' | 'shipping' | 'delivered';
   expectedDeliveryDate: Date;
+  email: string;
 }
