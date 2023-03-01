@@ -1,17 +1,17 @@
 <div class="d-flex justify-content-start flex-wrap gap-5 productsContainer" >
   <div class="card p-2" style="width: 20rem;" *ngFor="let product of products">
-    <img src="{{product.thumbnail}}" class="card-img-top" alt="laptop-img">
+    <img src={{product.images[0]}} class="card-img-top" alt="laptop-img">
     <div class="card-body">
-      <p class="card-text description">{{product.description}}</p>
+      <p class="card-text description">{{product.decreption}}</p>
       <p>
-        ({{product.rating}}):
+        ({{product.avgRating}}):
         <span *ngFor="let star of product.ratingArray">
           <i class="fa-solid fa-star star"></i>
         </span>
         <i *ngIf="product.halfAStar > 0" class="fa-solid fa-star-half star"></i>
       </p>
-      <p>{{product.price}}$</p>
-      <a href="#" class="btn btn-primary" routerLink="/products/{{product.id}}">Go to details</a>
+      <p>{{product.price}}LE</p>
+      <a href="#" class="btn btn-primary" routerLink="/categories/{{product.category}}/{{product.id}}">Go to details</a>
     </div>
   </div>
 </div>

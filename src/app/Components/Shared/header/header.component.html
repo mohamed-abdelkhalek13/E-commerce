@@ -23,7 +23,7 @@
 </header>
 
 <nav class="navbar navbar-expand-lg sticky-top navbar-dark p-2 shadow-sm nav">
-  <div class="container">
+  <div class="container-fluid">
     <a class="navbar-brand" href="#"
       ><img src="assets/Images/tidal-logo.png" alt="logo" class="logo_img"
     /></a>
@@ -68,7 +68,12 @@
       </div>
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link mx-2 text-uppercase" href="#">Products</a>
+          <a
+            class="nav-link mx-2 text-uppercase"
+            (click)="getAll()"
+            routerLink="/categories/All"
+            >Products</a
+          >
         </li>
         <li class="nav-item">
           <a class="nav-link mx-2 text-uppercase" href="#">Catalog</a>
@@ -87,6 +92,21 @@
         <li class="nav-item">
           <a class="nav-link mx-2 text-uppercase" href="#"
             ><i class="fa-solid fa-circle-user me-1"></i> Account</a
+          >
+        </li>
+
+        <li class="nav-item" *ngIf="!this.auth.isLoggedIn()">
+          <a class="nav-link mx-2 text-uppercase" routerLink="login">Log in</a>
+        </li>
+        <li class="nav-item" *ngIf="this.auth.isLoggedIn()">
+          <a class="nav-link mx-2 text-uppercase">Hello, {{ fullName }}</a>
+        </li>
+        <li class="nav-item" *ngIf="this.auth.isLoggedIn()">
+          <a
+            class="nav-link mx-2 text-uppercase"
+            routerLink="/"
+            (click)="logOut()"
+            >Log out</a
           >
         </li>
       </ul>
