@@ -30,3 +30,25 @@ ul:not(:last-child)
 {
   border-bottom: 2px solid #252525;
 }
+ul li button{
+  color: #fff;
+  width: 100%;
+  background-color: inherit;
+  text-align: left;
+  border: none;
+  font-family: "Roboto","Arial",sans-serif;
+  font-size: 1rem;
+  line-height: 1.5rem;
+
+}
+a{
+  width: 100%;
+  text-decoration: none;
+  color: #fff;
+}
+ul li button:hover{
+  background-color: #272727;
+}
+ul li button:focus {
+  color: rgba(255,164,28,255);
+}

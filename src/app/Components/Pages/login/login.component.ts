@@ -26,7 +26,6 @@ export class LoginComponent {
       console.log('Form submitted successfully');
       console.log(form.value);
       // logic to handle form submission
-
       this.auth
         .logIn({ email: this.email, password: this.password })
         .subscribe({

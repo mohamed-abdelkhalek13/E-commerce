@@ -19,6 +19,18 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CategoriesComponent } from './Components/Pages/categories/categories.component';
 
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { AdminDashBoardComponent } from './Components/Pages/admin-dash-board/admin-dash-board.component';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatTreeModule } from '@angular/material/tree';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatSelectModule } from '@angular/material/select';
+import { AddProductComponent } from './Components/Pages/add-product/add-product.component';
+import { MatButtonModule } from '@angular/material/button';
+import { CustomersComponent } from './Components/Pages/customers/customers.component';
+import { EditUserComponent } from './Components/Shared/edit-user/edit-user.component';
+
 import { ShippingComponent } from './Components/Pages/shipping/shipping.component';
 import { CheckoutComponent } from './Components/Pages/checkout/checkout.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -45,6 +57,11 @@ import { ToastrModule } from 'ngx-toastr';
 import { TokenInterceptor } from './interceptors/token.interceptor';
 import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 import { AuthGuard } from './guards/auth.guard';
+
+import { MatDialogModule } from '@angular/material/dialog';
+import { ManageCategoriesComponent } from './Components/Pages/manage-categories/manage-categories.component';
+import { CatdialogComponent } from './Components/dialogs/catdialog/catdialog.component';
+
 @NgModule({
   declarations: [
     ProductCardComponent,
@@ -63,12 +80,16 @@ import { AuthGuard } from './guards/auth.guard';
     RegisterComponent,
     SliderComponent,
     CategoriesComponent,
+    AdminDashBoardComponent,
+    AddProductComponent,
+    CustomersComponent,
+    EditUserComponent,
     ShippingComponent,
     CheckoutComponent,
-
     ReviewsComponent,
-
+    CatdialogComponent,
     TransactionsComponent,
+    ManageCategoriesComponent,
   ],
   imports: [
     BrowserModule,
@@ -77,12 +98,19 @@ import { AuthGuard } from './guards/auth.guard';
     ReactiveFormsModule,
     FontAwesomeModule,
     BrowserAnimationsModule,
-    NgbAccordionModule,
-    HttpClientModule,
-    NgbDatepickerModule,
+    MatExpansionModule,
+    MatTreeModule,
+    MatIconModule,
+    MatMenuModule,
+    MatSidenavModule,
+    MatSelectModule,
     NgbModule,
     NgbCarouselModule,
     MatTableModule,
+    MatButtonModule,
+    HttpClientModule,
+    NgbAccordionModule,
+    NgbDatepickerModule,
     MatFormFieldModule,
     MatInputModule,
     MatSortModule,
@@ -103,6 +131,7 @@ import { AuthGuard } from './guards/auth.guard';
       multi: true,
     },
     JwtHelperService,
+    MatDialogModule,
   ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { ProductsService } from 'src/app/Services/products.service';
 
 @Component({
   selector: 'app-home',
