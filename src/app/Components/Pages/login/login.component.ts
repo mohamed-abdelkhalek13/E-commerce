@@ -30,6 +30,7 @@ export class LoginComponent {
           localStorage.setItem('token', response.token);
           localStorage.setItem('tokenExpiration', response.expiration);
           localStorage.setItem('roles', JSON.stringify(response.roles));
+          localStorage.setItem('email', JSON.stringify(response.email));
 
           console.log("Done");
           this.router.navigate(['/']);

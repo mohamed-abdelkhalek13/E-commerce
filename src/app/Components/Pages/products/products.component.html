@@ -1,4 +1,3 @@
-<p>products works!</p>
 <div class="container-fluid">
   <div class="row">
     <div class="row">
@@ -6,8 +5,8 @@
         <h1>Filter <i class="fa-solid fa-filter filterIcon"></i></h1>
       </div>
       <div class="col-9">
-        <select class="form-select" aria-label="Disabled select example" >
-          <option selected>Sort by</option>
+        <select class="form-select" aria-label="Disabled select example" (change)="sort($event.target)">
+          <option selected value="">Sort by</option>
           <option value="lowToHigh">price low to high <i class="fa-solid fa-arrow-up-wide-short lowToHigh" ></i></option>
           <option value="highToLow">price high to low</option>
         </select>

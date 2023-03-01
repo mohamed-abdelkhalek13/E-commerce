@@ -25,7 +25,7 @@
 <nav class="navbar navbar-expand-lg sticky-top navbar-dark p-2 shadow-sm nav">
   <div class="container">
     <a class="navbar-brand" href="#"
-      ><img src="assets/Images/tidal-logo.png" alt="logo" class="logo_img"
+      ><img src="assets/images/tidal-logo.png" alt="logo" class="logo_img"
     /></a>
     <button
       class="navbar-toggler"
@@ -68,7 +68,7 @@
       </div>
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link mx-2 text-uppercase" href="#">Products</a>
+          <a class="nav-link mx-2 text-uppercase" (click)="getAll()" routerLink="/categories/All">Products</a>
         </li>
         <li class="nav-item">
           <a class="nav-link mx-2 text-uppercase" href="#">Catalog</a>

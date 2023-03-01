@@ -75,8 +75,6 @@ import { ProductDetailsCardComponent } from './Components/Shared/product-details
     MatInputModule,
     MatSortModule,
     MatPaginatorModule,
-
-
   ],
   providers: [NgbModal],
   bootstrap: [AppComponent]
