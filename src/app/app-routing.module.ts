@@ -24,17 +24,17 @@ const routes: Routes = [
   {path:"cart", component:CartComponent},
   {path:"orders", component:OrdersComponent},
   {path:"Categories", component:CategoriesComponent},
-<<<<<<< HEAD
+
   {path:"AddProducts",component:AddProductComponent},
   {path:"Customers",component:CustomersComponent},
-  {path:"EditUser",component:EditUserComponent}
-=======
+  {path:"EditUser",component:EditUserComponent},
+
   {path:"shipping", component:ShippingComponent},
   {path:"checkout", component:CheckoutComponent},
   {path:"transactions", component:TransactionsComponent},
 
 
->>>>>>> ffbde576d91fefaf3362626c2055779f26d72c31
+
 ];
 
 @NgModule({
