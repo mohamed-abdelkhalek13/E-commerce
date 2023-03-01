@@ -1,0 +1,35 @@
+*{
+    font-weight: 600;
+    font-size: 18px;
+}
+h3{
+    font-size: 25px;
+}
+.form-control{
+    margin-bottom: 10px;
+}
+.AddProduct{
+    color: #fff;
+    margin: 10px 50px;
+}
+[type="submit"]{
+    color: #fff;
+    background-color: #272727;
+    border: none;
+}
+[type="submit"]:hover{
+    background-color: #fff;
+    color:#272727 ;
+}
+select{
+    color: #EEE;
+    background: transparent;
+}
+select option:focus{
+    background: transparent;
+}
+.group{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}

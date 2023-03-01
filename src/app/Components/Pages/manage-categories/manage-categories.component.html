@@ -1,0 +1,70 @@
+
+<div class="add">
+  <a class="btn btn-success"(click)="open()" >Add New Item</a>
+</div>
+<div class="cd">
+  <table class="table  container ">
+    <thead>
+      <tr class="row">
+
+        <td class="col-2">Name</td>
+        <td class="col-3">Description</td>
+        <td class="col-1">Image</td>
+
+        <td class="col-3">Actions</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="row" *ngFor="let s of cat">
+
+        <td class="col-2">{{s.name}}</td>
+        <td class="col-3">{{s.description}}</td>
+        <td class="col-1"><img src="{{s.image}}" alt=""></td>
+
+
+
+        <td class="col-3"><button type="button" class="btn btn-danger" (click)="delete1(s.id)" >Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+
+
+
+<style>
+  h3{
+    color: aqua;
+  }
+
+
+  td,th{
+
+    color: rgb(255, 255, 255);
+    text-align: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  img{
+    width: 60px;
+height: 60px;
+    border-radius:6px;
+
+  }
+
+  button{
+    margin-right: 9px;
+  }
+
+  .add{
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+</style>
+
+
+

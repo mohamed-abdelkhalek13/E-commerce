@@ -1,0 +1,31 @@
+
+
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th scope="col">#</th>
+			<th scope="col">Products</th>
+			<th scope="col">Name</th>
+			<th scope="col">Rating</th>
+			<th scope="col">Date</th>
+			<th scope="col">Remove</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let country of countries; index as i">
+			<th scope="row">{{ i + 1 }}</th>
+			<td>
+				<img
+
+					style="width: 20px"
+				/>
+				{{ country.product }}
+			</td>
+      <td>{{ country.name  }}</td>
+			<td><ngb-rating [rate]="country.rating"></ngb-rating></td>
+
+			<td>{{ country.date }}</td>
+			<td><p  class="btn btn-danger">Remove</p></td>
+		</tr>
+	</tbody>
+</table>
