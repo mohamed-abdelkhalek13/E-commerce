@@ -62,6 +62,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { ManageCategoriesComponent } from './Components/Pages/manage-categories/manage-categories.component';
 import { CatdialogComponent } from './Components/dialogs/catdialog/catdialog.component';
 
+
 @NgModule({
   declarations: [
     ProductCardComponent,
@@ -117,6 +118,7 @@ import { CatdialogComponent } from './Components/dialogs/catdialog/catdialog.com
     MatPaginatorModule,
     ToastrModule,
     NgxSpinnerModule,
+    MatDialogModule,
   ],
   providers: [
     NgbModal,

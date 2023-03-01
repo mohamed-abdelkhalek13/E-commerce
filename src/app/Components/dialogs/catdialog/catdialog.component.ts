@@ -31,8 +31,9 @@ export class CatdialogComponent {
 
   newitem1( ){
     var newitem = this.addform.value
-    console.log(newitem)
+
     this.server.additem(newitem).subscribe()
+    console.log(newitem)
     this.dialogRef.close();
       window.location.reload();
   }
