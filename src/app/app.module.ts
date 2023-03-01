@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,16 +18,20 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CategoriesComponent } from './Components/Pages/categories/categories.component';
 
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ShippingComponent } from './Components/Pages/shipping/shipping.component';
 import { CheckoutComponent } from './Components/Pages/checkout/checkout.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
-
+import { NgxSpinnerModule } from 'ngx-spinner';
 import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
-import { NgbAccordionModule, NgbDatepickerModule, NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import {
+  NgbAccordionModule,
+  NgbDatepickerModule,
+  NgbModal,
+  ModalDismissReasons,
+} from '@ng-bootstrap/ng-bootstrap';
 import { TransactionsComponent } from './Components/Pages/transactions/transactions.component';
-import {MatTableModule} from '@angular/material/table';
+import { MatTableModule } from '@angular/material/table';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSortModule } from '@angular/material/sort';
@@ -36,11 +40,11 @@ import { ProductCardComponent } from './Components/Shared/product-card/product-c
 import { ProductReviewsComponent } from './Components/Shared/product-reviews/product-reviews.component';
 import { ProductDetailsCardComponent } from './Components/Shared/product-details-card/product-details-card.component';
 
-
-
-
 import { ReviewsComponent } from './Components/Pages/reviews/reviews.component';
-
+import { ToastrModule } from 'ngx-toastr';
+import { TokenInterceptor } from './interceptors/token.interceptor';
+import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
+import { AuthGuard } from './guards/auth.guard';
 @NgModule({
   declarations: [
     ProductCardComponent,
@@ -64,10 +68,7 @@ import { ReviewsComponent } from './Components/Pages/reviews/reviews.component';
 
     ReviewsComponent,
 
-
-
-    TransactionsComponent
-
+    TransactionsComponent,
   ],
   imports: [
     BrowserModule,
@@ -86,10 +87,24 @@ import { ReviewsComponent } from './Components/Pages/reviews/reviews.component';
     MatInputModule,
     MatSortModule,
     MatPaginatorModule,
-
-
+    ToastrModule,
+    NgxSpinnerModule,
   ],
-  providers: [NgbModal],
-  bootstrap: [AppComponent]
+  providers: [
+    NgbModal,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true,
+    },
+    {
+      provide: JWT_OPTIONS,
+      useValue: JWT_OPTIONS,
+      multi: true,
+    },
+    JwtHelperService,
+  ],
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class AppModule { }
+export class AppModule {}
