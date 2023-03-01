@@ -14,6 +14,9 @@ import { ProductDetailsComponent } from './Components/Pages/product-details/prod
 import { ProductsComponent } from './Components/Pages/products/products.component';
 import { RegisterComponent } from './Components/Pages/register/register.component';
 import { EditUserComponent } from './Components/Shared/edit-user/edit-user.component';
+import { ReviewsComponent } from './Components/Pages/reviews/reviews.component';
+import { ProductCardComponent } from './Components/Shared/product-card/product-card.component';
+import { AdminDashBoardComponent } from './Components/Pages/admin-dash-board/admin-dash-board.component';
 
 const routes: Routes = [
   {path:"", component:HomeComponent},
@@ -24,17 +27,15 @@ const routes: Routes = [
   {path:"cart", component:CartComponent},
   {path:"orders", component:OrdersComponent},
   {path:"Categories", component:CategoriesComponent},
-<<<<<<< HEAD
+  {path:"Dashboard",component:AdminDashBoardComponent},
+  {path:"productList",component:ProductCardComponent},
   {path:"AddProducts",component:AddProductComponent},
   {path:"Customers",component:CustomersComponent},
-  {path:"EditUser",component:EditUserComponent}
-=======
+  {path:"EditUser",component:EditUserComponent},
   {path:"shipping", component:ShippingComponent},
   {path:"checkout", component:CheckoutComponent},
   {path:"transactions", component:TransactionsComponent},
-
-
->>>>>>> ffbde576d91fefaf3362626c2055779f26d72c31
+  {path:"reviews",component:ReviewsComponent},
 ];
 
 @NgModule({

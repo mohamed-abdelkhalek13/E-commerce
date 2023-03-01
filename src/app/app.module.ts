@@ -18,32 +18,20 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CategoriesComponent } from './Components/Pages/categories/categories.component';
-<<<<<<< HEAD
 import { AdminDashBoardComponent } from './Components/Pages/admin-dash-board/admin-dash-board.component';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatTreeModule} from '@angular/material/tree';
 import {MatIconModule} from '@angular/material/icon';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatSidenavModule} from '@angular/material/sidenav'; 
-import {MatFormFieldModule} from '@angular/material/form-field'; 
 import {MatSelectModule} from '@angular/material/select'; 
-import {MatTableModule} from '@angular/material/table'; 
 import { AddProductComponent } from './Components/Pages/add-product/add-product.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {MatButtonModule} from '@angular/material/button';
-import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
-import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
-import { ModalDismissReasons, NgbDatepickerModule, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { CustomersComponent } from './Components/Pages/customers/customers.component';
 import { EditUserComponent } from './Components/Shared/edit-user/edit-user.component';
-=======
-
-import { HttpClientModule } from '@angular/common/http';
 import { ShippingComponent } from './Components/Pages/shipping/shipping.component';
 import { CheckoutComponent } from './Components/Pages/checkout/checkout.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
-
 import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbAccordionModule, NgbDatepickerModule, NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { TransactionsComponent } from './Components/Pages/transactions/transactions.component';
@@ -55,13 +43,10 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { ProductCardComponent } from './Components/Shared/product-card/product-card.component';
 import { ProductReviewsComponent } from './Components/Shared/product-reviews/product-reviews.component';
 import { ProductDetailsCardComponent } from './Components/Shared/product-details-card/product-details-card.component';
-
-
-
-
 import { ReviewsComponent } from './Components/Pages/reviews/reviews.component';
+import { ProductService } from './Components/core/services/product-service.service';
+import { CustomerService } from './Components/core/services/customer.service';
 
->>>>>>> ffbde576d91fefaf3362626c2055779f26d72c31
 @NgModule({
   declarations: [
     ProductCardComponent,
@@ -80,23 +65,14 @@ import { ReviewsComponent } from './Components/Pages/reviews/reviews.component';
     RegisterComponent,
     SliderComponent,
     CategoriesComponent,
-<<<<<<< HEAD
     AdminDashBoardComponent,
     AddProductComponent,
     CustomersComponent,
     EditUserComponent,
-    
-=======
     ShippingComponent,
     CheckoutComponent,
-
     ReviewsComponent,
-
-
-
-    TransactionsComponent
-
->>>>>>> ffbde576d91fefaf3362626c2055779f26d72c31
+    TransactionsComponent,
   ],
   imports: [
     BrowserModule,
@@ -105,7 +81,6 @@ import { ReviewsComponent } from './Components/Pages/reviews/reviews.component';
     ReactiveFormsModule,
     FontAwesomeModule,
     BrowserAnimationsModule,
-<<<<<<< HEAD
     FormsModule,
     ReactiveFormsModule,
     MatExpansionModule,
@@ -115,25 +90,18 @@ import { ReviewsComponent } from './Components/Pages/reviews/reviews.component';
     MatSidenavModule,
     MatFormFieldModule,
     MatSelectModule,
-    NgbModule,
     NgbCarouselModule ,
     MatTableModule,
     MatButtonModule,
-    HttpClientModule
-=======
+    HttpClientModule,
     NgbAccordionModule,
     HttpClientModule,
     NgbDatepickerModule,
     NgbModule,
-    NgbCarouselModule,
     MatTableModule,
-    MatFormFieldModule,
     MatInputModule,
     MatSortModule,
     MatPaginatorModule,
-
-
->>>>>>> ffbde576d91fefaf3362626c2055779f26d72c31
   ],
   providers: [NgbModal],
   bootstrap: [AppComponent]

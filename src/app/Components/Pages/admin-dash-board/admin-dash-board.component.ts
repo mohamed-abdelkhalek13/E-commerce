@@ -28,11 +28,11 @@ export class AdminDashBoardComponent {
         name: 'Products',
         Path:"",
         icon:"inventory 2",
-        children: [{name: 'Add Products',Path:"/AddProducts",children:[]}, {name: 'Product List',Path:"/Products",children:[]}, {name: 'Categories',Path:"Categories",children:[]}],
+        children: [{name: 'Add Products',Path:"/AddProducts",children:[]}, {name: 'Product List',Path:"/productList",children:[]}, {name: 'Categories',Path:"Categories",children:[]}],
       },
       {name: 'Orders',Path:"/Orders",icon:"shopping_cart",children:[]},
       {name:'Customers',Path:"/Customers",icon:"group",children:[]},
-      {name:'Reviews',Path:"/Reviews",icon:"reviews",children:[]},
+      {name:'Reviews',Path:"/reviews",icon:"reviews",children:[]},
       {name:'Hot offers',Path:"/HotOffers",children:[]},
       {name:'Settings',Path:"/EditUser",children:[]}
     ]);
