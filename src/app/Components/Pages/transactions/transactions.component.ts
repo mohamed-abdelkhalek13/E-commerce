@@ -11,7 +11,7 @@ export interface UserData {
   fruit: string;
 }
 
-/** Constants used to fill up our data base. */
+/** Constants used to fill up our data base*/
 const FRUITS: string[] = [
   'blueberry',
   'lychee',

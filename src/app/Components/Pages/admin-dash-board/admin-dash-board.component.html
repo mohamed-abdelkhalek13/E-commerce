@@ -8,7 +8,7 @@
             <mat-menu #menu="matMenu">
                 <a class="nav-link" mat-menu-item [routerLink]="">
                     <i class="fa-solid fa-user-shield"></i>
-                    Settings
+                    Add New Admin
                 </a>
                 <a class="nav-link" mat-menu-item [routerLink]="">
                     <i class="fa-solid fa-user-pen"></i>
@@ -33,20 +33,22 @@
                     </mat-tree-node>                   
                     <mat-nested-tree-node *matTreeNodeDef="let node; when: hasChild">
                         <li>
-                            <div class="mat-tree-node">
-                                <button class="productDropDown" mat-icon-button matTreeNodeToggle>
+                            <button class="productDropDown" mat-icon-button matTreeNodeToggle>
+                                <div class="iconProduct">
                                     <mat-icon>{{node.icon}}</mat-icon>
-                                    <a class="nav-link"  [routerLink]="node.Path">
-                                        {{node.name}}
+                                </div>
+                                <span>{{node.name}}</span>
+                                <!-- <a class="nav-link"  [routerLink]="node.Path"> -->
+                                    <div class="iconExpand">
                                         <mat-icon class="mat-icon-ltr-mirror">
                                             {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
                                         </mat-icon>
-                                    </a>
-                                </button>
+                                    </div>
+                                <!-- </a> -->
                                 <button mat-button (click)="toggle()">
                                     <mat-icon>view_list</mat-icon>
                                 </button>
-                            </div>
+                            </button>
                             <ul [class.example-tree-invisible]="!treeControl.isExpanded(node)">
                                 <ng-container matTreeNodeOutlet></ng-container>
                             </ul>
