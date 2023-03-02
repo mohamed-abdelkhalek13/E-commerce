@@ -1,0 +1,53 @@
+<div class="container-fluied sli">
+  <h2>Best Seller</h2>
+<div class="slick-wrapper container-fluied" >
+
+
+  <ngx-slick-carousel class="carousel " #slickModal="slick-carousel" [config]="slideConfig" (init)="slickInit($event)"
+    (breakpoint)="breakpoint($event)" (afterChange)="afterChange($event)" (beforeChange)="beforeChange($event)">
+    <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+
+
+      <!-- -------- -->
+
+
+<section class=" cvv">
+  <div class=" ">
+
+<div class="card" >
+<img src="{{slide.image}}" alt="">
+<div class="con">
+  <h3>{{slide.Name}}</h3>
+  <P>{{slide.Price}} EGP</P>
+</div>
+
+</div>
+
+
+  </div>
+</section>
+
+<style>
+.sli{
+  margin-top: 8px;
+
+  width: 100%;
+  text-align: center;
+
+}
+</style>
+      <!-- -------- -->
+    </div>
+  </ngx-slick-carousel>
+
+  </div>
+
+
+</div>
+
+
+
+
+
+
+

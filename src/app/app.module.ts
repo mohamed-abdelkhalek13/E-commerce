@@ -21,8 +21,6 @@ import { CategoriesComponent } from './Components/Pages/categories/categories.co
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AdminDashBoardComponent } from './Components/Pages/admin-dash-board/admin-dash-board.component';
 
-import { MatExpansionModule } from '@angular/material/expansion';
-
 import { MatIconModule } from '@angular/material/icon';
 
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -34,6 +32,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { EditUserComponent } from './Components/Shared/edit-user/edit-user.component';
+
+import { MatExpansionModule } from '@angular/material/expansion';
 
 import { MatTreeModule } from '@angular/material/tree';
 
@@ -76,6 +76,10 @@ import { CatdialogComponent } from './Components/dialogs/catdialog/catdialog.com
 import { EditProductComponent } from './Components/Pages/edit-product/edit-product.component';
 import { ProductListComponent } from './Components/Pages/product-list/product-list.component';
 
+import { NotfoundComponent } from './Components/Pages/notfound/notfound.component';
+import { BestproductsComponent } from './Components/bestproducts/bestproducts.component';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
+
 @NgModule({
   declarations: [
     ProductCardComponent,
@@ -104,8 +108,10 @@ import { ProductListComponent } from './Components/Pages/product-list/product-li
     CatdialogComponent,
     TransactionsComponent,
     ManageCategoriesComponent,
+
     EditProductComponent,
     ProductListComponent,
+    BestproductsComponent,
   ],
   imports: [
     BrowserModule,
@@ -119,16 +125,13 @@ import { ProductListComponent } from './Components/Pages/product-list/product-li
     MatIconModule,
     MatMenuModule,
     MatSidenavModule,
-    MatFormFieldModule,
     MatSelectModule,
     NgbModule,
     NgbCarouselModule,
     MatTableModule,
     MatButtonModule,
     HttpClientModule,
-
     NgbAccordionModule,
-    HttpClientModule,
     NgbDatepickerModule,
     MatInputModule,
     MatSortModule,
@@ -138,7 +141,8 @@ import { ProductListComponent } from './Components/Pages/product-list/product-li
 
     ToastrModule,
     NgxSpinnerModule,
-    MatDialogModule,
+
+    SlickCarouselModule,
   ],
   providers: [
     NgbModal,

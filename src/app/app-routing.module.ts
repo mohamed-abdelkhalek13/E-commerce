@@ -18,23 +18,14 @@ import { RegisterComponent } from './Components/Pages/register/register.componen
 import { AuthGuard } from './guards/auth.guard';
 import { NotAccessableGuard } from './guards/not-accessable.guard';
 import { EditUserComponent } from './Components/Shared/edit-user/edit-user.component';
-import { ReviewsComponent } from './Components/Pages/reviews/reviews.component';
-import { ProductCardComponent } from './Components/Shared/product-card/product-card.component';
+import { NotfoundComponent } from './Components/Pages/notfound/notfound.component';
 import { AdminDashBoardComponent } from './Components/Pages/admin-dash-board/admin-dash-board.component';
 import { EditProductComponent } from './Components/Pages/edit-product/edit-product.component';
-import { ManageCategoriesComponent } from './Components/Pages/manage-categories/manage-categories.component';
 import { ProductListComponent } from './Components/Pages/product-list/product-list.component';
+import { ManageCategoriesComponent } from './Components/Pages/manage-categories/manage-categories.component';
+import { ReviewsComponent } from './Components/Pages/reviews/reviews.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
-  { path: 'products', component: ProductsComponent },
-  { path: 'products/:id', component: ProductDetailsComponent },
-  { path: 'cart', component: CartComponent },
-  { path: 'orders', component: OrdersComponent },
-  { path: 'Categories', component: CategoriesComponent },
-
   {
     path: 'Dashboard',
     component: AdminDashBoardComponent,
@@ -48,17 +39,10 @@ const routes: Routes = [
       { path: 'EditUser', component: EditUserComponent },
     ],
   },
-  { path: 'shipping', component: ShippingComponent },
-  { path: 'checkout', component: CheckoutComponent },
-  { path: 'transactions', component: TransactionsComponent },
 
-  { path: 'AddProducts', component: AddProductComponent },
-  { path: 'Customers', component: CustomersComponent },
-  { path: 'EditUser', component: EditUserComponent },
-
-  { path: 'shipping', component: ShippingComponent },
-  { path: 'checkout', component: CheckoutComponent },
-  { path: 'transactions', component: TransactionsComponent },
+  // { path: 'AddProducts', component: AddProductComponent },
+  // { path: 'Customers', component: CustomersComponent },
+  // { path: 'EditUser', component: EditUserComponent },
 
   { path: '', component: HomeComponent },
   {
@@ -93,9 +77,7 @@ const routes: Routes = [
     path: 'categories/:categoryName/:productID',
     component: ProductDetailsComponent,
   },
-  { path: 'AddProducts', component: AddProductComponent },
-  { path: 'Customers', component: CustomersComponent },
-  { path: 'EditUser', component: EditUserComponent },
+  { path: '**', component: NotfoundComponent },
 ];
 
 @NgModule({
