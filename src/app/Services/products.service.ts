@@ -1,21 +1,51 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
-
+export interface Product{
+  id:number;
+  name:string;
+  price:number;
+  weight:number;
+  decreption:string;
+  stock:number;
+  about:string;
+  color:string;
+  images:string[];
+  category:string;
+}
 @Injectable({
   providedIn: 'root',
 })
 export class ProductsService {
-  DBProducts: any[] = [];
-  DBProducts$ = new Subject();
-  productsURL = 'https://localhost:7150/api/product';
-  categoriesURL = 'https://localhost:7150/api/categories';
-
-  reviews: any[] = [];
+  productsURL = 'https://localhost:7150/api/Product';
+  categoriesURL = 'https://localhost:7150/api/Categories';
   productsReviewsURL = 'https://localhost:7150/api/ProductReviews';
-
+  product:any;
+  DBProducts: any[] = [];
+  reviews: any[] = [];
+  AllProducts=new Subject();
+  DBProducts$ = new Subject();
+  editMode=false;
+  productEdit:any;
   constructor(private DBClient: HttpClient) {}
   //---------------------Api calls----------------
+  addProduct(product:Product){
+    console.log(product);
+    
+    const header = new HttpHeaders().set('Content-Type', 'application/json');
+    this.DBClient.post(this.productsURL,product,{headers:header}).subscribe(
+      {next: (response) => {
+          console.log("successful registration");
+          // redirect to login page
+          // this.router.navigate(['login']);
+        },
+        error: (error) => {
+          console.error(error);
+        }
+      }
+    );
+    
+  }
   GetCategoriesFromDB() {
     return this.DBClient.get(this.categoriesURL, {
       headers: {
@@ -70,38 +100,22 @@ export class ProductsService {
   }
   //---------------------products methods----------------
   GetProductById(id: number) {
-    let product: {
-      id: number;
-      name: string;
-      price: number;
-      weight: number;
-      decreption: string;
-      stock: number;
-      color: string;
-      about: string;
-      images: string[];
-      category: string;
-    } = this.DBProducts.find((p) => p.id == id);
-    let adjustedProduct = {
-      id: product.id,
-      name: product.name,
-      price: product.price,
-      weight: product.weight,
-      decreption: product.decreption,
-      stock: product.stock,
-      color: product.color,
-      about: product.about.split(','),
-      images: product.images,
-      category: product.category,
-    };
-    return adjustedProduct;
+     this.DBClient.get(this.productsURL+"/"+id).subscribe(res=>this.product=res);
+     console.log(this.product);
+     return this.product;
+     
   }
-  SetProducts(products: any) {
+  SetProducts(products: Product[]) {
     this.DBProducts = products;
   }
   getProducts() {
+    console.log(this.DBProducts);
     return this.DBProducts;
   }
+  deleteProduct(id:number){
+    this.DBClient.delete(this.productsURL+"/"+id).subscribe();
+    console.log(this.productsURL+"/"+id);
+}
   //---------------------products Reviews methods----------------
   GetProductReviewsFromDB() {
     return this.DBClient.get(this.productsReviewsURL);

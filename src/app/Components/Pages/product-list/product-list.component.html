@@ -1,0 +1,17 @@
+<div class="showEmptyProductList" *ngIf="this.showEmptyProduct;else showProduct">
+        There Are No Product in Store
+</div>
+<ng-template #showProduct class="d-flex justify-content-start flex-wrap gap-5 productsContainer" >
+    <div class="card p-2" style="width: 20rem;" *ngFor="let product of products">
+      <img src={{product.images[0]}} class="card-img-top" alt="laptop-img">
+      <div class="card-body">
+        <p class="card-text description">{{product.decreption}}</p>
+        
+        <p>{{product.price}}LE</p>
+        <div class="buttons">
+          <a  class="btn btn-warning" routerLink="/Dashboard/EditProduct/{{product.id}}" (click)="EditProduct(product.id)">Edit</a>
+          <a  class="btn btn-danger" routerLink="/Dashboard/productList" (click)="deleteProduct(product.id)">Delete</a>
+        </div>
+      </div>
+    </div>
+</ng-template>

@@ -2,9 +2,6 @@
     background-color: #0f0f0f;
     color: white;
 }
-.example-tree-progress-bar {
-    margin-left: 30px;
-}
 mat-tree-node{
     background-color: #0f0f0f;
     color: #fff;
@@ -20,10 +17,6 @@ button{
 }
 .navbar-brand{
     font-weight: bold;
-}
-i{
-    height: 30px;
-    font-size: 20px;
 }
 .adminDropDown{
     background-color: #0f0f0f;
@@ -48,7 +41,7 @@ i{
     height: 80%;
 }
 mat-tree-node {  
-    padding: 0 20px;
+    padding: 0 10px;
 }
 .contain{
     display: flex;
@@ -58,7 +51,10 @@ mat-tree-node {
 }
 .productDropDown{
     display: flex;
-    justify-content: center;
+    justify-content: center; 
     align-items: center;
-    padding: 0 70px;
+    padding:0 100px;
+}
+.productDropDown .iconProduct{
+    padding-right: 5px;
 }
