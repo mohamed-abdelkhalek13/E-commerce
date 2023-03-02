@@ -17,16 +17,7 @@ import { RegisterComponent } from './Components/Pages/register/register.componen
 import { AuthGuard } from './guards/auth.guard';
 import { NotAccessableGuard } from './guards/not-accessable.guard';
 import { EditUserComponent } from './Components/Shared/edit-user/edit-user.component';
-<<<<<<< HEAD
 import { NotfoundComponent } from './Components/Pages/notfound/notfound.component';
-=======
-import { ReviewsComponent } from './Components/Pages/reviews/reviews.component';
-import { ProductCardComponent } from './Components/Shared/product-card/product-card.component';
-import { AdminDashBoardComponent } from './Components/Pages/admin-dash-board/admin-dash-board.component';
-import { EditProductComponent } from './Components/Pages/edit-product/edit-product.component';
-import { ManageCategoriesComponent } from './Components/Pages/manage-categories/manage-categories.component';
-import { ProductListComponent } from './Components/Pages/product-list/product-list.component';
->>>>>>> 589429e6e3c215840f9f91dfd41b4e0a11b8d410
 
 const routes: Routes = [
 
@@ -38,20 +29,6 @@ const routes: Routes = [
   {path:"cart", component:CartComponent},
   {path:"orders", component:OrdersComponent},
   {path:"Categories", component:CategoriesComponent},
-<<<<<<< HEAD
-  {path:"Dashboard",component:AdminDashBoardComponent,children:[
-    {path:"AddProducts",component:AddProductComponent},
-    {path:"EditProduct/:id",component:EditProductComponent},
-    {path:"productList",component:ProductListComponent},
-    {path:"Categories", component:ManageCategoriesComponent},
-    {path:"Customers",component:CustomersComponent},
-    {path:"reviews",component:ReviewsComponent},
-    {path:"EditUser",component:EditUserComponent},
-  ]},
-  {path:"shipping", component:ShippingComponent},
-  {path:"checkout", component:CheckoutComponent},
-  {path:"transactions", component:TransactionsComponent},
-=======
 
   {path:"AddProducts",component:AddProductComponent},
   {path:"Customers",component:CustomersComponent},
@@ -92,12 +69,7 @@ const routes: Routes = [
   { path: 'AddProducts', component: AddProductComponent },
   { path: 'Customers', component: CustomersComponent },
   { path: 'EditUser', component: EditUserComponent },
-<<<<<<< HEAD
   {path:"**", component:NotfoundComponent},
-=======
-
->>>>>>> 2a46bda877372e41a89cccb2211ff7b7d0e7de34
->>>>>>> 589429e6e3c215840f9f91dfd41b4e0a11b8d410
 ];
 
 @NgModule({
