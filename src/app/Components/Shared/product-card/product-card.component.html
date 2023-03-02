@@ -1,21 +1,17 @@
 <div class="d-flex justify-content-start flex-wrap gap-5 productsContainer" >
-  <div class="card p-2" style="width: 20rem;" *ngFor="let product of products;" >
-    <!-- <img src="{{product.thumbnail}}" class="card-img-top" alt="laptop-img"> -->
+  <div class="card p-2" style="width: 20rem;" *ngFor="let product of products">
+    <img src={{product.images[0]}} class="card-img-top" alt="laptop-img">
     <div class="card-body">
-      <p class="card-text description">{{product.description}}</p>
-      <!-- <p>
-        ({{product.rating}}):
+      <p class="card-text description">{{product.decreption}}</p>
+      <p>
+        ({{product.avgRating}}):
         <span *ngFor="let star of product.ratingArray">
           <i class="fa-solid fa-star star"></i>
         </span>
         <i *ngIf="product.halfAStar > 0" class="fa-solid fa-star-half star"></i>
-      </p> -->
-      <p>{{product.price}}$</p>
-      <div class="buttons" *ngIf="showButtons else detail">
-          <a class="btn btn-warning" routerLink="/AddProducts" (click)="EditProduct(product.id)">Edit</a>
-          <a class="btn btn-danger" routerLink="/productList" (click)="deleteProduct(product.id)">Delete</a>
-      </div>
-      <ng-template #detail><a  href="#" class="btn btn-primary" routerLink="/products/{{product.id}}">Go to details</a></ng-template>
+      </p>
+      <p>{{product.price}}LE</p>
+      <a href="#" class="btn btn-primary" routerLink="/categories/{{product.category}}/{{product.id}}">Go to details</a>
     </div>
   </div>
 </div>

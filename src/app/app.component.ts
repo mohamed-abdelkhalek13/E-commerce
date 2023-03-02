@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ProductService } from './Components/core/services/product-service.service';
+import { ProductService } from './Components/core/services/prod';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

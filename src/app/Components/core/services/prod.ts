@@ -62,7 +62,6 @@ export class ProductService  implements OnInit{
   deleteProduct(id:number){
       this.http.delete(this.URL+"/"+id).subscribe();
       console.log(this.URL+"/"+id);
-      
   }
   editProduct(id:number,product:Product){
     this.http.put(this.URL+'/'+id,product).subscribe();

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ProductsService } from 'src/app/Services/products.service';
 
 @Component({
   selector: 'app-product-details-card',
@@ -6,20 +8,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./product-details-card.component.css']
 })
 export class ProductDetailsCardComponent {
-  product = {
-    "id": 1,
-    "title": "laptop asus",
-    "description": "2022 ASUS 14 Thin Light Business Student Laptop Computer, Intel Celeron N4020 Processor, 4GB DDR4 RAM, 320 GB Storage, 12Hours Battery, Webcam, Zoom Meeting, Win11 + 1 Year Office 365, Black",
-    "price": 229,
-    "rating": 3,
-    "brand": "Asus",
-    "screenSize": "14 inches",
-    "color": "black",
-    "batteryLife": "12 hours",
-    "category": "gaming",
-    "thumbnail": "assets/images/asus.jpg",
-  }
+  product:any={};
   quantity=1;
+  constructor(private productService: ProductsService, private activatedRoute: ActivatedRoute){}
+  ngOnInit(){
+    this.product = this.productService.GetProductById(this.activatedRoute.snapshot.params["productID"]);
+  }
   increase(){
     this.quantity++;
   }
@@ -27,7 +21,6 @@ export class ProductDetailsCardComponent {
     if(this.quantity == 1){
       this.quantity =1;
     }else{
-
       this.quantity--;
     }
   }

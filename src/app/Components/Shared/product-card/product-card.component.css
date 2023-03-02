@@ -15,8 +15,5 @@ p{
   border: 1px solid #252525;
   padding: 10px;
   border-radius: 10px;
-}
-.buttons{
-  display: flex;
-  gap: 10px;
+  
 }

@@ -28,17 +28,17 @@ export class AdminDashBoardComponent {
         name: 'Products',
         Path:"",
         icon:"inventory 2",
-        children: [{name: 'Add Products',Path:"/AddProducts",children:[]}, {name: 'Product List',Path:"/productList",children:[]}, {name: 'Categories',Path:"Categories",children:[]}],
+        children: [{name: 'Add Products',Path:"/Dashboard/AddProducts",children:[]}, {name: 'Product List',Path:"/Dashboard/productList",children:[]}, {name: 'Categories',Path:"/Dashboard/Categories",children:[]}],
       },
-      {name: 'Orders',Path:"/Orders",icon:"shopping_cart",children:[]},
-      {name:'Customers',Path:"/Customers",icon:"group",children:[]},
-      {name:'Reviews',Path:"/reviews",icon:"reviews",children:[]},
-      {name:'Hot offers',Path:"/HotOffers",children:[]},
-      {name:'Settings',Path:"/EditUser",children:[]}
+      {name: 'Orders',Path:"/Dashboard/Orders",icon:"shopping_cart",children:[]},
+      {name:'Customers',Path:"/Dashboard/Customers",icon:"group",children:[]},
+      {name:'Reviews',Path:"/Dashboard/reviews",icon:"reviews",children:[]},
+      {name:'Hot offers',Path:"/Dashboard/HotOffers",children:[]},
+      {name:'Settings',Path:"/Dashboard/EditUser",children:[]}
     ]);
   }
   private _getChildren = (node: Dashboard) => { return observableOf(node.children); };
-  hasChild =  (_: number, nodeData: Dashboard) => {return !(nodeData.Path); };
+  hasChild =  (_: number, nodeData: Dashboard) => {return !(nodeData.Path); }
   show="none";
   isShow=false;
   toggle(){

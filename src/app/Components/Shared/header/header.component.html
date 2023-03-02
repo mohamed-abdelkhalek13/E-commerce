@@ -25,7 +25,7 @@
 <nav class="navbar navbar-expand-lg sticky-top navbar-dark p-2 shadow-sm nav">
   <div class="container">
     <a class="navbar-brand" href="#"
-      ><img src="assets/Images/tidal-logo.png" alt="logo" class="logo_img"
+      ><img src="assets/images/tidal-logo.png" alt="logo" class="logo_img"
     /></a>
     <button
       class="navbar-toggler"
@@ -39,7 +39,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="mx-auto my-3 d-lg-none d-sm-block d-xs-block">
+    <!-- <div class="mx-auto my-3 d-lg-none d-sm-block d-xs-block">
       <div class="input-group">
         <span class="border-primary input-group-text bg-primary text-white"
           ><i class="fa-solid fa-magnifying-glass"></i
@@ -49,11 +49,11 @@
           class="form-control border-primary"
           style="color: #7a7a7a"
         />
-        <button class="btn btn-primary text-white">Search</button>
+        <button class="btn btn-primary text-white">فصثقفصثقفف</button>
       </div>
-    </div>
+    </div> -->
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <div class="ms-auto d-none d-lg-block">
+      <!-- <div class="ms-auto d-none d-lg-block">
         <div class="input-group">
           <span class="border-primary input-group-text bg-primary text-white"
             ><i class="fa-solid fa-magnifying-glass"></i
@@ -65,10 +65,10 @@
           />
           <button class="btn btn-primary text-white">Search</button>
         </div>
-      </div>
+      </div> -->
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link mx-2 text-uppercase" href="#">Products</a>
+          <a class="nav-link mx-2 text-uppercase" (click)="getAll()" routerLink="/categories/All">Products</a>
         </li>
         <li class="nav-item">
           <a class="nav-link mx-2 text-uppercase" href="#">Catalog</a>

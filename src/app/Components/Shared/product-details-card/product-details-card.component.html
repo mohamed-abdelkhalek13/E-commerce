@@ -1,20 +1,19 @@
 <div class="container-fluid gap-md-4">
   <div class="row">
     <div class="sideImagesContainer col-lg-1 d-flex flex-lg-column flex-md-row  justify-content-evenly mb-md-2 mb-sm-2 mb-xl-2 gap-2">
-      <div class="row"><img src="{{product.thumbnail}}" alt="product-image"></div>
-      <div class="row"><img src="{{product.thumbnail}}" alt="product-image"></div>
-      <div class="row"><img src="{{product.thumbnail}}" alt="product-image"></div>
-      <div class="row"><img src="{{product.thumbnail}}" alt="product-image"></div>
+      <div class="row"><img src={{product.images[0]}} alt="product-image"></div>
+      <div class="row"><img src={{product.images[1]}} alt="product-image"></div>
+      <div class="row"><img src={{product.images[2]}} alt="product-image"></div>
     </div>
     <div class="col-lg-7 col-md-12">
       <div class="row mb-md-3 mb-sm-2 mb-xl-2">
-        <img src="{{product.thumbnail}}" alt="product-image">
+        <img src={{product.images[0]}} alt="product-image">
       </div>
 
     </div>
     <div class="col-lg-4  col-md-12 d-flex flex-column justify-content-around description gap-3 p-2">
-      <div>{{product.description}}</div>
-      <div>Price: {{product.price}} $</div>
+      <div>{{product.decreption}}</div>
+      <div>Price: {{product.price}} LE</div>
       <div class="d-flex ">
         <div class="me-1">Availability: </div>
         <i class="fa-solid fa-check inStockIcon"></i>
@@ -38,18 +37,7 @@
   <div class="row">
     <h1>Product details:</h1>
     <ul class="ms-4">
-      <li>Brand: <span>Asus</span></li>
-      <li>category: <span>Gaming</span></li>
-      <li>Screen size: <span>14 inch</span></li>
-      <li>CPU: <span>Intel Celeron N4020 Processor</span></li>
-      <li>GPU: <span>Gaming</span></li>
-      <li>Storage: <span>320GB storage </span></li>
-      <li>Ram: <span>4GB DDR4 RAM</span></li>
-      <li>color: <span>blue</span></li>
-      <li>operating system: <span>Windows 11</span></li>
-      <li>Weight: <span>light</span></li>
-      <li>Battery life: <span>12 hours</span></li>
-      <li>Resolution: <span>720k</span></li>
+      <li *ngFor="let detail of product.about">{{detail}}</li>
     </ul>
   </div>
 </div>
