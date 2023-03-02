@@ -21,22 +21,7 @@ import { NotfoundComponent } from './Components/Pages/notfound/notfound.componen
 
 const routes: Routes = [
 
-  {path:"", component:HomeComponent},
-  {path:"login", component:LoginComponent},
-  {path:"register", component:RegisterComponent},
-  {path:"products", component:ProductsComponent},
-  {path:"products/:id", component:ProductDetailsComponent},
-  {path:"cart", component:CartComponent},
-  {path:"orders", component:OrdersComponent},
-  {path:"Categories", component:CategoriesComponent},
 
-  {path:"AddProducts",component:AddProductComponent},
-  {path:"Customers",component:CustomersComponent},
-  {path:"EditUser",component:EditUserComponent},
-
-  {path:"shipping", component:ShippingComponent},
-  {path:"checkout", component:CheckoutComponent},
-  {path:"transactions", component:TransactionsComponent},
 
 
 
