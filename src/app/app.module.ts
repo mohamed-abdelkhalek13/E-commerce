@@ -117,6 +117,7 @@ import { CatdialogComponent } from './Components/dialogs/catdialog/catdialog.com
     MatPaginatorModule,
     ToastrModule,
     NgxSpinnerModule,
+    MatDialogModule,
   ],
   providers: [
     NgbModal,

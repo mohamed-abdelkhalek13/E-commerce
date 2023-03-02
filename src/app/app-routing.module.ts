@@ -1,3 +1,4 @@
+import { AdminGuard } from './guards/admin.guard';
 import { TransactionsComponent } from './Components/Pages/transactions/transactions.component';
 import { CheckoutComponent } from './Components/Pages/checkout/checkout.component';
 import { ShippingComponent } from './Components/Pages/shipping/shipping.component';
@@ -25,8 +26,16 @@ const routes: Routes = [
     component: LoginComponent,
     canActivate: [NotAccessableGuard],
   },
-  { path: 'register', component: RegisterComponent },
-  { path: 'register-admin', component: RegisterComponent },
+  {
+    path: 'register',
+    component: RegisterComponent,
+    canActivate: [NotAccessableGuard],
+  },
+  {
+    path: 'register-admin',
+    component: RegisterComponent,
+    canActivate: [AdminGuard],
+  },
   { path: 'products', component: ProductsComponent },
   { path: 'products/:id', component: ProductDetailsComponent },
   { path: 'cart', component: CartComponent },
