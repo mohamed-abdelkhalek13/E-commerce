@@ -17,6 +17,7 @@ import { RegisterComponent } from './Components/Pages/register/register.componen
 import { AuthGuard } from './guards/auth.guard';
 import { NotAccessableGuard } from './guards/not-accessable.guard';
 import { EditUserComponent } from './Components/Shared/edit-user/edit-user.component';
+import { NotfoundComponent } from './Components/Pages/notfound/notfound.component';
 
 const routes: Routes = [
 
@@ -68,7 +69,7 @@ const routes: Routes = [
   { path: 'AddProducts', component: AddProductComponent },
   { path: 'Customers', component: CustomersComponent },
   { path: 'EditUser', component: EditUserComponent },
-
+  {path:"**", component:NotfoundComponent},
 ];
 
 @NgModule({

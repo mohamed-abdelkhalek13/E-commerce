@@ -1,0 +1,40 @@
+.slick-wrapper{
+  width: 1000px;
+  margin: 20px auto;
+
+}
+
+.slick-prev:before, .slick-next:before {
+  color: black!important;
+
+}
+.card{
+  margin-left: 4px;
+
+transition: 0.2s;
+cursor: pointer;
+
+
+
+}
+.card:hover{
+ scale: 1.02;
+}
+img{
+
+}
+h3{
+  color: black;
+  font-weight: 900;
+}
+P{
+  color: black;
+  font-weight: 900;
+}
+.con{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 5px;
+  margin-right: 5px;
+}

@@ -61,6 +61,9 @@ import { AuthGuard } from './guards/auth.guard';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ManageCategoriesComponent } from './Components/Pages/manage-categories/manage-categories.component';
 import { CatdialogComponent } from './Components/dialogs/catdialog/catdialog.component';
+import { NotfoundComponent } from './Components/Pages/notfound/notfound.component';
+import { BestproductsComponent } from './Components/bestproducts/bestproducts.component';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 
 @NgModule({
@@ -91,6 +94,8 @@ import { CatdialogComponent } from './Components/dialogs/catdialog/catdialog.com
     CatdialogComponent,
     TransactionsComponent,
     ManageCategoriesComponent,
+    NotfoundComponent,
+    BestproductsComponent,
   ],
   imports: [
     BrowserModule,
@@ -119,6 +124,7 @@ import { CatdialogComponent } from './Components/dialogs/catdialog/catdialog.com
     ToastrModule,
     NgxSpinnerModule,
     MatDialogModule,
+    SlickCarouselModule
   ],
   providers: [
     NgbModal,
