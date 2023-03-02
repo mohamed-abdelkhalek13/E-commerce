@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CatService } from 'src/app/cat.service';
 import {MatDialog} from '@angular/material/dialog';
-import { CategoriesComponent } from '../categories/categories.component';
+
 import { CatdialogComponent } from '../../dialogs/catdialog/catdialog.component';
 
 
@@ -13,7 +13,7 @@ import { CatdialogComponent } from '../../dialogs/catdialog/catdialog.component'
 export class ManageCategoriesComponent {
 
   cat:any=''
-  constructor(public server:CatService,public dialog: MatDialog){
+  constructor(public server:CatService,private dialog: MatDialog){
 
 
 
@@ -37,6 +37,7 @@ export class ManageCategoriesComponent {
     confirm("are you sure to delete");
     if (true){
   this.server.deleteitem(id).subscribe()
+  window.location.reload();
 
     }
 
