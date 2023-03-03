@@ -18,6 +18,7 @@ import { AuthGuard } from './guards/auth.guard';
 import { NotAccessableGuard } from './guards/not-accessable.guard';
 import { EditUserComponent } from './Components/Shared/edit-user/edit-user.component';
 import { NotfoundComponent } from './Components/Pages/notfound/notfound.component';
+import { OrdersdashboardComponent } from './Components/Pages/ordersdashboard/ordersdashboard.component';
 
 const routes: Routes = [
 
@@ -54,6 +55,7 @@ const routes: Routes = [
   { path: 'AddProducts', component: AddProductComponent },
   { path: 'Customers', component: CustomersComponent },
   { path: 'EditUser', component: EditUserComponent },
+  { path: 'manageorder', component: OrdersdashboardComponent },
   {path:"**", component:NotfoundComponent},
 ];
 

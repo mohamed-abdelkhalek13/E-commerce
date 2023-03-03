@@ -64,6 +64,7 @@ import { CatdialogComponent } from './Components/dialogs/catdialog/catdialog.com
 import { NotfoundComponent } from './Components/Pages/notfound/notfound.component';
 import { BestproductsComponent } from './Components/bestproducts/bestproducts.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { OrdersdashboardComponent } from './Components/Pages/ordersdashboard/ordersdashboard.component';
 
 
 @NgModule({
@@ -96,6 +97,7 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
     ManageCategoriesComponent,
     NotfoundComponent,
     BestproductsComponent,
+    OrdersdashboardComponent,
 
   ],
   imports: [
