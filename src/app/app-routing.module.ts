@@ -19,15 +19,15 @@ import { AuthGuard } from './guards/auth.guard';
 import { NotAccessableGuard } from './guards/not-accessable.guard';
 import { EditUserComponent } from './Components/Shared/edit-user/edit-user.component';
 import { NotfoundComponent } from './Components/Pages/notfound/notfound.component';
-<<<<<<< HEAD
+
 import { OrdersdashboardComponent } from './Components/Pages/ordersdashboard/ordersdashboard.component';
-=======
+
 import { AdminDashBoardComponent } from './Components/Pages/admin-dash-board/admin-dash-board.component';
 import { EditProductComponent } from './Components/Pages/edit-product/edit-product.component';
 import { ProductListComponent } from './Components/Pages/product-list/product-list.component';
 import { ManageCategoriesComponent } from './Components/Pages/manage-categories/manage-categories.component';
 import { ReviewsComponent } from './Components/Pages/reviews/reviews.component';
->>>>>>> 8d5bfe3c1f5f51118259807bcc3ab2406bda65d2
+
 
 const routes: Routes = [
   {
@@ -81,15 +81,14 @@ const routes: Routes = [
     path: 'categories/:categoryName/:productID',
     component: ProductDetailsComponent,
   },
-<<<<<<< HEAD
+
   { path: 'AddProducts', component: AddProductComponent },
   { path: 'Customers', component: CustomersComponent },
   { path: 'EditUser', component: EditUserComponent },
   { path: 'manageorder', component: OrdersdashboardComponent },
   {path:"**", component:NotfoundComponent},
-=======
-  { path: '**', component: NotfoundComponent },
->>>>>>> 8d5bfe3c1f5f51118259807bcc3ab2406bda65d2
+
+
 ];
 
 @NgModule({

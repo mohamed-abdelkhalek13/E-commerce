@@ -109,12 +109,11 @@ import { OrdersdashboardComponent } from './Components/Pages/ordersdashboard/ord
     CatdialogComponent,
     TransactionsComponent,
     ManageCategoriesComponent,
-<<<<<<< HEAD
+
     NotfoundComponent,
     BestproductsComponent,
     OrdersdashboardComponent,
-=======
->>>>>>> 8d5bfe3c1f5f51118259807bcc3ab2406bda65d2
+
 
     EditProductComponent,
     ProductListComponent,
