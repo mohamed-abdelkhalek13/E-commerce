@@ -1,11 +1,11 @@
 <div class="container-fluied sli">
-  <h2>Best Seller</h2>
+  <h2>Latest Products</h2>
 <div class="slick-wrapper container-fluied" >
 
 
   <ngx-slick-carousel class="carousel " #slickModal="slick-carousel" [config]="slideConfig" (init)="slickInit($event)"
     (breakpoint)="breakpoint($event)" (afterChange)="afterChange($event)" (beforeChange)="beforeChange($event)">
-    <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+    <div ngxSlickItem *ngFor="let product of products" class="slide">
 
 
       <!-- -------- -->
@@ -15,10 +15,10 @@
   <div class=" ">
 
 <div class="card" >
-<img src="{{slide.image}}" alt="">
+<img src="{{product.images[0]}}" alt="">
 <div class="con">
-  <h3>{{slide.Name}}</h3>
-  <P>{{slide.Price}} EGP</P>
+  <h3>{{product.name}}</h3>
+  <P>{{product.price}} EGP</P>
 </div>
 
 </div>
