@@ -20,22 +20,32 @@ import { CategoriesComponent } from './Components/Pages/categories/categories.co
 
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AdminDashBoardComponent } from './Components/Pages/admin-dash-board/admin-dash-board.component';
-import { MatExpansionModule } from '@angular/material/expansion';
-import { MatTreeModule } from '@angular/material/tree';
+
 import { MatIconModule } from '@angular/material/icon';
-import { MatMenuModule } from '@angular/material/menu';
+
 import { MatSidenavModule } from '@angular/material/sidenav';
+
 import { MatSelectModule } from '@angular/material/select';
 import { AddProductComponent } from './Components/Pages/add-product/add-product.component';
+
 import { MatButtonModule } from '@angular/material/button';
-import { CustomersComponent } from './Components/Pages/customers/customers.component';
+import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
+
 import { EditUserComponent } from './Components/Shared/edit-user/edit-user.component';
+
+import { MatExpansionModule } from '@angular/material/expansion';
+
+import { MatTreeModule } from '@angular/material/tree';
+
+import { MatMenuModule } from '@angular/material/menu';
+
+import { CustomersComponent } from './Components/Pages/customers/customers.component';
 
 import { ShippingComponent } from './Components/Pages/shipping/shipping.component';
 import { CheckoutComponent } from './Components/Pages/checkout/checkout.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxSpinnerModule } from 'ngx-spinner';
-import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
+
 import {
   NgbAccordionModule,
   NgbDatepickerModule,
@@ -45,6 +55,7 @@ import {
 import { TransactionsComponent } from './Components/Pages/transactions/transactions.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatFormFieldModule } from '@angular/material/form-field';
+
 import { MatInputModule } from '@angular/material/input';
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
@@ -61,11 +72,14 @@ import { AuthGuard } from './guards/auth.guard';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ManageCategoriesComponent } from './Components/Pages/manage-categories/manage-categories.component';
 import { CatdialogComponent } from './Components/dialogs/catdialog/catdialog.component';
+
+import { EditProductComponent } from './Components/Pages/edit-product/edit-product.component';
+import { ProductListComponent } from './Components/Pages/product-list/product-list.component';
+
 import { NotfoundComponent } from './Components/Pages/notfound/notfound.component';
 import { BestproductsComponent } from './Components/bestproducts/bestproducts.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { OrdersdashboardComponent } from './Components/Pages/ordersdashboard/ordersdashboard.component';
-
 
 @NgModule({
   declarations: [
@@ -95,10 +109,16 @@ import { OrdersdashboardComponent } from './Components/Pages/ordersdashboard/ord
     CatdialogComponent,
     TransactionsComponent,
     ManageCategoriesComponent,
+<<<<<<< HEAD
     NotfoundComponent,
     BestproductsComponent,
     OrdersdashboardComponent,
+=======
+>>>>>>> 8d5bfe3c1f5f51118259807bcc3ab2406bda65d2
 
+    EditProductComponent,
+    ProductListComponent,
+    BestproductsComponent,
   ],
   imports: [
     BrowserModule,
@@ -120,14 +140,16 @@ import { OrdersdashboardComponent } from './Components/Pages/ordersdashboard/ord
     HttpClientModule,
     NgbAccordionModule,
     NgbDatepickerModule,
-    MatFormFieldModule,
     MatInputModule,
     MatSortModule,
     MatPaginatorModule,
+
+    MatDialogModule,
+
     ToastrModule,
     NgxSpinnerModule,
-    MatDialogModule,
-    SlickCarouselModule
+
+    SlickCarouselModule,
   ],
   providers: [
     NgbModal,
