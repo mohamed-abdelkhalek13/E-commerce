@@ -1,5 +1,5 @@
 <div class="container-fluied sli">
-  <h2>Latest Products</h2>
+  <h2>Top rated Products</h2>
 <div class="slick-wrapper container-fluied" >
 
 
@@ -15,11 +15,14 @@
   <div class=" ">
 
 <div class="card" >
-<img src="{{product.images[0]}}" alt="">
-<div class="con">
-  <h3>{{product.name}}</h3>
-  <P>{{product.price}} EGP</P>
-</div>
+  <a routerLink="/categories/{{product.category}}/{{product.id}}">
+
+    <img src="{{product.images[0]}}" alt="">
+  </a>
+  <div class="con d-flex flex-column">
+    <p class="productName">{{product.name}}</p>
+    <P class="productPrice">{{product.price}} EGP</P>
+  </div>
 
 </div>
 
