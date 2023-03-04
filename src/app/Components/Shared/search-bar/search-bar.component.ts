@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProductsService } from 'src/app/Services/products.service';
-import { ProductService } from '../../core/services/product-service.service';
 
 @Component({
   selector: 'app-search-bar',
@@ -35,8 +34,6 @@ export class SearchBarComponent {
       this.productService.StoreProductsFromAKeyword(array);
       this.productService.DBProducts$.next(array);
       this.router.navigate(['/categories/search']);
-      let arr = [{productid:1, quantity:2},{productid:2, quantity:3}]
-      
   }
 }
 

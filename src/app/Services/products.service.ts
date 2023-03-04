@@ -17,7 +17,7 @@ export interface Product{
   providedIn: 'root',
 })
 export class ProductsService {
-<<<<<<< HEAD
+
   DBProducts: any[] = [];
   DBProducts$ = new Subject();
   DBProductReviews$ = new Subject();
@@ -32,20 +32,13 @@ export class ProductsService {
   constructor(private DBClient: HttpClient) {
   }
 
-=======
-  productsURL = 'https://localhost:7150/api/Product';
-  categoriesURL = 'https://localhost:7150/api/Categories';
-  productsReviewsURL = 'https://localhost:7150/api/ProductReviews';
   product:any;
-  DBProducts: any[] = [];
-  reviews: any[] = [];
+
   AllProducts=new  Subject();
   isThereProducts= new Subject();
-  DBProducts$ = new Subject();
   editMode=false;
   productEdit:any;
-  constructor(private DBClient: HttpClient) {}
->>>>>>> b8d897c6064145d4d74633634a60cd81231a5ccf
+
   //---------------------Api calls----------------
   addProduct(product:Product){
     console.log(product);
@@ -83,7 +76,7 @@ export class ProductsService {
       },
     });
   }
-<<<<<<< HEAD
+
   GetProductFromDBById(id:any) {
     return this.DBClient.get(this.productsURL + "/"+ id, {
       headers: {
@@ -91,7 +84,7 @@ export class ProductsService {
         'Authorization': `Bearer ${localStorage.getItem('token')}`,
       },
     });
-=======
+  }
   GetAllProductsFromDB(){
       return this.DBClient.get(this.productsURL, {
         headers: {
@@ -115,7 +108,7 @@ export class ProductsService {
   }
   get AllProductSubject(){
     return this.AllProducts;
->>>>>>> b8d897c6064145d4d74633634a60cd81231a5ccf
+
   }
   AddCurrentCustomerReview( body: any) {
     this.DBClient.post(this.productsReviewsURL, body, {
@@ -193,7 +186,7 @@ export class ProductsService {
         },
       }).subscribe(res=>{
         console.log(res);
-        
+
       })
   }
   SetReviews(revs: any) {
@@ -214,3 +207,4 @@ export class ProductsService {
     return this.keywordProducts;
   }
 }
+

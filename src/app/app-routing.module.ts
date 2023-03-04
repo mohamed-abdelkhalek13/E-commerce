@@ -18,9 +18,9 @@ import { RegisterComponent } from './Components/Pages/register/register.componen
 import { AuthGuard } from './guards/auth.guard';
 import { NotAccessableGuard } from './guards/not-accessable.guard';
 import { EditUserComponent } from './Components/Shared/edit-user/edit-user.component';
-<<<<<<< HEAD
-import { AdminDashBoardComponent } from './Components/Pages/admin-dash-board/admin-dash-board.component';
-=======
+
+
+
 import { NotfoundComponent } from './Components/Pages/notfound/notfound.component';
 
 import { OrdersdashboardComponent } from './Components/Pages/ordersdashboard/ordersdashboard.component';
@@ -31,7 +31,6 @@ import { ProductListComponent } from './Components/Pages/product-list/product-li
 import { ManageCategoriesComponent } from './Components/Pages/manage-categories/manage-categories.component';
 import { ReviewsComponent } from './Components/Pages/reviews/reviews.component';
 
->>>>>>> b8d897c6064145d4d74633634a60cd81231a5ccf
 
 const routes: Routes = [
   {
@@ -55,15 +54,15 @@ const routes: Routes = [
   {path:"cart", component:CartComponent},
   {path:"orders", component:OrdersComponent},
   {path:"Categories", component:CategoriesComponent},
-<<<<<<< HEAD
+
   {path:"AddProducts",component:AddProductComponent},
   {path:"Customers",component:CustomersComponent},
   {path:"EditUser",component:EditUserComponent},
   {path:"shipping", component:ShippingComponent},
   {path:"checkout", component:CheckoutComponent},
   {path:"transactions", component:TransactionsComponent},
-{path:"dashboard", component: AdminDashBoardComponent}
-=======
+{path:"dashboard", component: AdminDashBoardComponent},
+
   {path:"Dashboard",component:AdminDashBoardComponent,children:[
     {path:"AddProducts",component:AddProductComponent},
     {path:"EditProduct/:id",component:EditProductComponent},
@@ -129,7 +128,7 @@ const routes: Routes = [
   { path: 'reviews', component: ReviewsComponent },
   // { path: 'ordershistory', component: OrdersComponent },
   {path:"**", component:NotfoundComponent},
->>>>>>> b8d897c6064145d4d74633634a60cd81231a5ccf
+
 ];
 
 @NgModule({
