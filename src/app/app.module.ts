@@ -123,6 +123,7 @@ import { OrdersdashboardComponent } from './Components/Pages/ordersdashboard/ord
     ToastrModule,
     NgxSpinnerModule,
     MatFormFieldModule,
+    SlickCarouselModule
 
   ],
   providers: [
