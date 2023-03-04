@@ -1,0 +1,97 @@
+
+
+
+<div class="of">
+
+</div>
+<div>
+  <div class="card">
+
+    <div class="row">
+        <div class=" cart">
+            <div class="title">
+                <div class="row">
+
+                    <div class="col"><h4><b>Shopping Cart</b></h4></div>
+                    <h2 fxFlexOffset="10" *ngIf="!productsList[0]">Your Cart is empty</h2>
+                    <div class="col align-self-center text-right text-muted"></div>
+                </div>
+            </div>
+            <div class="row border-top border-bottom" >
+              <ng-container *ngFor="let s of productsList" >
+
+
+                  <div  class="col-2"><img class="img-fluid" src="{{s.thumbnail}}"></div>
+                                  <div class="col">
+                                      <div class="row text-muted">{{s.title}}</div>
+
+
+
+                                  </div>
+                                  <div class="col mx-4">
+                                      <a (click)="removeOne(s.id)" ><i class="fa-solid fa-minus"></i></a><button href="#" class="border "  >{{s.quantity}}</button><a (click)="addOne(s.id)"><i class="fa-solid fa-plus"></i></a>
+                                  </div>
+                                  <div class="col"> {{s.price}} EGP <span class="close">&#10005;</span></div>
+
+
+
+
+              </ng-container>
+
+            </div>
+            <div class="tp">
+              <div>
+
+              </div>
+              <div>
+                Total Price: {{ totalPrice }} EGP
+              </div>
+
+
+
+            </div>
+
+
+            <div class="back-to-shop"><a href="#">&leftarrow;</a><span class="text-muted">Back to shop</span></div>
+
+        </div>
+
+    </div>
+
+
+  </div>
+</div>
+
+
+<style>
+  .tp{
+text-align: center;
+margin-top: 10px;
+font-size: 20px;
+display: flex;
+align-items: center;
+justify-content: space-evenly;
+
+
+  }
+
+.btn{
+  margin-bottom: 10px;
+  font-size: 14px;
+border-radius: 5px;
+}
+
+
+.left{
+  background-color: rgb(231, 229, 229);
+  border-radius: 0px 12px 12px 0px;
+
+}
+
+.of{
+height: 1px;
+  background-color: #161616;
+}
+
+
+</style>

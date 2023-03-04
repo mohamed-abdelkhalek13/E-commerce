@@ -1,0 +1,77 @@
+<div class="AddProduct">
+    <section class="panel panel-default">
+      <div class="panel-heading"> 
+      <h3 class="panel-title">Edit Product</h3> 
+      </div> 
+      <div class="panel-body">
+      <form [formGroup]="editFrom" class="form-horizontal" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="name" class="control-label">Product title</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" name="name" id="name" value="{{this.product.name}}" formControlName="name">
+          </div>
+        </div> 
+        <div class="form-group">
+          <label for="Description" class="col-sm-3 control-label">Description</label>
+          <div class="col-sm-9">
+            <textarea class="form-control" name="description" id="Description" [value]="this.product.decreption" formControlName="decreption"></textarea>
+          </div>
+        </div> 
+        <div class="form-group">
+          <label for="About" class="col-sm-3 control-label">About</label>
+          <div class="col-sm-9">
+            <textarea class="form-control" name="about" id="About" [value]="this.product.about" formControlName="about"></textarea>
+          </div>
+        </div> 
+        <div class="form-group">
+            <label class="control-label" for="file_img">Product Image (jpg/png):</label><br>
+             <input class="imgPath" type="text" name="image" value="{{this.product.images[0]}}" #imgPath formControlName="image">
+             <img [src]="imgPath.value">
+        </div> <!-- form-group // -->
+        <!-- <div class="form-group">
+          <label for="tech" class="control-label">Categories</label>
+          <div class="">
+        <select class="form-control" name="category" ngModel>
+          <option selected disabled>Select Category</option>
+          <option (focus)="change()" *ngFor="let cat of CategoryList let i=index"  value={{cat}}>{{cat}}</option>
+        </select>
+          </div>
+        </div> -->
+        <div class="form-group">
+          <label for="" class="col-sm-3 control-label">Category</label>
+          <input class="form-control" type="text" name="category" id="" [value]="this.product.category" formControlName="category">
+        </div>
+        <div class="form-group group">
+            <div>
+              <label for="Price" class="col-sm-3 control-label">Price</label>
+              <div class="">
+                <input type="number" class="form-control number" name="price" id="price" placeholder="Type here" [value]="this.product.price" formControlName="price">
+              </div>
+            </div>
+            <div>
+              <label for="Weight" class="col-sm-3 control-label">Weight</label>
+              <div class="">
+                <input type="number" class="form-control number" name="weight" id="Weight" placeholder="Type here" [value]="this.product.weight" formControlName="weight">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="Stock" class="col-sm-3 control-label ">Stock</label>
+              <input type="number" class="form-control number" name="stock" id="Stock" placeholder="Type here" [value]="this.product.stock" formControlName="stock">
+            </div>
+          </div>
+          <div class="form-group group">
+              <label for="Color" class="control-label">Color</label>
+              <div class="">
+                <input type="color" class="form-control" name="color" id="Color" placeholder="Type here" [value]="this.product.color" formControlName="color">
+              </div>
+            </div>
+        <hr>
+        <div class="form-group">
+          <div class="col-sm-offset-3 col-sm-9">
+            <button type="submit" class="btn btn-primary" >sava changes</button>
+          </div>
+        </div>
+      </form>       
+      </div>
+  </section>
+</div>

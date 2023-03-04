@@ -1,11 +1,23 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
-
+import { Observable, Subject } from 'rxjs';
+export interface Product{
+  id:number;
+  name:string;
+  price:number;
+  weight:number;
+  decreption:string;
+  stock:number;
+  about:string;
+  color:string;
+  images:string[];
+  category:string;
+}
 @Injectable({
   providedIn: 'root',
 })
 export class ProductsService {
+<<<<<<< HEAD
   DBProducts: any[] = [];
   DBProducts$ = new Subject();
   DBProductReviews$ = new Subject();
@@ -20,7 +32,42 @@ export class ProductsService {
   constructor(private DBClient: HttpClient) {
   }
 
+=======
+  productsURL = 'https://localhost:7150/api/Product';
+  categoriesURL = 'https://localhost:7150/api/Categories';
+  productsReviewsURL = 'https://localhost:7150/api/ProductReviews';
+  product:any;
+  DBProducts: any[] = [];
+  reviews: any[] = [];
+  AllProducts=new  Subject();
+  isThereProducts= new Subject();
+  DBProducts$ = new Subject();
+  editMode=false;
+  productEdit:any;
+  constructor(private DBClient: HttpClient) {}
+>>>>>>> b8d897c6064145d4d74633634a60cd81231a5ccf
   //---------------------Api calls----------------
+  addProduct(product:Product){
+    console.log(product);
+    const header = new HttpHeaders().set('Content-Type', 'application/json');
+    return this.DBClient.post(this.productsURL,product,{headers:header});
+  }
+  editProduct(id:number,product:any){
+    const header = new HttpHeaders().set('Content-Type', 'application/json');
+    console.log(id);
+    console.log(product);
+    this.DBClient.put(this.productsURL+"/"+id,product,{headers:header}).subscribe(res=>{
+      console.log(res)
+      return this.DBClient.get(this.productsURL, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      }).subscribe((res)=>{
+        console.log(res);
+        this.AllProductSubject.next(res);
+      });
+    });
+  }
   GetCategoriesFromDB() {
     return this.DBClient.get(this.categoriesURL, {
       headers: {
@@ -33,10 +80,10 @@ export class ProductsService {
     return this.DBClient.get(this.productsURL, {
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${localStorage.getItem('token')}`,
       },
     });
   }
+<<<<<<< HEAD
   GetProductFromDBById(id:any) {
     return this.DBClient.get(this.productsURL + "/"+ id, {
       headers: {
@@ -44,6 +91,31 @@ export class ProductsService {
         'Authorization': `Bearer ${localStorage.getItem('token')}`,
       },
     });
+=======
+  GetAllProductsFromDB(){
+      return this.DBClient.get(this.productsURL, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      }).subscribe({
+        next:(res)=>{
+          console.log(res);
+          this.AllProductSubject.next(res);
+          this.isThereProducts.next(true);
+        },
+        error:(error)=>{
+          console.log("osama");
+          this.isThereProducts.next(false);
+        }
+      }
+      );
+  }
+  get statusofProducts():any{
+    return this.isThereProducts;
+  }
+  get AllProductSubject(){
+    return this.AllProducts;
+>>>>>>> b8d897c6064145d4d74633634a60cd81231a5ccf
   }
   AddCurrentCustomerReview( body: any) {
     this.DBClient.post(this.productsReviewsURL, body, {
@@ -83,41 +155,46 @@ export class ProductsService {
   }
   //---------------------products methods----------------
   GetProductById(id: number) {
-    let product: {
-      id: number;
-      name: string;
-      price: number;
-      weight: number;
-      decreption: string;
-      stock: number;
-      color: string;
-      about: string;
-      images: string[];
-      category: string;
-    } = this.DBProducts.find((p) => p.id == id);
-    let adjustedProduct = {
-      id: product.id,
-      name: product.name,
-      price: product.price,
-      weight: product.weight,
-      decreption: product.decreption,
-      stock: product.stock,
-      color: product.color,
-      about: product.about.split(','),
-      images: product.images,
-      category: product.category,
-    };
-    return adjustedProduct;
+    return this.DBClient.get(this.productsURL+"/"+id);
   }
-  SetProducts(products: any) {
+  SetProducts(products: Product[]) {
     this.DBProducts = products;
   }
   getProducts() {
+    console.log(this.DBProducts);
     return this.DBProducts;
   }
+  deleteProduct(id:number){
+    this.DBClient.delete(this.productsURL+"/"+id).subscribe();
+    return this.DBClient.get(this.productsURL, {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    }).subscribe((res)=>{
+      console.log(res);
+      this.AllProductSubject.next(res);
+    });
+}
   //---------------------products Reviews methods----------------
   GetProductReviewsFromDB() {
     return this.DBClient.get(this.productsReviewsURL);
+  }
+  setReviewByProductId(id:number){
+    console.log(id);
+      this.DBClient.post(this.productsReviewsURL,{
+        review: "osama",
+        rating: 3,
+        product_Id: id,
+        customerEmail: "elkholyo510@gmail.com"
+      },{
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${localStorage.getItem('token')}`,
+        },
+      }).subscribe(res=>{
+        console.log(res);
+        
+      })
   }
   SetReviews(revs: any) {
     this.reviews = revs;

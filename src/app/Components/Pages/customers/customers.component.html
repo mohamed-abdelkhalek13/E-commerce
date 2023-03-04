@@ -1,29 +1,29 @@
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+<table mat-table [dataSource]="ELEMENT_DATA" class="mat-elevation-z8">
     <ng-container matColumnDef="Position">
       <th mat-header-cell *matHeaderCellDef> No. </th>
-      <td mat-cell *matCellDef="let element"> {{element.Position}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
     </ng-container>
   
     <!-- Name Column -->
     <ng-container matColumnDef="Name">
       <th mat-header-cell *matHeaderCellDef> Name </th>
-      <td mat-cell *matCellDef="let element"> {{element.Name}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.first_Name}} {{element.last_Name}} </td>
     </ng-container>
   
     <!-- Weight Column -->
     <ng-container matColumnDef="Email">
       <th mat-header-cell *matHeaderCellDef> Email </th>
-      <td mat-cell *matCellDef="let element"> {{element.Email}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.email}} </td>
     </ng-container>
   
     <!-- Symbol Column -->
     <ng-container matColumnDef="ShippingAddress">
       <th mat-header-cell *matHeaderCellDef> ShippingAddress </th>
-      <td mat-cell *matCellDef="let element"> {{element.ShippingAddress}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.default_Shipping_Address}} </td>
     </ng-container>
     <ng-container matColumnDef="Country">
         <th mat-header-cell *matHeaderCellDef> Country </th>
-        <td mat-cell *matCellDef="let element"> {{element.Country}} </td>
+        <td mat-cell *matCellDef="let element"> {{element.country}} </td>
     </ng-container>
     <ng-container matColumnDef="Phone">
         <th mat-header-cell *matHeaderCellDef> Phone </th>
@@ -31,18 +31,18 @@
     </ng-container>
     <ng-container matColumnDef="Gender">
         <th mat-header-cell *matHeaderCellDef> Gender </th>
-        <td mat-cell *matCellDef="let element"> {{element.Gender}} </td>
+        <td mat-cell *matCellDef="let element"> {{element.gender}} </td>
     </ng-container>
     <ng-container matColumnDef="Edit">
       <th mat-header-cell *matHeaderCellDef> Edit </th>
       <td mat-cell *matCellDef="let element">
-          <a mat-raised-button color="warn" routerLink="#" >{{element.Edit}}</a> 
+          <a mat-raised-button color="warn" routerLink="#" >Edit</a> 
       </td>
     </ng-container>
     <ng-container matColumnDef="Delete">
       <th mat-header-cell *matHeaderCellDef>Delete</th>
       <td mat-cell *matCellDef="let element">
-          <a class="btn btn-danger" routerLink="#">{{element.Delete}}</a>
+          <a class="btn btn-danger" routerLink="/Dashboard/Customers" (click)="deleteCustomer(element.email)">Delete</a>
       </td>
     </ng-container>
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

@@ -31,6 +31,9 @@
               "src/custom-theme.scss",
               "node_modules/normalize.css/normalize.css",
               "./node_modules/normalize.css/normalize.css",
+              "node_modules/ngx-toastr/toastr.css",
+              "node_modules/ngx-spinner/animations/ball-scale-multiple.css",
+              "node_modules/ngx-spinner/animations/ball-atom.css",
               "node_modules/font-awesome/css/font-awesome.min.css",
               "src/custom-theme.scss",
               "./node_modules/normalize.css/normalize.css",
@@ -38,10 +41,14 @@
               "src/styles.css",
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/slick-carousel/slick/slick.scss",
+              "node_modules/slick-carousel/slick/slick-theme.scss"
             ],
             "scripts": [
-              "./node_modules/bootstrap/dist/js/bootstrap.min.js"
+              "./node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/slick-carousel/slick/slick.min.js"
             ]
           },
           "configurations": {
@@ -106,10 +113,7 @@
               "src/styles.css",
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
-<<<<<<< HEAD
               "node_modules/normalize.css/normalize.css",
-=======
->>>>>>> ffbde576d91fefaf3362626c2055779f26d72c31
               "src/styles.css"
             ],
             "scripts": [

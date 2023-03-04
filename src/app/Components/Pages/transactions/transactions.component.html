@@ -1,3 +1,12 @@
+<ngx-spinner
+  bdColor="#576478"
+  size="large"
+  color="#00bcd4"
+  type="ball-atom"
+  [fullScreen]="true"
+  ><small style="color: white">Loading...</small></ngx-spinner
+>
+
 <div class="container">
   <div class="row">
     <div class="d-flex justify-content-between py-4">
@@ -8,7 +17,7 @@
     </div>
   </div>
   <div class="row pb-5">
-    <div class="row col-9">
+    <div class="col-9">
       <mat-form-field class="tall">
         <mat-label>Filter</mat-label>
         <input
@@ -71,7 +80,6 @@
         ></mat-paginator>
       </div>
     </div>
-
     <div class="row col-3 ms-1">
       <div class="d-flex flex-column">
         <div class="row pb-3">

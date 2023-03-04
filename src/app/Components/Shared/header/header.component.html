@@ -23,10 +23,14 @@
 </header>
 
 <nav class="navbar navbar-expand-lg sticky-top navbar-dark p-2 shadow-sm nav">
+<<<<<<< HEAD
   <div class="container">
 
+=======
+  <div class="container-fluid">
+>>>>>>> b8d897c6064145d4d74633634a60cd81231a5ccf
     <a class="navbar-brand" href="#"
-      ><img src="assets/images/tidal-logo.png" alt="logo" class="logo_img"
+      ><img src="assets/Images/tidal-logo.png" alt="logo" class="logo_img"
     /></a>
     <button
       class="navbar-toggler"
@@ -39,13 +43,49 @@
     >
       <span class="navbar-toggler-icon"></span>
     </button>
+<<<<<<< HEAD
     <i (click)="toggleSearch()" class="fa-sharp fa-solid fa-magnifying-glass searchIcon"></i>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <i (click)="toggleSearch()" class="fa-sharp fa-solid fa-magnifying-glass"></i>
+=======
+
+    <!-- <div class="mx-auto my-3 d-lg-none d-sm-block d-xs-block">
+      <div class="input-group">
+        <span class="border-primary input-group-text bg-primary text-white"
+          ><i class="fa-solid fa-magnifying-glass"></i
+        ></span>
+        <input
+          type="text"
+          class="form-control border-primary"
+          style="color: #7a7a7a"
+        />
+        <button class="btn btn-primary text-white">فصثقفصثقفف</button>
+      </div>
+    </div> -->
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <!-- <div class="ms-auto d-none d-lg-block">
+        <div class="input-group">
+          <span class="border-primary input-group-text bg-primary text-white"
+            ><i class="fa-solid fa-magnifying-glass"></i
+          ></span>
+          <input
+            type="text"
+            class="form-control border-primary"
+            style="color: #7a7a7a"
+          />
+          <button class="btn btn-primary text-white">Search</button>
+        </div>
+      </div> -->
+>>>>>>> b8d897c6064145d4d74633634a60cd81231a5ccf
       <ul class="navbar-nav ms-auto">
 
         <li class="nav-item">
-          <a class="nav-link mx-2 text-uppercase" (click)="getAll()" routerLink="/categories/All">Products</a>
+          <a
+            class="nav-link mx-2 text-uppercase"
+            (click)="getAll()"
+            routerLink="/categories/All"
+            >Products</a
+          >
         </li>
         <li class="nav-item">
           <a class="nav-link mx-2 text-uppercase" href="#"
@@ -56,6 +96,36 @@
           <a class="nav-link mx-2 text-uppercase" href="#">About</a>
         </li>
       </ul>
+<<<<<<< HEAD
+=======
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link mx-2 text-uppercase" href="#"
+            ><i class="fa-solid fa-cart-shopping me-1"></i> Cart</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mx-2 text-uppercase" href="#"
+            ><i class="fa-solid fa-circle-user me-1"></i> Account</a
+          >
+        </li>
+
+        <li class="nav-item" *ngIf="!this.auth.isLoggedIn()">
+          <a class="nav-link mx-2 text-uppercase" routerLink="login">Log in</a>
+        </li>
+        <li class="nav-item" *ngIf="this.auth.isLoggedIn()">
+          <a class="nav-link mx-2 text-uppercase">Hello, {{ fullName }}</a>
+        </li>
+        <li class="nav-item" *ngIf="this.auth.isLoggedIn()">
+          <a
+            class="nav-link mx-2 text-uppercase"
+            routerLink="/"
+            (click)="logOut()"
+            >Log out</a
+          >
+        </li>
+      </ul>
+>>>>>>> b8d897c6064145d4d74633634a60cd81231a5ccf
     </div>
   </div>
 </nav>

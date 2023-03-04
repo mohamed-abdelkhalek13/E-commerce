@@ -1,0 +1,38 @@
+p{
+    font-family: "Roboto","Arial",sans-serif;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 600;
+    color: #fff;
+  }
+  .star{
+    color: rgba(255,164,28,255);
+  }
+  .card{
+    background-color: #252525;
+  }
+  .productsContainer{
+    border: 1px solid #252525;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  .showEmptyProductList{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    font-size: 25px;
+  }
+  .buttons{
+    display: flex;
+    gap: 10px;
+  }
+  .numbers{
+    display: flex;
+    gap: 20px;
+  }
+  img{
+    /* width: 200px; */
+    height: 200px;
+  }
+  
