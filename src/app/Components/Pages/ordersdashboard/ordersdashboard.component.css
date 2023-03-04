@@ -48,3 +48,13 @@ p{
 
   background-color: rgba(15,15,15,255);
 }
+option{
+  background-color: #fff;
+  color: #000;
+}
+option:hover{
+  color: green;
+}
+.btn{
+  color: #fff;
+}
