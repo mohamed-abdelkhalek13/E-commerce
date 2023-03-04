@@ -34,7 +34,6 @@ const routes: Routes = [
   {path:"cart", component:CartComponent},
   {path:"orders", component:OrdersComponent},
   {path:"Categories", component:CategoriesComponent},
-<<<<<<< HEAD
   {path:"Dashboard",component:AdminDashBoardComponent,children:[
     {path:"AddProducts",component:AddProductComponent},
     {path:"EditProduct/:id",component:EditProductComponent},
@@ -47,8 +46,6 @@ const routes: Routes = [
   {path:"shipping", component:ShippingComponent},
   {path:"checkout", component:CheckoutComponent},
   {path:"transactions", component:TransactionsComponent},
-=======
-
   {path:"AddProducts",component:AddProductComponent},
   {path:"Customers",component:CustomersComponent},
   {path:"EditUser",component:EditUserComponent},
@@ -88,8 +85,6 @@ const routes: Routes = [
   { path: 'AddProducts', component: AddProductComponent },
   { path: 'Customers', component: CustomersComponent },
   { path: 'EditUser', component: EditUserComponent },
-
->>>>>>> 2a46bda877372e41a89cccb2211ff7b7d0e7de34
 ];
 
 @NgModule({

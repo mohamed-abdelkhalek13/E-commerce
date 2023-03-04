@@ -21,28 +21,35 @@ export class ProductListComponent {
     
   }
   ngOnInit(){
-    this.productsService.GetProductsFromDB().subscribe({
-      next:(prod:any)=>{
-        let productsAll=prod;
-        this.productsService.DBProducts$.next(productsAll);
-      }
-    });
-    this.productsService.DBProducts$.subscribe({
-      next:(data)=>{this.products=data, console.log(this.products);}
+    this.productsService.GetAllProductsFromDB();
+    this.productsService.AllProductSubject.subscribe((res)=>{
+      console.log(res);
+      this.products=res;
+      this.productsService.statusofProducts.subscribe(status=>{
+        this.showEmptyProduct=!status;
+        console.log(status);
+        
+      })
       
-      
-    });
+      // if(!this.productsService.isThereAnyProducts) this.showEmptyProduct=true;
+    })
     if(this.route.routeConfig.path=="productList"){
       this.showButtons=true;
       this.productsService.editMode=true;
     }
-    else this.showButtons=false;
-    // if(this.products==undefined) this.showEmptyProduct=true;
+    // else this.showButtons=false;
     
   }
   deleteProduct(id:number){ 
     console.log(id);
     this.productsService.deleteProduct(+id);
+    this.productsService.GetAllProductsFromDB();
+      // this.products=res;
+      this.productsService.AllProductSubject.subscribe(res=>{
+        console.log(res);
+        
+      });
+    
   }
   trackByFn(index:number,prd:Product){
       return prd.id;

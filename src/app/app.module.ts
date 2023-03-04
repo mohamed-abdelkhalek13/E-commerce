@@ -20,35 +20,13 @@ import { CategoriesComponent } from './Components/Pages/categories/categories.co
 
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AdminDashBoardComponent } from './Components/Pages/admin-dash-board/admin-dash-board.component';
-<<<<<<< HEAD
-import {MatExpansionModule} from '@angular/material/expansion';
-import {MatTreeModule} from '@angular/material/tree';
-import {MatIconModule} from '@angular/material/icon';
-import {MatMenuModule} from '@angular/material/menu';
-import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatSelectModule} from '@angular/material/select';
 import {MatTableModule} from '@angular/material/table';
-import { AddProductComponent } from './Components/Pages/add-product/add-product.component';
-
-import {MatButtonModule} from '@angular/material/button';
 import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
 import { ModalDismissReasons, NgbDatepickerModule, NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { CustomersComponent } from './Components/Pages/customers/customers.component';
-import { EditUserComponent } from './Components/Shared/edit-user/edit-user.component';
-
-
-
-import { ShippingComponent } from './Components/Pages/shipping/shipping.component';
-import { CheckoutComponent } from './Components/Pages/checkout/checkout.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
-
-
 import { TransactionsComponent } from './Components/Pages/transactions/transactions.component';
-
-=======
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatTreeModule } from '@angular/material/tree';
 import { MatIconModule } from '@angular/material/icon';
@@ -59,22 +37,10 @@ import { AddProductComponent } from './Components/Pages/add-product/add-product.
 import { MatButtonModule } from '@angular/material/button';
 import { CustomersComponent } from './Components/Pages/customers/customers.component';
 import { EditUserComponent } from './Components/Shared/edit-user/edit-user.component';
-
 import { ShippingComponent } from './Components/Pages/shipping/shipping.component';
 import { CheckoutComponent } from './Components/Pages/checkout/checkout.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxSpinnerModule } from 'ngx-spinner';
-import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
-import {
-  NgbAccordionModule,
-  NgbDatepickerModule,
-  NgbModal,
-  ModalDismissReasons,
-} from '@ng-bootstrap/ng-bootstrap';
-import { TransactionsComponent } from './Components/Pages/transactions/transactions.component';
-import { MatTableModule } from '@angular/material/table';
-import { MatFormFieldModule } from '@angular/material/form-field';
->>>>>>> 2a46bda877372e41a89cccb2211ff7b7d0e7de34
+
 import { MatInputModule } from '@angular/material/input';
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
@@ -91,13 +57,8 @@ import { AuthGuard } from './guards/auth.guard';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ManageCategoriesComponent } from './Components/Pages/manage-categories/manage-categories.component';
 import { CatdialogComponent } from './Components/dialogs/catdialog/catdialog.component';
-<<<<<<< HEAD
 import { EditProductComponent } from './Components/Pages/edit-product/edit-product.component';
 import { ProductListComponent } from './Components/Pages/product-list/product-list.component';
-=======
-
->>>>>>> 2a46bda877372e41a89cccb2211ff7b7d0e7de34
-
 @NgModule({
   declarations: [
     ProductCardComponent,
@@ -125,17 +86,10 @@ import { ProductListComponent } from './Components/Pages/product-list/product-li
     ReviewsComponent,
     CatdialogComponent,
     TransactionsComponent,
-<<<<<<< HEAD
-          ManageCategoriesComponent,
-          EditProductComponent,
-          ProductListComponent,
-
-
-
-
-=======
     ManageCategoriesComponent,
->>>>>>> 2a46bda877372e41a89cccb2211ff7b7d0e7de34
+    EditProductComponent,
+    ProductListComponent,
+    ManageCategoriesComponent,
   ],
   imports: [
     BrowserModule,
@@ -164,16 +118,10 @@ import { ProductListComponent } from './Components/Pages/product-list/product-li
     MatInputModule,
     MatSortModule,
     MatPaginatorModule,
-<<<<<<< HEAD
-    MatDialogModule
-
-
-
-=======
+    MatDialogModule,
     ToastrModule,
     NgxSpinnerModule,
     MatDialogModule,
->>>>>>> 2a46bda877372e41a89cccb2211ff7b7d0e7de34
   ],
   providers: [
     NgbModal,
@@ -193,8 +141,4 @@ import { ProductListComponent } from './Components/Pages/product-list/product-li
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-<<<<<<< HEAD
-export class AppModule { }
-=======
 export class AppModule {}
->>>>>>> 2a46bda877372e41a89cccb2211ff7b7d0e7de34
