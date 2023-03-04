@@ -13,7 +13,6 @@ import { ProductsComponent } from '../../Pages/products/products.component';
 export class HeaderComponent implements OnInit {
   fullName: any;
   fullNameSubscription!: Subscription;
-
   constructor(
     public auth: AuthService,
     private productsService: ProductsService,

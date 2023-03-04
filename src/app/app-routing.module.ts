@@ -113,6 +113,7 @@ const routes: Routes = [
   { path: 'Customers', component: CustomersComponent },
   { path: 'EditUser', component: EditUserComponent },
   { path: 'manageorder', component: OrdersdashboardComponent },
+  // { path: 'ordershistory', component: OrdersComponent },
   {path:"**", component:NotfoundComponent},
 ];
 

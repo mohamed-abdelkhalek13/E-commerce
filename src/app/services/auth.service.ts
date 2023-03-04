@@ -71,6 +71,9 @@ export class AuthService {
   get fullName() {
     return localStorage.getItem('name');
   }
+  get email() {
+    return localStorage.getItem('email');
+  }
   // get role(): string {
   //   return this.decodedToken
   //     ? this.decodedToken[
