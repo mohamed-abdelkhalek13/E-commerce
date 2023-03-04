@@ -1,3 +1,4 @@
+import { AdminGuard } from './guards/admin.guard';
 import { TransactionsComponent } from './Components/Pages/transactions/transactions.component';
 import { CheckoutComponent } from './Components/Pages/checkout/checkout.component';
 import { ShippingComponent } from './Components/Pages/shipping/shipping.component';
@@ -17,15 +18,31 @@ import { RegisterComponent } from './Components/Pages/register/register.componen
 import { AuthGuard } from './guards/auth.guard';
 import { NotAccessableGuard } from './guards/not-accessable.guard';
 import { EditUserComponent } from './Components/Shared/edit-user/edit-user.component';
-import { ReviewsComponent } from './Components/Pages/reviews/reviews.component';
-import { ProductCardComponent } from './Components/Shared/product-card/product-card.component';
+import { NotfoundComponent } from './Components/Pages/notfound/notfound.component';
+
+import { OrdersdashboardComponent } from './Components/Pages/ordersdashboard/ordersdashboard.component';
+
 import { AdminDashBoardComponent } from './Components/Pages/admin-dash-board/admin-dash-board.component';
 import { EditProductComponent } from './Components/Pages/edit-product/edit-product.component';
-import { ManageCategoriesComponent } from './Components/Pages/manage-categories/manage-categories.component';
 import { ProductListComponent } from './Components/Pages/product-list/product-list.component';
+import { ManageCategoriesComponent } from './Components/Pages/manage-categories/manage-categories.component';
+import { ReviewsComponent } from './Components/Pages/reviews/reviews.component';
+
 
 const routes: Routes = [
-
+  {
+    path: 'Dashboard',
+    component: AdminDashBoardComponent,
+    children: [
+      { path: 'AddProducts', component: AddProductComponent },
+      { path: 'EditProduct/:id', component: EditProductComponent },
+      { path: 'productList', component: ProductListComponent },
+      { path: 'Categories', component: ManageCategoriesComponent },
+      { path: 'Customers', component: CustomersComponent },
+      { path: 'reviews', component: ReviewsComponent },
+      { path: 'EditUser', component: EditUserComponent },
+    ],
+  },
   {path:"", component:HomeComponent},
   {path:"login", component:LoginComponent},
   {path:"register", component:RegisterComponent},
@@ -54,8 +71,9 @@ const routes: Routes = [
   {path:"checkout", component:CheckoutComponent},
   {path:"transactions", component:TransactionsComponent},
 
-
-
+  // { path: 'AddProducts', component: AddProductComponent },
+  // { path: 'Customers', component: CustomersComponent },
+  // { path: 'EditUser', component: EditUserComponent },
 
   { path: '', component: HomeComponent },
   {
@@ -63,8 +81,16 @@ const routes: Routes = [
     component: LoginComponent,
     canActivate: [NotAccessableGuard],
   },
-  { path: 'register', component: RegisterComponent },
-  { path: 'register-admin', component: RegisterComponent },
+  {
+    path: 'register',
+    component: RegisterComponent,
+    canActivate: [NotAccessableGuard],
+  },
+  {
+    path: 'register-admin',
+    component: RegisterComponent,
+    canActivate: [AdminGuard],
+  },
   { path: 'products', component: ProductsComponent },
   { path: 'products/:id', component: ProductDetailsComponent },
   { path: 'cart', component: CartComponent },
@@ -82,9 +108,12 @@ const routes: Routes = [
     path: 'categories/:categoryName/:productID',
     component: ProductDetailsComponent,
   },
+
   { path: 'AddProducts', component: AddProductComponent },
   { path: 'Customers', component: CustomersComponent },
   { path: 'EditUser', component: EditUserComponent },
+  { path: 'manageorder', component: OrdersdashboardComponent },
+  {path:"**", component:NotfoundComponent},
 ];
 
 @NgModule({

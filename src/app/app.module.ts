@@ -17,7 +17,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CategoriesComponent } from './Components/Pages/categories/categories.component';
-
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AdminDashBoardComponent } from './Components/Pages/admin-dash-board/admin-dash-board.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -30,35 +29,36 @@ import { TransactionsComponent } from './Components/Pages/transactions/transacti
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatTreeModule } from '@angular/material/tree';
 import { MatIconModule } from '@angular/material/icon';
-import { MatMenuModule } from '@angular/material/menu';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatSelectModule } from '@angular/material/select';
 import { AddProductComponent } from './Components/Pages/add-product/add-product.component';
 import { MatButtonModule } from '@angular/material/button';
-import { CustomersComponent } from './Components/Pages/customers/customers.component';
 import { EditUserComponent } from './Components/Shared/edit-user/edit-user.component';
+import { MatMenuModule } from '@angular/material/menu';
+import { CustomersComponent } from './Components/Pages/customers/customers.component';
 import { ShippingComponent } from './Components/Pages/shipping/shipping.component';
 import { CheckoutComponent } from './Components/Pages/checkout/checkout.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
-
 import { MatInputModule } from '@angular/material/input';
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { ProductCardComponent } from './Components/Shared/product-card/product-card.component';
 import { ProductReviewsComponent } from './Components/Shared/product-reviews/product-reviews.component';
 import { ProductDetailsCardComponent } from './Components/Shared/product-details-card/product-details-card.component';
-
 import { ReviewsComponent } from './Components/Pages/reviews/reviews.component';
 import { ToastrModule } from 'ngx-toastr';
 import { TokenInterceptor } from './interceptors/token.interceptor';
 import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 import { AuthGuard } from './guards/auth.guard';
-
 import { MatDialogModule } from '@angular/material/dialog';
 import { ManageCategoriesComponent } from './Components/Pages/manage-categories/manage-categories.component';
 import { CatdialogComponent } from './Components/dialogs/catdialog/catdialog.component';
 import { EditProductComponent } from './Components/Pages/edit-product/edit-product.component';
 import { ProductListComponent } from './Components/Pages/product-list/product-list.component';
+import { NotfoundComponent } from './Components/Pages/notfound/notfound.component';
+import { BestproductsComponent } from './Components/bestproducts/bestproducts.component';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { OrdersdashboardComponent } from './Components/Pages/ordersdashboard/ordersdashboard.component';
 @NgModule({
   declarations: [
     ProductCardComponent,
@@ -90,6 +90,11 @@ import { ProductListComponent } from './Components/Pages/product-list/product-li
     EditProductComponent,
     ProductListComponent,
     ManageCategoriesComponent,
+    NotfoundComponent,
+    BestproductsComponent,
+    OrdersdashboardComponent,
+    ProductListComponent,
+    BestproductsComponent,
   ],
   imports: [
     BrowserModule,
@@ -103,25 +108,22 @@ import { ProductListComponent } from './Components/Pages/product-list/product-li
     MatIconModule,
     MatMenuModule,
     MatSidenavModule,
-    MatFormFieldModule,
     MatSelectModule,
     NgbModule,
     NgbCarouselModule,
     MatTableModule,
     MatButtonModule,
     HttpClientModule,
-
     NgbAccordionModule,
-    HttpClientModule,
     NgbDatepickerModule,
-    MatFormFieldModule,
     MatInputModule,
     MatSortModule,
     MatPaginatorModule,
     MatDialogModule,
     ToastrModule,
     NgxSpinnerModule,
-    MatDialogModule,
+    MatFormFieldModule,
+
   ],
   providers: [
     NgbModal,

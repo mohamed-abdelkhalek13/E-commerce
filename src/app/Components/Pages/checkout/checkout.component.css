@@ -5,3 +5,10 @@
 .pay-method {
   width: 4rem;
 }
+* {
+  color: white;
+}
+
+.bg {
+  background-color: #0f0f0f;
+}

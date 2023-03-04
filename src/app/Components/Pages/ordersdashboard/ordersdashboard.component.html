@@ -1,0 +1,92 @@
+
+<div >
+  <div class="container my-5">
+
+    <ngb-accordion #acc="ngbAccordion" *ngFor="let s of orders" >
+
+      <ngb-panel>
+        <ng-template ngbPanelTitle>
+
+          <div class="left">
+            <p class="text-muted">order ID</p>
+            <p class="bold">{{s.id}}</p>
+            <p class="text-muted">{{s.order_Date
+            }}</p>
+              </div>
+
+
+              <div class="items">
+                <p class="bold">Customer email</p>
+            <p>{{s.customerEmail
+            }}</p>
+
+              </div>
+
+              <div class="items">
+                <p class="bold">Shipping Address</p>
+            <p>{{s.shipping_Address
+            }}</p>
+
+              </div>
+              <div class="total-price">
+                <div>Order Total</div>
+                <div class="bold">{{s.price}} EGP</div>
+
+                      </div>
+
+              <div class="status">
+           <p class="btn btn-success">{{s.order_Status
+          }}</p>
+
+              </div>
+
+        </ng-template>
+        <ng-template ngbPanelContent class="con" >
+          <div class="con">
+
+          </div>
+          <div>Delivered Items</div>
+          <div class="row fasel">
+            <div class="col one">
+              <img src="https://www.elite.com.eg/wp-content/uploads/2022/01/dell-3520-1.jpg" width="100px" alt="">
+            </div>
+            <div class="col">
+              <p class="bold">{{s.details[1]}}</p>
+              <p>Quantity: 1</p>
+            </div>
+            <div class="col">
+              <p>unit price</p>
+              <p class="bold">40000 EGP</p>
+            </div>
+
+
+          </div>
+          <div class="row fasel">
+            <div class="col">
+            <img src="https://m.media-amazon.com/images/I/71nP6lTogjL._AC_SL1500_.jpg" width="100px" alt="">
+            </div>
+            <div class="col">
+              <p class="bold">HP laptop</p>
+              <p>Quantity: 1</p>
+            </div>
+            <div class="col">
+              <p>unit price</p>
+              <p class="bold">20000 EGP</p>
+            </div>
+
+
+          </div>
+        </ng-template>
+      </ngb-panel>
+
+
+
+    </ngb-accordion>
+
+
+  </div>
+</div>
+
+
+
+

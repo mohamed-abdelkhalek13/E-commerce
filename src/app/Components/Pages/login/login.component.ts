@@ -1,16 +1,17 @@
-import { Component, NgZone } from '@angular/core';
+import { Component, NgZone, OnInit } from '@angular/core';
 import { NgForm, AbstractControl } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { ToastrService } from 'ngx-toastr';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
   email: string = '';
   password: string = '';
   errorMessage: string = '';
@@ -18,8 +19,16 @@ export class LoginComponent {
   constructor(
     private http: HttpClient,
     private router: Router,
-    private auth: AuthService
+    private auth: AuthService,
+    private spinner: NgxSpinnerService
   ) {}
+
+  ngOnInit(): void {
+    this.spinner.show();
+    setTimeout(() => {
+      this.spinner.hide();
+    }, 3000);
+  }
 
   onSubmit(form: NgForm) {
     if (form.valid) {
