@@ -3,20 +3,30 @@
   margin: 20px auto;
 
 }
-
+a{
+  text-decoration: none;
+}
 .slick-prev:before, .slick-next:before {
   color: black!important;
 
 }
+a img{
+  object-fit: contain;
+  width: 100%;
+}
 .card{
   margin-left: 4px;
-
+  height: 350px;
 transition: 0.2s;
 cursor: pointer;
-
-
-
+justify-content: space-between;
 }
+.productName{
+color: black;
+font-weight: bold;
+}
+
+
 .card:hover{
  scale: 1.02;
 }

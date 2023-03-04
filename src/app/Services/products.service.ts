@@ -175,7 +175,7 @@ export class ProductsService {
   setReviewByProductId(id:number){
     console.log(id);
       this.DBClient.post(this.productsReviewsURL,{
-        review: "osama",
+        review: "_",
         rating: 3,
         product_Id: id,
         customerEmail: "elkholyo510@gmail.com"
