@@ -87,7 +87,7 @@ export class CheckoutComponent implements OnInit {
 
   discount: number = 0;
 
-  shipping: number = 5;
+  shipping: number = 50;
 
   total(): number {
     const subtotal = this.subtotal();
