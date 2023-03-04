@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../../core/services/cart.service';
 
@@ -8,38 +9,36 @@ import { CartService } from '../../core/services/cart.service';
 })
 export class CartComponent implements OnInit {
   productsList: any[] = [];
-  totalPrice: number = 0;
-  constructor(private service: CartService) {
+  quantity: number = 1;
+  constructor(private service: CartService, private router: Router) {
     this.service = service;
   }
-
   ngOnInit(): void {
-    this.productsList = this.service.getProduct();
-    this.totalPrice = this.service.getTotalPrice();
+    this.productsList = this.service.getItems();
+    console.log(this.productsList);
   }
 
-  addOne(id: any) {
-    let oldProduct = this.productsList.find((p) => p.id == id);
-    oldProduct.quantity++;
-    this.service.increaseTotalPriceBy(oldProduct.price);
-    this.service.increaseCartItemsCount();
-    this.service.productsCount$.next(this.service.getCartItemsCount());
-    this.totalPrice = this.service.getTotalPrice();
+  add(item) {
+    if (item.quantity < item.stock) {
+      item.quantity++;
+    }
   }
-  removeOne(id: any) {
-    let oldProduct = this.productsList.find((p) => p.id == id);
-    if (oldProduct.quantity !== 1) {
-      oldProduct.quantity--;
+
+  remove(item) {
+    if (item.quantity > 1) {
+      item.quantity--;
     } else {
-      let newList = this.productsList.filter((p) => p.id !== id);
-      this.productsList = newList;
-      if (this.productsList.length == 0) {
-        this.service.products = [];
+      // Remove the item from the productsList array
+      const index = this.productsList.indexOf(item);
+      if (index !== -1) {
+        this.productsList.splice(index, 1);
       }
     }
-    this.service.decreaseCartItemsCount();
-    this.service.productsCount$.next(this.service.getCartItemsCount());
-    this.service.decreaseTotalPriceBy(oldProduct.price);
-    this.totalPrice = this.service.getTotalPrice();
+  }
+
+  orderNow() {
+    const selectedProducts = this.productsList;
+
+    this.router.navigate(['/checkout'], { state: { selectedProducts } });
   }
 }

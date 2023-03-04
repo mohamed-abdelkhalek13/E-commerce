@@ -14,7 +14,11 @@ h3{
 }
 img{
     width: 150px;
-    margin-left: 10px;
+    border-radius: 50%;
+    margin-left: 5px;
+}
+.imgPath{
+    width: 45%;
 }
 .form-control{
     margin-bottom: 10px;

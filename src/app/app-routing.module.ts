@@ -36,6 +36,7 @@ const routes: Routes = [
   {
     path: 'Dashboard',
     component: AdminDashBoardComponent,
+    canActivate: [AdminGuard],
     children: [
       { path: 'AddProducts', component: AddProductComponent },
       { path: 'EditProduct/:id', component: EditProductComponent },
@@ -44,6 +45,10 @@ const routes: Routes = [
       { path: 'Customers', component: CustomersComponent },
       { path: 'reviews', component: ReviewsComponent },
       { path: 'EditUser', component: EditUserComponent },
+      {
+        path: 'register-admin',
+        component: RegisterComponent,
+      },
     ],
   },
   {path:"", component:HomeComponent},
@@ -71,6 +76,7 @@ const routes: Routes = [
     {path:"Customers",component:CustomersComponent},
     {path:"reviews",component:ReviewsComponent},
     {path:"EditUser",component:EditUserComponent},
+    {path:"Orders",component:OrdersdashboardComponent}
   ]},
   {path:"shipping", component:ShippingComponent},
   {path:"checkout", component:CheckoutComponent},
@@ -98,11 +104,7 @@ const routes: Routes = [
     component: RegisterComponent,
     canActivate: [NotAccessableGuard],
   },
-  {
-    path: 'register-admin',
-    component: RegisterComponent,
-    canActivate: [AdminGuard],
-  },
+
   { path: 'products', component: ProductsComponent },
   { path: 'products/:id', component: ProductDetailsComponent },
   { path: 'cart', component: CartComponent },

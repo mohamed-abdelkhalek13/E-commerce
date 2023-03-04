@@ -1,97 +1,50 @@
-
-
-
-<div class="of">
-
-</div>
-<div>
-  <div class="card">
-
-    <div class="row">
-        <div class=" cart">
-            <div class="title">
-                <div class="row">
-
-                    <div class="col"><h4><b>Shopping Cart</b></h4></div>
-                    <h2 fxFlexOffset="10" *ngIf="!productsList[0]">Your Cart is empty</h2>
-                    <div class="col align-self-center text-right text-muted"></div>
-                </div>
-            </div>
-            <div class="row border-top border-bottom" >
-              <ng-container *ngFor="let s of productsList" >
-
-
-                  <div  class="col-2"><img class="img-fluid" src="{{s.thumbnail}}"></div>
-                                  <div class="col">
-                                      <div class="row text-muted">{{s.title}}</div>
-
-
-
-                                  </div>
-                                  <div class="col mx-4">
-                                      <a (click)="removeOne(s.id)" ><i class="fa-solid fa-minus"></i></a><button href="#" class="border "  >{{s.quantity}}</button><a (click)="addOne(s.id)"><i class="fa-solid fa-plus"></i></a>
-                                  </div>
-                                  <div class="col"> {{s.price}} EGP <span class="close">&#10005;</span></div>
-
-
-
-
-              </ng-container>
-
-            </div>
-            <div class="tp">
-              <div>
-
-              </div>
-              <div>
-                Total Price: {{ totalPrice }} EGP
-              </div>
-
-
-
-            </div>
-
-
-            <div class="back-to-shop"><a href="#">&leftarrow;</a><span class="text-muted">Back to shop</span></div>
-
+<div class="container mt-4">
+  <div
+    class="h100 row d-flex justify-content-center fs-4 fw-semibold text-danger"
+    *ngIf="productsList.length == 0"
+  >
+    Your cart is empty.
+  </div>
+  <div
+    class="row d-flex justify-content-center mt-3"
+    *ngFor="let item of productsList"
+  >
+    <div class="col-8 sm-col-10">
+      <div class="d-flex justify-content-center item p-2">
+        <div class="col-6">
+          <p class="name">{{ item.name }}</p>
+          <p class="ps-1">{{ item.category }}</p>
         </div>
-
+        <div class="col-4">
+          <img class="drug-img" [src]="item.images[0]" alt="" />
+        </div>
+        <div class="col-2">
+          <div>
+            <p><strong>Quantity:</strong> {{ item.stock }}</p>
+          </div>
+          <div>
+            <p><strong>Price:</strong> {{ item.price }} EGP</p>
+          </div>
+          <div>
+            <button class="btn btnn rounded-circle me-1" (click)="add(item)">
+              +
+            </button>
+            <p class="quantity">
+              {{ item.quantity }}
+            </p>
+            <button class="btn btnn rounded-circle ms-1" (click)="remove(item)">
+              -
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
-
-
   </div>
 </div>
 
-
-<style>
-  .tp{
-text-align: center;
-margin-top: 10px;
-font-size: 20px;
-display: flex;
-align-items: center;
-justify-content: space-evenly;
-
-
-  }
-
-.btn{
-  margin-bottom: 10px;
-  font-size: 14px;
-border-radius: 5px;
-}
-
-
-.left{
-  background-color: rgb(231, 229, 229);
-  border-radius: 0px 12px 12px 0px;
-
-}
-
-.of{
-height: 1px;
-  background-color: #161616;
-}
-
-
-</style>
+<div
+  class="d-flex justify-content-center my-5 fs-4 text-danger"
+  *ngIf="productsList.length > 0"
+>
+  <a class="btno" (click)="orderNow()">Order Now</a>
+</div>
