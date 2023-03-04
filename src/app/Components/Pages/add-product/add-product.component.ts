@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { map } from 'rxjs';
+import { map, takeLast } from 'rxjs';
 import { ProductsService } from 'src/app/Services/products.service';
 export interface Product{
   id:number;
@@ -21,7 +21,7 @@ export interface Product{
   styleUrls: ['./add-product.component.css']
 })
 export class AddProductComponent implements OnInit{
-    productId=this.productService.DBProducts.length;
+    // productId=this.productService.DBProducts.length;
     productItem!:Product;
     editMode=this.productService.editMode;
     btncontent=""
@@ -47,14 +47,14 @@ export class AddProductComponent implements OnInit{
           this.CategoryList=Object.values(CategoryList)//.map(cats=>cats['name']);
           console.log(this.CategoryList);
           
-        });     
+        });
     }
     change(){
       this.backgroundColor="#ddd";
     }
     
     onSubmit(){
-        this.productItem.id=this.productId++;
+        // this.productItem.id=this.productId++;
         this.productItem.name=this.AddProductForm.value.name;
         this.productItem.price=this.AddProductForm.value.price;
         this.productItem.stock=this.AddProductForm.value.stock;
@@ -64,19 +64,24 @@ export class AddProductComponent implements OnInit{
         this.productItem.color=this.AddProductForm.value.color;
         this.productItem.images.push(this.AddProductForm.value.image);
         this.productItem.category=this.AddProductForm.value.category;
-        this.productService.addProduct(this.productItem);
-        this.productService.AllProducts.subscribe({
-          next:(data:any)=>{
-            let productAll=[...data,this.productItem];
-            
-            this.productService.AllProducts.next(productAll);
+        this.productService.addProduct(this.productItem).subscribe(
+          {next: (response) => {
+              console.log("successful registration");
+              console.log(response);
+              let currentProductID= response["id"];
+              console.log(currentProductID);
+              
+              this.productService.setReviewByProductId(currentProductID);
+              console.log(this.productService.GetReviewsByProductId(currentProductID));
+              console.log(this.productItem);
+              this.AddProductForm.reset();
+              this.router.navigate(['/Dashboard/productList'])
+            },
+            error: (error) => {
+              console.error(error);
+            }
           }
-        })
-        console.log(this.productItem);
-        this.AddProductForm.reset();
-        this.router.navigate(['/Dashboard/productList'])
-    }
-    submit(){
-        // this.router.navigate(['/products']);
+        );
+        // window.location.reload();
     }
 }

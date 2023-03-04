@@ -19,30 +19,26 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CategoriesComponent } from './Components/Pages/categories/categories.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AdminDashBoardComponent } from './Components/Pages/admin-dash-board/admin-dash-board.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatTableModule} from '@angular/material/table';
+import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
+import { ModalDismissReasons, NgbDatepickerModule, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { TransactionsComponent } from './Components/Pages/transactions/transactions.component';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatTreeModule } from '@angular/material/tree';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatSelectModule } from '@angular/material/select';
 import { AddProductComponent } from './Components/Pages/add-product/add-product.component';
 import { MatButtonModule } from '@angular/material/button';
-import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 import { EditUserComponent } from './Components/Shared/edit-user/edit-user.component';
-import { MatExpansionModule } from '@angular/material/expansion';
-import { MatTreeModule } from '@angular/material/tree';
 import { MatMenuModule } from '@angular/material/menu';
 import { CustomersComponent } from './Components/Pages/customers/customers.component';
 import { ShippingComponent } from './Components/Pages/shipping/shipping.component';
 import { CheckoutComponent } from './Components/Pages/checkout/checkout.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxSpinnerModule } from 'ngx-spinner';
-import {
-  NgbAccordionModule,
-  NgbDatepickerModule,
-  NgbModal,
-  ModalDismissReasons,
-} from '@ng-bootstrap/ng-bootstrap';
-import { TransactionsComponent } from './Components/Pages/transactions/transactions.component';
-import { MatTableModule } from '@angular/material/table';
-import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
@@ -63,7 +59,6 @@ import { NotfoundComponent } from './Components/Pages/notfound/notfound.componen
 import { BestproductsComponent } from './Components/bestproducts/bestproducts.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { OrdersdashboardComponent } from './Components/Pages/ordersdashboard/ordersdashboard.component';
-
 @NgModule({
   declarations: [
     ProductCardComponent,
@@ -92,10 +87,12 @@ import { OrdersdashboardComponent } from './Components/Pages/ordersdashboard/ord
     CatdialogComponent,
     TransactionsComponent,
     ManageCategoriesComponent,
+    EditProductComponent,
+    ProductListComponent,
+    ManageCategoriesComponent,
     NotfoundComponent,
     BestproductsComponent,
     OrdersdashboardComponent,
-    EditProductComponent,
     ProductListComponent,
     BestproductsComponent,
   ],
@@ -125,7 +122,8 @@ import { OrdersdashboardComponent } from './Components/Pages/ordersdashboard/ord
     MatDialogModule,
     ToastrModule,
     NgxSpinnerModule,
-    SlickCarouselModule,
+    MatFormFieldModule,
+
   ],
   providers: [
     NgbModal,
@@ -145,5 +143,4 @@ import { OrdersdashboardComponent } from './Components/Pages/ordersdashboard/ord
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-
 export class AppModule {}
