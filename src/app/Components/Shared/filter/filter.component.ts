@@ -10,6 +10,7 @@ import { ProductsService } from 'src/app/Services/products.service';
 export class FilterComponent {
   filteredArray:any[]=[];
   constructor(private productsService: ProductsService, private activatedRoute: ActivatedRoute){}
+  searchRoute = this.activatedRoute.snapshot.params["categoryName"];
   ngOnInit(){
     this.productsService.GetProductsFromDB().subscribe({
       next: (DBProducts:any ) => {
@@ -19,9 +20,20 @@ export class FilterComponent {
           let halfAStar = p.avgRating - Math.floor(p.avgRating);
           return {...p, ratingArray: starsArray, halfAStar:halfAStar}
         });
-        this.filteredArray = array.filter(p => p.category == this.activatedRoute.snapshot.params["categoryName"]);
-        this.productsService.DBProducts$.next(this.filteredArray);
         this.productsService.SetProducts(array);
+        if(this.searchRoute == "search"){
+          this.filteredArray = this.productsService.GetProductsFromAKeyword();
+          this.productsService.DBProducts$.next(this.filteredArray);
+        }
+        else if(this.searchRoute == "All"){
+          this.productsService.SetProducts(array);
+          this.getAll();
+        }
+        else{
+          this.filteredArray = array.filter(p => p.category == this.activatedRoute.snapshot.params["categoryName"]);
+          this.productsService.DBProducts$.next(this.filteredArray);
+          this.productsService.SetProducts(array);
+        }
 
       },
       error: (err) => {
@@ -37,7 +49,7 @@ export class FilterComponent {
     let allProducts = this.productsService.getProducts();
     this.filteredArray = allProducts.filter(p => p.category == "Hp");
     this.productsService.DBProducts$.next(this.filteredArray);
-
+    console.log(this.searchRoute)
   }
   getAsus(){
     let allProducts = this.productsService.getProducts();
@@ -73,7 +85,12 @@ export class FilterComponent {
   }
   under15(){
     let currentProducts = this.productsService.getProducts().filter(c => c.category == this.activatedRoute.snapshot.params["categoryName"]);
-    if(currentProducts.length == 0){
+    if(currentProducts.length == 0 && this.searchRoute == "search"){
+      let searchArray = this.productsService.GetProductsFromAKeyword();
+      let newArray = searchArray.filter(p => p.price < 15000);
+      this.filteredArray = newArray;
+    }
+    else if(currentProducts.length == 0 && this.searchRoute == "All"){
       currentProducts= this.productsService.getProducts().filter(p => p.price < 15000)
       this.filteredArray = currentProducts
     }
@@ -85,7 +102,13 @@ export class FilterComponent {
   }
   between15And25(){
     let currentProducts = this.productsService.getProducts().filter(c => c.category == this.activatedRoute.snapshot.params["categoryName"]);
-    if(currentProducts.length == 0){
+    if(currentProducts.length == 0 && this.searchRoute == "search"){
+      let searchArray = this.productsService.GetProductsFromAKeyword();
+      let newArray = searchArray.filter(p => p.price >= 15000);
+      let newArr = newArray.filter(p => p.price < 25000);
+      this.filteredArray = newArr;
+    }
+    else if(currentProducts.length == 0 && this.searchRoute == "All"){
       currentProducts= this.productsService.getProducts().filter(p => p.price >= 15000)
       let newARR = currentProducts.filter(p => p.price < 25000);
       this.filteredArray = newARR
@@ -100,7 +123,13 @@ export class FilterComponent {
   }
   between25And35(){
     let currentProducts = this.productsService.getProducts().filter(c => c.category == this.activatedRoute.snapshot.params["categoryName"]);
-    if(currentProducts.length == 0){
+    if(currentProducts.length == 0 && this.searchRoute == "search"){
+      let searchArray = this.productsService.GetProductsFromAKeyword();
+      let newArray = searchArray.filter(p => p.price >= 25000);
+      let newArr = newArray.filter(p => p.price < 35000);
+      this.filteredArray = newArr;
+    }
+    else if(currentProducts.length == 0 && this.searchRoute == "All"){
       currentProducts= this.productsService.getProducts().filter(p => p.price >= 25000)
       let newARR = currentProducts.filter(p => p.price < 35000);
       this.filteredArray = newARR
@@ -115,7 +144,12 @@ export class FilterComponent {
   }
   above35(){
     let currentProducts = this.productsService.getProducts().filter(c => c.category == this.activatedRoute.snapshot.params["categoryName"]);
-    if(currentProducts.length == 0){
+    if(currentProducts.length == 0 && this.searchRoute == "search"){
+      let searchArray = this.productsService.GetProductsFromAKeyword();
+      let newArray = searchArray.filter(p => p.price > 35000);
+      this.filteredArray = newArray;
+    }
+    else if(currentProducts.length == 0 && this.searchRoute == "All"){
       currentProducts= this.productsService.getProducts().filter(p => p.price > 35000)
       this.filteredArray = currentProducts
     }
@@ -129,7 +163,12 @@ export class FilterComponent {
 
   stars4Up(){
     let currentProducts = this.productsService.getProducts().filter(c => c.category == this.activatedRoute.snapshot.params["categoryName"]);
-    if(currentProducts.length == 0){
+    if(currentProducts.length == 0 && this.searchRoute == "search"){
+      let searchArray = this.productsService.GetProductsFromAKeyword();
+      let newArray = searchArray.filter(p => p.avgRating > 4);
+      this.filteredArray = newArray;
+    }
+    else if(currentProducts.length == 0 && this.searchRoute == "All"){
       currentProducts= this.productsService.getProducts().filter(p => p.avgRating > 4)
       this.filteredArray = currentProducts
     }
@@ -142,7 +181,12 @@ export class FilterComponent {
   }
   stars3Up(){
     let currentProducts = this.productsService.getProducts().filter(c => c.category == this.activatedRoute.snapshot.params["categoryName"]);
-    if(currentProducts.length == 0){
+    if(currentProducts.length == 0 && this.searchRoute == "search"){
+      let searchArray = this.productsService.GetProductsFromAKeyword();
+      let newArray = searchArray.filter(p => p.avgRating > 3);
+      this.filteredArray = newArray;
+    }
+    else if(currentProducts.length == 0 && this.searchRoute == "All"){
       currentProducts= this.productsService.getProducts().filter(p => p.avgRating > 3)
       this.filteredArray = currentProducts
     }
@@ -155,7 +199,12 @@ export class FilterComponent {
   }
   stars2Up(){
     let currentProducts = this.productsService.getProducts().filter(c => c.category == this.activatedRoute.snapshot.params["categoryName"]);
-    if(currentProducts.length == 0){
+    if(currentProducts.length == 0 && this.searchRoute == "search"){
+      let searchArray = this.productsService.GetProductsFromAKeyword();
+      let newArray = searchArray.filter(p => p.avgRating > 2);
+      this.filteredArray = newArray;
+    }
+    else if(currentProducts.length == 0 && this.searchRoute == "All"){
       currentProducts= this.productsService.getProducts().filter(p => p.avgRating > 2)
       this.filteredArray = currentProducts
     }
@@ -168,7 +217,12 @@ export class FilterComponent {
   }
   stars1Up(){
     let currentProducts = this.productsService.getProducts().filter(c => c.category == this.activatedRoute.snapshot.params["categoryName"]);
-    if(currentProducts.length == 0){
+    if(currentProducts.length == 0 && this.searchRoute == "search"){
+      let searchArray = this.productsService.GetProductsFromAKeyword();
+      let newArray = searchArray.filter(p => p.avgRating > 1);
+      this.filteredArray = newArray;
+    }
+    else if(currentProducts.length == 0 && this.searchRoute == "All"){
       currentProducts= this.productsService.getProducts().filter(p => p.avgRating > 1)
       this.filteredArray = currentProducts
     }
@@ -181,7 +235,12 @@ export class FilterComponent {
   }
   removeOutOfStock(){
     let currentProducts = this.productsService.getProducts().filter(c => c.category == this.activatedRoute.snapshot.params["categoryName"]);
-    if(currentProducts.length == 0){
+    if(currentProducts.length == 0 && this.searchRoute == "search"){
+      let searchArray = this.productsService.GetProductsFromAKeyword();
+      let newArray = searchArray.filter(p => p.stock != 0);
+      this.filteredArray = newArray;
+    }
+    else if(currentProducts.length == 0){
       currentProducts= this.productsService.getProducts().filter(p => p.stock != 0)
       this.filteredArray = currentProducts
     }

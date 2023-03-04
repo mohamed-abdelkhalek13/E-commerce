@@ -36,13 +36,15 @@ export class AuthService {
     tokenExpiration: any,
     roles: any,
     name: string,
-    email: string
+    email: string,
+    id: string
   ) {
     localStorage.setItem('token', tokenValue);
     localStorage.setItem('tokenExpiration', tokenExpiration);
     localStorage.setItem('roles', JSON.stringify(roles));
     localStorage.setItem('name', name);
     localStorage.setItem('email', email);
+    localStorage.setItem('id', id);
     this.fullNameSubject.next(name);
   }
 
@@ -70,6 +72,9 @@ export class AuthService {
 
   get fullName() {
     return localStorage.getItem('name');
+  }
+  get email() {
+    return localStorage.getItem('email');
   }
   // get role(): string {
   //   return this.decodedToken

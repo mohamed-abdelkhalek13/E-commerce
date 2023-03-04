@@ -24,8 +24,6 @@ import {MatTableModule} from '@angular/material/table';
 import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
 import { ModalDismissReasons, NgbDatepickerModule, NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { TransactionsComponent } from './Components/Pages/transactions/transactions.component';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatTreeModule } from '@angular/material/tree';
 import { MatIconModule } from '@angular/material/icon';
@@ -34,10 +32,13 @@ import { MatSelectModule } from '@angular/material/select';
 import { AddProductComponent } from './Components/Pages/add-product/add-product.component';
 import { MatButtonModule } from '@angular/material/button';
 import { EditUserComponent } from './Components/Shared/edit-user/edit-user.component';
-import { MatMenuModule } from '@angular/material/menu';
-import { CustomersComponent } from './Components/Pages/customers/customers.component';
 import { ShippingComponent } from './Components/Pages/shipping/shipping.component';
 import { CheckoutComponent } from './Components/Pages/checkout/checkout.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { TransactionsComponent } from './Components/Pages/transactions/transactions.component';
+import { MatMenuModule } from '@angular/material/menu';
+import { CustomersComponent } from './Components/Pages/customers/customers.component';
+
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { MatInputModule } from '@angular/material/input';
 import { MatSortModule } from '@angular/material/sort';
@@ -45,6 +46,9 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { ProductCardComponent } from './Components/Shared/product-card/product-card.component';
 import { ProductReviewsComponent } from './Components/Shared/product-reviews/product-reviews.component';
 import { ProductDetailsCardComponent } from './Components/Shared/product-details-card/product-details-card.component';
+
+
+
 import { ReviewsComponent } from './Components/Pages/reviews/reviews.component';
 import { ToastrModule } from 'ngx-toastr';
 import { TokenInterceptor } from './interceptors/token.interceptor';
@@ -53,6 +57,11 @@ import { AuthGuard } from './guards/auth.guard';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ManageCategoriesComponent } from './Components/Pages/manage-categories/manage-categories.component';
 import { CatdialogComponent } from './Components/dialogs/catdialog/catdialog.component';
+import { NgSelectModule } from '@ng-select/ng-select';
+import { SearchBarComponent } from './Components/Shared/search-bar/search-bar.component';
+import {MatRadioModule} from '@angular/material/radio';
+
+
 import { EditProductComponent } from './Components/Pages/edit-product/edit-product.component';
 import { ProductListComponent } from './Components/Pages/product-list/product-list.component';
 import { NotfoundComponent } from './Components/Pages/notfound/notfound.component';
@@ -87,6 +96,9 @@ import { OrdersdashboardComponent } from './Components/Pages/ordersdashboard/ord
     CatdialogComponent,
     TransactionsComponent,
     ManageCategoriesComponent,
+
+    SearchBarComponent,
+
     EditProductComponent,
     ProductListComponent,
     ManageCategoriesComponent,
@@ -95,14 +107,16 @@ import { OrdersdashboardComponent } from './Components/Pages/ordersdashboard/ord
     OrdersdashboardComponent,
     ProductListComponent,
     BestproductsComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
-    ReactiveFormsModule,
     FontAwesomeModule,
     BrowserAnimationsModule,
+
+    ReactiveFormsModule,
+
     MatExpansionModule,
     MatTreeModule,
     MatIconModule,
@@ -120,10 +134,19 @@ import { OrdersdashboardComponent } from './Components/Pages/ordersdashboard/ord
     MatSortModule,
     MatPaginatorModule,
     MatDialogModule,
+
+    NgSelectModule,
+    FormsModule,
+    MatRadioModule,
+
     ToastrModule,
     NgxSpinnerModule,
     MatFormFieldModule,
     SlickCarouselModule
+<<<<<<< HEAD
+=======
+
+>>>>>>> c51d6a2b44e4564906cf6c249a317b718750711c
   ],
   providers: [
     NgbModal,

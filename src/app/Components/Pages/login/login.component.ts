@@ -45,7 +45,8 @@ export class LoginComponent implements OnInit {
               response.expiration,
               response.roles,
               response.name,
-              response.email
+              response.email,
+              response.id
             );
             console.log('Done');
             this.router.navigate(['/']);

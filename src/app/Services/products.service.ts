@@ -17,18 +17,28 @@ export interface Product{
   providedIn: 'root',
 })
 export class ProductsService {
-  productsURL = 'https://localhost:7150/api/Product';
-  categoriesURL = 'https://localhost:7150/api/Categories';
-  productsReviewsURL = 'https://localhost:7150/api/ProductReviews';
-  product:any;
+
   DBProducts: any[] = [];
+  DBProducts$ = new Subject();
+  DBProductReviews$ = new Subject();
+  keywordProducts:any[] = [];
+
+  productsURL = 'https://localhost:7150/api/product';
+  categoriesURL = 'https://localhost:7150/api/categories';
+
   reviews: any[] = [];
+  productsReviewsURL = 'https://localhost:7150/api/ProductReviews';
+
+  constructor(private DBClient: HttpClient) {
+  }
+
+  product:any;
+
   AllProducts=new  Subject();
   isThereProducts= new Subject();
-  DBProducts$ = new Subject();
   editMode=false;
   productEdit:any;
-  constructor(private DBClient: HttpClient) {}
+
   //---------------------Api calls----------------
   addProduct(product:Product){
     console.log(product);
@@ -66,6 +76,15 @@ export class ProductsService {
       },
     });
   }
+
+  GetProductFromDBById(id:any) {
+    return this.DBClient.get(this.productsURL + "/"+ id, {
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${localStorage.getItem('token')}`,
+      },
+    });
+  }
   GetAllProductsFromDB(){
       return this.DBClient.get(this.productsURL, {
         headers: {
@@ -89,6 +108,7 @@ export class ProductsService {
   }
   get AllProductSubject(){
     return this.AllProducts;
+
   }
   AddCurrentCustomerReview( body: any) {
     this.DBClient.post(this.productsReviewsURL, body, {
@@ -166,7 +186,7 @@ export class ProductsService {
         },
       }).subscribe(res=>{
         console.log(res);
-        
+
       })
   }
   SetReviews(revs: any) {
@@ -180,5 +200,11 @@ export class ProductsService {
     let review = this.reviews.find((r) => r.product_Id == id && r.customerEmail == userEmail);
     return review;
   }
-
+  StoreProductsFromAKeyword(keywordP:any){
+    this.keywordProducts =keywordP;
+  }
+  GetProductsFromAKeyword(){
+    return this.keywordProducts;
+  }
 }
+

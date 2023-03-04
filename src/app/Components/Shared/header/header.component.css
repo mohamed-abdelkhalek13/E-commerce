@@ -194,3 +194,12 @@ a {
   background-color: rgba(0, 0, 0, 0.2);
   opacity: 1 !important;
 }
+.searchIcon{
+  color: white;
+  font-weight: bold;
+  font-size: larger;
+}
+.searchIcon:hover{
+  cursor: pointer;
+  color: rgba(255,164,28,255);
+}

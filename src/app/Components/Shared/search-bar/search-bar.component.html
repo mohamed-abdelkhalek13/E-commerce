@@ -1,0 +1,23 @@
+<div class="searchContainer d-flex gap-2 justify-content-center p-2">
+  <mat-radio-group class="radio-group ps-1 pe-1" [(ngModel)]="searchOption">
+    <mat-radio-button
+      *ngFor="let option of options"
+      class="radio-button"
+      color="primary"
+      [value]="option"
+    >
+      {{ option }}
+    </mat-radio-button>
+  </mat-radio-group>
+  <ng-select class="select" *ngIf="searchOption == options[0]" class="search w-50">
+    <ng-option class="option" *ngFor="let product of products" [value]="product.id"
+      ><a routerLink="/categories/{{ product.category }}/{{ product.id }}"
+        ><img class="me-2" src={{product.images[0]}} alt="product-image" width="50px" height="50px"/>{{
+          product.name
+        }}</a
+      ></ng-option
+    >
+  </ng-select>
+  <input #search id="searchInput" *ngIf="searchOption == options[1]" type="text" [(ngModel)] = "getSearchKeyword" />
+  <button class="btn btn-primary" (click)="search()">Search</button>
+</div>
