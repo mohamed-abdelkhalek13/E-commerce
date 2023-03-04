@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 export interface Product{
   id:number;
   name:string;
@@ -17,34 +17,49 @@ export interface Product{
   providedIn: 'root',
 })
 export class ProductsService {
-  productsURL = 'https://localhost:7150/api/Product';
-  categoriesURL = 'https://localhost:7150/api/Categories';
-  productsReviewsURL = 'https://localhost:7150/api/ProductReviews';
-  product:any;
+
   DBProducts: any[] = [];
-  reviews: any[] = [];
-  AllProducts=new Subject();
   DBProducts$ = new Subject();
+  DBProductReviews$ = new Subject();
+  keywordProducts:any[] = [];
+
+  productsURL = 'https://localhost:7150/api/product';
+  categoriesURL = 'https://localhost:7150/api/categories';
+
+  reviews: any[] = [];
+  productsReviewsURL = 'https://localhost:7150/api/ProductReviews';
+
+  constructor(private DBClient: HttpClient) {
+  }
+
+  product:any;
+
+  AllProducts=new  Subject();
+  isThereProducts= new Subject();
   editMode=false;
   productEdit:any;
-  constructor(private DBClient: HttpClient) {}
+
   //---------------------Api calls----------------
   addProduct(product:Product){
     console.log(product);
-    
     const header = new HttpHeaders().set('Content-Type', 'application/json');
-    this.DBClient.post(this.productsURL,product,{headers:header}).subscribe(
-      {next: (response) => {
-          console.log("successful registration");
-          // redirect to login page
-          // this.router.navigate(['login']);
+    return this.DBClient.post(this.productsURL,product,{headers:header});
+  }
+  editProduct(id:number,product:any){
+    const header = new HttpHeaders().set('Content-Type', 'application/json');
+    console.log(id);
+    console.log(product);
+    this.DBClient.put(this.productsURL+"/"+id,product,{headers:header}).subscribe(res=>{
+      console.log(res)
+      return this.DBClient.get(this.productsURL, {
+        headers: {
+          'Content-Type': 'application/json',
         },
-        error: (error) => {
-          console.error(error);
-        }
-      }
-    );
-    
+      }).subscribe((res)=>{
+        console.log(res);
+        this.AllProductSubject.next(res);
+      });
+    });
   }
   GetCategoriesFromDB() {
     return this.DBClient.get(this.categoriesURL, {
@@ -58,9 +73,42 @@ export class ProductsService {
     return this.DBClient.get(this.productsURL, {
       headers: {
         'Content-Type': 'application/json',
+      },
+    });
+  }
+
+  GetProductFromDBById(id:any) {
+    return this.DBClient.get(this.productsURL + "/"+ id, {
+      headers: {
+        'Content-Type': 'application/json',
         'Authorization': `Bearer ${localStorage.getItem('token')}`,
       },
     });
+  }
+  GetAllProductsFromDB(){
+      return this.DBClient.get(this.productsURL, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      }).subscribe({
+        next:(res)=>{
+          console.log(res);
+          this.AllProductSubject.next(res);
+          this.isThereProducts.next(true);
+        },
+        error:(error)=>{
+          console.log("osama");
+          this.isThereProducts.next(false);
+        }
+      }
+      );
+  }
+  get statusofProducts():any{
+    return this.isThereProducts;
+  }
+  get AllProductSubject(){
+    return this.AllProducts;
+
   }
   AddCurrentCustomerReview( body: any) {
     this.DBClient.post(this.productsReviewsURL, body, {
@@ -100,10 +148,7 @@ export class ProductsService {
   }
   //---------------------products methods----------------
   GetProductById(id: number) {
-     this.DBClient.get(this.productsURL+"/"+id).subscribe(res=>this.product=res);
-     console.log(this.product);
-     return this.product;
-     
+    return this.DBClient.get(this.productsURL+"/"+id);
   }
   SetProducts(products: Product[]) {
     this.DBProducts = products;
@@ -114,11 +159,35 @@ export class ProductsService {
   }
   deleteProduct(id:number){
     this.DBClient.delete(this.productsURL+"/"+id).subscribe();
-    console.log(this.productsURL+"/"+id);
+    return this.DBClient.get(this.productsURL, {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    }).subscribe((res)=>{
+      console.log(res);
+      this.AllProductSubject.next(res);
+    });
 }
   //---------------------products Reviews methods----------------
   GetProductReviewsFromDB() {
     return this.DBClient.get(this.productsReviewsURL);
+  }
+  setReviewByProductId(id:number){
+    console.log(id);
+      this.DBClient.post(this.productsReviewsURL,{
+        review: "osama",
+        rating: 3,
+        product_Id: id,
+        customerEmail: "elkholyo510@gmail.com"
+      },{
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${localStorage.getItem('token')}`,
+        },
+      }).subscribe(res=>{
+        console.log(res);
+
+      })
   }
   SetReviews(revs: any) {
     this.reviews = revs;
@@ -131,5 +200,11 @@ export class ProductsService {
     let review = this.reviews.find((r) => r.product_Id == id && r.customerEmail == userEmail);
     return review;
   }
-
+  StoreProductsFromAKeyword(keywordP:any){
+    this.keywordProducts =keywordP;
+  }
+  GetProductsFromAKeyword(){
+    return this.keywordProducts;
+  }
 }
+

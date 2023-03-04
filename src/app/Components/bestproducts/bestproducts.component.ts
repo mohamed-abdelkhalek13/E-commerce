@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ProductsService } from 'src/app/Services/products.service';
+import { ProductService } from '../core/services/prod';
 
 @Component({
   selector: 'app-bestproducts',
@@ -6,120 +8,28 @@ import { Component } from '@angular/core';
   styleUrls: ['./bestproducts.component.css']
 })
 export class BestproductsComponent {
+
+  path="";
+  products: any='';
+
+
+
+
+
+
+  constructor(private productsService:ProductsService) {
+
+
+
+  }
   title = 'ngSlick';
 
-
-  slides = [
-    {
-      image:"https://i0.wp.com/www.awfarlak.com/wp-content/uploads/2023/01/Image00001-58.jpg?fit=1300%2C1300&ssl=1",
-    Name:'DELL',
-    Price:55000,
-
-  },
-    {
-      image:"https://i0.wp.com/www.awfarlak.com/wp-content/uploads/2023/01/Image00001-38.jpg?fit=1300%2C1300&ssl=1",
-    Name:'DELL',
-    Price:55000,
-
-  },
-
-    {
-      image:"https://i0.wp.com/www.awfarlak.com/wp-content/uploads/2023/01/Image00001-58.jpg?fit=1300%2C1300&ssl=1",
-    Name:'DELL',
-    Price:55000,
-
-  },
-    {
-      image:"https://i0.wp.com/www.awfarlak.com/wp-content/uploads/2023/01/Image00001-38.jpg?fit=1300%2C1300&ssl=1",
-    Name:'DELL',
-    Price:55000,
-
-  },
-
-    {
-      image:"https://i0.wp.com/www.awfarlak.com/wp-content/uploads/2023/01/Image00001-58.jpg?fit=1300%2C1300&ssl=1",
-    Name:'DELL',
-    Price:55000,
-
-  },
-    {
-      image:"https://i0.wp.com/www.awfarlak.com/wp-content/uploads/2023/01/Image00001-38.jpg?fit=1300%2C1300&ssl=1",
-    Name:'DELL',
-    Price:55000,
-
-  },
-    {
-      image:"https://i0.wp.com/www.awfarlak.com/wp-content/uploads/2023/01/Image00001-58.jpg?fit=1300%2C1300&ssl=1",
-    Name:'DELL',
-    Price:55000,
-
-  },
-    {
-      image:"https://i0.wp.com/www.awfarlak.com/wp-content/uploads/2023/01/Image00001-38.jpg?fit=1300%2C1300&ssl=1",
-    Name:'DELL',
-    Price:55000,
-
-  },
-
-    {
-      image:"https://i0.wp.com/www.awfarlak.com/wp-content/uploads/2023/01/Image00001-58.jpg?fit=1300%2C1300&ssl=1",
-    Name:'DELL',
-    Price:55000,
-
-  },
-    {
-      image:"https://i0.wp.com/www.awfarlak.com/wp-content/uploads/2023/01/Image00001-38.jpg?fit=1300%2C1300&ssl=1",
-    Name:'DELL',
-    Price:55000,
-
-  },
-    {
-      image:"https://i0.wp.com/www.awfarlak.com/wp-content/uploads/2023/01/Image00001-58.jpg?fit=1300%2C1300&ssl=1",
-    Name:'DELL',
-    Price:55000,
-
-  },
-    {
-      image:"https://i0.wp.com/www.awfarlak.com/wp-content/uploads/2023/01/Image00001-38.jpg?fit=1300%2C1300&ssl=1",
-    Name:'DELL',
-    Price:55000,
-
-  },
-
-    {
-      image:"https://i0.wp.com/www.awfarlak.com/wp-content/uploads/2023/01/Image00001-58.jpg?fit=1300%2C1300&ssl=1",
-    Name:'DELL',
-    Price:55000,
-
-  },
-    {
-      image:"https://i0.wp.com/www.awfarlak.com/wp-content/uploads/2023/01/Image00001-38.jpg?fit=1300%2C1300&ssl=1",
-    Name:'DELL',
-    Price:55000,
-
-  },
-
-
-
-
-];
-
-  slideConfig = {
-    "slidesToShow": 5,
-    "slidesToScroll": 1,
-    "dots": true,
-    "infinite": false,
-    // cssEase: 'linear',
-
-
-  };
-
   addSlide() {
-    this.slides.push()
+    this.products.push()
   }
 
   removeSlide() {
-    this.slides.length = this.slides.length - 1;
+    this.products.length = this.products.length - 1;
   }
 
   slickInit(e: any) {
@@ -137,4 +47,42 @@ export class BestproductsComponent {
   beforeChange(e: any) {
     console.log('beforeChange');
   }
+
+
+
+  slideConfig = {
+    "slidesToShow": 5,
+    "slidesToScroll": 1,
+    "dots": true,
+    "infinite": false,
+    // cssEase: 'linear',
+
+
+  };
+
+
+
+  ngOnInit(){
+    this.productsService.GetProductsFromDB().subscribe({
+      next:(prod:any)=>{
+        let productsAll=prod;
+        this.productsService.DBProducts$.next(productsAll);
+      }
+    });
+    this.productsService.DBProducts$.subscribe({
+      next:(data)=>{this.products=data,
+        this.products=this.products.slice(0,10),console.log(this.products)
+
+
+      }
+
+
+
+    });
+
+
+}
+
+
+
 }

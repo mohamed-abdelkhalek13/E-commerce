@@ -26,7 +26,7 @@
   width: 100%;
 }
 .submitReview{
-  width: 30%;
+  width: fit-content;
 }
 #currentUserRating{
   width: 30%;
@@ -38,4 +38,8 @@ textarea{
   line-height: 1.5rem;
   font-weight: 600;
   color: black;
+}
+a{
+  text-decoration: none;
+  color: white;
 }

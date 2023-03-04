@@ -1,0 +1,50 @@
+.left p{
+  padding: 0;
+  margin: 0;
+}
+.items p{
+  margin: 0;
+}
+
+.left{
+
+}
+.items{
+  margin: auto;
+}
+.status{
+  margin: auto;
+}
+
+
+.ro{
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-around !important;
+
+}
+
+
+.bold
+{
+font-weight: bold;
+}
+
+p{
+  margin: 0;
+}
+
+.one{
+  margin-bottom: 4px;
+}
+.fasel{
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgb(107, 103, 103);
+}
+.con{
+  background-color:#f6f6f6
+}
+.vv{
+
+  background-color: rgba(15,15,15,255);
+}

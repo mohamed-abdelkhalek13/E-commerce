@@ -112,10 +112,11 @@ export class CheckoutComponent implements OnInit {
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
 
     // Update data object with new values
-    const details = {};
+    const details = [];
     for (let i = 0; i < this.selectedProducts.length; i++) {
-      Object.assign(details, {
-        [this.selectedProducts[i].productId]: this.selectedProducts[i].quantity,
+      details.push({
+        productId: this.selectedProducts[i].id,
+        quantity: this.selectedProducts[i].quantity,
       });
     }
 

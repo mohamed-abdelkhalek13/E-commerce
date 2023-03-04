@@ -17,45 +17,29 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CategoriesComponent } from './Components/Pages/categories/categories.component';
-
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AdminDashBoardComponent } from './Components/Pages/admin-dash-board/admin-dash-board.component';
-
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatTableModule} from '@angular/material/table';
+import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
+import { ModalDismissReasons, NgbDatepickerModule, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatTreeModule } from '@angular/material/tree';
 import { MatIconModule } from '@angular/material/icon';
-
 import { MatSidenavModule } from '@angular/material/sidenav';
-
 import { MatSelectModule } from '@angular/material/select';
 import { AddProductComponent } from './Components/Pages/add-product/add-product.component';
-
 import { MatButtonModule } from '@angular/material/button';
-import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
-
 import { EditUserComponent } from './Components/Shared/edit-user/edit-user.component';
-
-import { MatExpansionModule } from '@angular/material/expansion';
-
-import { MatTreeModule } from '@angular/material/tree';
-
-import { MatMenuModule } from '@angular/material/menu';
-
-import { CustomersComponent } from './Components/Pages/customers/customers.component';
-
 import { ShippingComponent } from './Components/Pages/shipping/shipping.component';
 import { CheckoutComponent } from './Components/Pages/checkout/checkout.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { NgxSpinnerModule } from 'ngx-spinner';
-
-import {
-  NgbAccordionModule,
-  NgbDatepickerModule,
-  NgbModal,
-  ModalDismissReasons,
-} from '@ng-bootstrap/ng-bootstrap';
 import { TransactionsComponent } from './Components/Pages/transactions/transactions.component';
-import { MatTableModule } from '@angular/material/table';
-import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatMenuModule } from '@angular/material/menu';
+import { CustomersComponent } from './Components/Pages/customers/customers.component';
 
+import { NgxSpinnerModule } from 'ngx-spinner';
 import { MatInputModule } from '@angular/material/input';
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
@@ -63,23 +47,27 @@ import { ProductCardComponent } from './Components/Shared/product-card/product-c
 import { ProductReviewsComponent } from './Components/Shared/product-reviews/product-reviews.component';
 import { ProductDetailsCardComponent } from './Components/Shared/product-details-card/product-details-card.component';
 
+
+
 import { ReviewsComponent } from './Components/Pages/reviews/reviews.component';
 import { ToastrModule } from 'ngx-toastr';
 import { TokenInterceptor } from './interceptors/token.interceptor';
 import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 import { AuthGuard } from './guards/auth.guard';
-
 import { MatDialogModule } from '@angular/material/dialog';
 import { ManageCategoriesComponent } from './Components/Pages/manage-categories/manage-categories.component';
 import { CatdialogComponent } from './Components/dialogs/catdialog/catdialog.component';
+import { NgSelectModule } from '@ng-select/ng-select';
+import { SearchBarComponent } from './Components/Shared/search-bar/search-bar.component';
+import {MatRadioModule} from '@angular/material/radio';
+
 
 import { EditProductComponent } from './Components/Pages/edit-product/edit-product.component';
 import { ProductListComponent } from './Components/Pages/product-list/product-list.component';
-
 import { NotfoundComponent } from './Components/Pages/notfound/notfound.component';
 import { BestproductsComponent } from './Components/bestproducts/bestproducts.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
-
+import { OrdersdashboardComponent } from './Components/Pages/ordersdashboard/ordersdashboard.component';
 @NgModule({
   declarations: [
     ProductCardComponent,
@@ -109,17 +97,26 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
     TransactionsComponent,
     ManageCategoriesComponent,
 
+    SearchBarComponent,
+
     EditProductComponent,
     ProductListComponent,
+    ManageCategoriesComponent,
+    NotfoundComponent,
     BestproductsComponent,
+    OrdersdashboardComponent,
+    ProductListComponent,
+    BestproductsComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
-    ReactiveFormsModule,
     FontAwesomeModule,
     BrowserAnimationsModule,
+
+    ReactiveFormsModule,
+
     MatExpansionModule,
     MatTreeModule,
     MatIconModule,
@@ -136,13 +133,17 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
     MatInputModule,
     MatSortModule,
     MatPaginatorModule,
-
     MatDialogModule,
+
+    NgSelectModule,
+    FormsModule,
+    MatRadioModule,
 
     ToastrModule,
     NgxSpinnerModule,
+    MatFormFieldModule,
+    SlickCarouselModule
 
-    SlickCarouselModule,
   ],
   providers: [
     NgbModal,

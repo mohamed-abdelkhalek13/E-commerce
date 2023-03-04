@@ -21,6 +21,7 @@ img{
 
 img:hover{
   cursor: pointer;
+
 }
 
 .sideImagesContainer div{
@@ -73,4 +74,13 @@ color: rgba(255,164,28,255);
 }
 span{
   font-weight: 400;
+}
+.sideImage{
+  width: 20%;
+}
+.sideImage:hover{
+  border: 1px solid rgba(255,164,28,255);
+}
+.mainImage{
+  width: 50%;
 }

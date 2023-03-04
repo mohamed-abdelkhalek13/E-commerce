@@ -27,4 +27,12 @@ p{
     display: flex;
     gap: 10px;
   }
+  .numbers{
+    display: flex;
+    gap: 20px;
+  }
+  img{
+    /* width: 200px; */
+    height: 200px;
+  }
   
