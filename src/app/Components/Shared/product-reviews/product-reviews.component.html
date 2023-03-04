@@ -20,8 +20,12 @@
     <div class="col-lg-6 col-md-12 col-sm-12 mb-sm-3 mb-xl-3 mt-md-4 review">
       {{review.review}}
     </div>
+    <div *ngIf="review.customerEmail == currentUserEmail" class="row mt-2 gap-4">
+      <button *ngIf="showEditButton == true" class="btn btn-primary submitReview" (click) = "editReview()">Edit</button>
+      <button class="btn btn-primary submitReview" (click) = "removeReview()">Remove</button>
+    </div>
   </div>
-<div class="container-fluid mb-5 currentUserReview">
+<div *ngIf="showCurrentCustomerReviewForm == true" class="container-fluid mb-5 currentUserReview">
   <div class="row mb-4"><h1>Add your Review</h1></div>
 
   <div class="row customerReviewCard p-3 mb-3">
@@ -30,7 +34,7 @@
       <i class="fa-solid fa-user userIcon"></i>
       <div #email class="userName" >{{currentUserEmail}}</div>
     </div>
-    <div class="col-lg-3 col-md-6 col-sm-12 mb-sm-3 mb-xl-3 customerRating">
+    <div class="col-lg-3 col-md-6 col-sm-12 mb-sm-3 mb-xl-3 customerRating" >
       <label for="currentUserRating">Rating</label>
       <input class="ms-2 rounded-3" id="currentUserRating" type="number" step="0.5" max="5" min="0" #rating value="{{+editedProduct.rating}}">
       <label class="ms-2" for="currentUserRating"> out of 5</label>
@@ -47,10 +51,8 @@
         ></textarea>
       </div>
       <div class="row gap-3">
-        <button class="btn btn-primary submitReview" (click) = "submitReview({rating:+rating.value, review: review.value})">Submit</button>
-        <button class="btn btn-primary submitReview" (click) = "editReview()">Edit</button>
-        <button class="btn btn-primary submitReview" (click) = "submitEditedReview({rating:+rating.value, review: review.value})">Submit Edited Review</button>
-        <button class="btn btn-primary submitReview" (click) = "removeReview()">Remove review</button>
+        <button *ngIf="showSubmit == true" class="btn btn-primary submitReview" (click) = "submitReview(+rating.value, review.value)">Submit</button>
+        <button *ngIf="showEditButton == false" class="btn btn-primary submitReview" (click) = "submitEditedReview(+rating.value, review.value)">Submit new review</button>
       </div>
     </div>
   </div>

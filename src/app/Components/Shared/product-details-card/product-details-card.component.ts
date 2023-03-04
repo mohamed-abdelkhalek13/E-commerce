@@ -10,9 +10,18 @@ import { ProductsService } from 'src/app/Services/products.service';
 export class ProductDetailsCardComponent {
   product:any={};
   quantity=1;
+  imgIndex = 0;
   constructor(private productService: ProductsService, private activatedRoute: ActivatedRoute){}
   ngOnInit(){
-    this.product = this.productService.GetProductById(this.activatedRoute.snapshot.params["productID"]);
+
+    this.productService.GetProductFromDBById(this.activatedRoute.snapshot.params["productID"]).subscribe({
+      next: (data:any) => {
+        let product:any = data;
+        let array:any[] = data.about.split(",")
+        let newProduct = {...product, aboutArray: array}
+        this.product = newProduct;
+      }
+    })
   }
   increase(){
     this.quantity++;
@@ -23,5 +32,14 @@ export class ProductDetailsCardComponent {
     }else{
       this.quantity--;
     }
+  }
+  setImage0(){
+    this.imgIndex = 0;
+  }
+  setImage1(){
+    this.imgIndex = 1;
+  }
+  setImage2(){
+    this.imgIndex = 2;
   }
 }

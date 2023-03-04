@@ -18,7 +18,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CategoriesComponent } from './Components/Pages/categories/categories.component';
-
 import { AdminDashBoardComponent } from './Components/Pages/admin-dash-board/admin-dash-board.component';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatTreeModule} from '@angular/material/tree';
@@ -30,13 +29,9 @@ import { AddProductComponent } from './Components/Pages/add-product/add-product.
 import {MatButtonModule} from '@angular/material/button';
 import { CustomersComponent } from './Components/Pages/customers/customers.component';
 import { EditUserComponent } from './Components/Shared/edit-user/edit-user.component';
-
-
 import { ShippingComponent } from './Components/Pages/shipping/shipping.component';
 import { CheckoutComponent } from './Components/Pages/checkout/checkout.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
-
 import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbAccordionModule, NgbDatepickerModule, NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { TransactionsComponent } from './Components/Pages/transactions/transactions.component';
@@ -48,15 +43,13 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { ProductCardComponent } from './Components/Shared/product-card/product-card.component';
 import { ProductReviewsComponent } from './Components/Shared/product-reviews/product-reviews.component';
 import { ProductDetailsCardComponent } from './Components/Shared/product-details-card/product-details-card.component';
-
-
 import {MatDialogModule} from '@angular/material/dialog';
-
 import { ReviewsComponent } from './Components/Pages/reviews/reviews.component';
 import { ManageCategoriesComponent } from './Components/Pages/manage-categories/manage-categories.component';
 import { CatdialogComponent } from './Components/dialogs/catdialog/catdialog.component';
-
-
+import { NgSelectModule } from '@ng-select/ng-select';
+import { SearchBarComponent } from './Components/Shared/search-bar/search-bar.component';
+import {MatRadioModule} from '@angular/material/radio';
 
 @NgModule({
   declarations: [
@@ -76,36 +69,23 @@ import { CatdialogComponent } from './Components/dialogs/catdialog/catdialog.com
     RegisterComponent,
     SliderComponent,
     CategoriesComponent,
-
     AdminDashBoardComponent,
     AddProductComponent,
     CustomersComponent,
     EditUserComponent,
-
-
     ShippingComponent,
     CheckoutComponent,
-
     ReviewsComponent,
     CatdialogComponent,
-
-
     TransactionsComponent,
-          ManageCategoriesComponent,
-
-
-
-
+    ManageCategoriesComponent,
+    SearchBarComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
-    ReactiveFormsModule,
     FontAwesomeModule,
     BrowserAnimationsModule,
-
-    FormsModule,
     ReactiveFormsModule,
     MatExpansionModule,
     MatTreeModule,
@@ -127,13 +107,10 @@ import { CatdialogComponent } from './Components/dialogs/catdialog/catdialog.com
     MatInputModule,
     MatSortModule,
     MatPaginatorModule,
-
-
-    MatDialogModule
-
-
-
-
+    MatDialogModule,
+    NgSelectModule,
+    FormsModule,
+    MatRadioModule
   ],
   providers: [NgbModal],
   bootstrap: [AppComponent]

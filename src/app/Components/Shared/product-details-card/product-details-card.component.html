@@ -1,23 +1,24 @@
 <div class="container-fluid gap-md-4">
   <div class="row">
     <div class="sideImagesContainer col-lg-1 d-flex flex-lg-column flex-md-row  justify-content-evenly mb-md-2 mb-sm-2 mb-xl-2 gap-2">
-      <div class="row"><img src={{product.images[0]}} alt="product-image"></div>
-      <div class="row"><img src={{product.images[1]}} alt="product-image"></div>
-      <div class="row"><img src={{product.images[2]}} alt="product-image"></div>
+      <div class="row sideImage" (click)="setImage0()"><img src={{product.images[0]}} alt="product-image"></div>
+      <div class="row sideImage" (click)="setImage1()"><img src={{product.images[1]}} alt="product-image"></div>
+      <div class="row sideImage"(click)="setImage2()"><img src={{product.images[2]}} alt="product-image"></div>
     </div>
     <div class="col-lg-7 col-md-12">
       <div class="row mb-md-3 mb-sm-2 mb-xl-2">
-        <img src={{product.images[0]}} alt="product-image">
+        <img class="mainPic" src={{product.images[imgIndex]}} alt="product-image">
       </div>
 
     </div>
-    <div class="col-lg-4  col-md-12 d-flex flex-column justify-content-around description gap-3 p-2">
+    <div class="col-lg-4  col-md-12 d-flex flex-column justify-content-start description gap-4 p-2">
       <div>{{product.decreption}}</div>
       <div>Price: {{product.price}} LE</div>
       <div class="d-flex ">
         <div class="me-1">Availability: </div>
-        <i class="fa-solid fa-check inStockIcon"></i>
-        <p class="m-0 ms-1">In stock</p>
+        <i *ngIf="product.stock > 0" class="fa-solid fa-check inStockIcon"></i>
+        <p *ngIf="product.stock > 0" class="m-0 ms-1">In stock</p>
+        <p *ngIf="product.stock == 0" class="m-0 ms-1">Out of stock</p>
       </div>
       <div class="quantity d-flex gap-2">
         Quantity:
@@ -37,7 +38,7 @@
   <div class="row">
     <h1>Product details:</h1>
     <ul class="ms-4">
-      <li *ngFor="let detail of product.about">{{detail}}</li>
+      <li *ngFor="let detail of product.aboutArray">{{detail}}</li>
     </ul>
   </div>
 </div>

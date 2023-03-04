@@ -10,9 +10,9 @@ import { NgIf } from '@angular/common';
 })
 export class SliderComponent {
   images:string[]=[
-    "https://picsum.photos/id/944/900/500",
-    "https://picsum.photos/id/1011/900/500",
-    "https://picsum.photos/id/984/900/500"
+    "https://www.kivodaily.com/wp-content/uploads/2023/01/Travel-Laptops.png",
+    "https://as2.ftcdn.net/v2/jpg/03/78/64/69/1000_F_378646947_vt9LnOVkcmwBz8UsnnMcbmCWIYfTwpVi.jpg",
+    "https://as1.ftcdn.net/v2/jpg/03/50/28/06/1000_F_350280688_m5VvahIlxOvLkcAnZBnbDf2YI81Tp9tR.jpg",
 
   ];
 }

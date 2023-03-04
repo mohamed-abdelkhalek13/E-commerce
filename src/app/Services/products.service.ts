@@ -8,13 +8,18 @@ import { Subject } from 'rxjs';
 export class ProductsService {
   DBProducts: any[] = [];
   DBProducts$ = new Subject();
+  DBProductReviews$ = new Subject();
+  keywordProducts:any[] = [];
+
   productsURL = 'https://localhost:7150/api/product';
   categoriesURL = 'https://localhost:7150/api/categories';
 
   reviews: any[] = [];
   productsReviewsURL = 'https://localhost:7150/api/ProductReviews';
 
-  constructor(private DBClient: HttpClient) {}
+  constructor(private DBClient: HttpClient) {
+  }
+
   //---------------------Api calls----------------
   GetCategoriesFromDB() {
     return this.DBClient.get(this.categoriesURL, {
@@ -26,6 +31,14 @@ export class ProductsService {
   }
   GetProductsFromDB() {
     return this.DBClient.get(this.productsURL, {
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${localStorage.getItem('token')}`,
+      },
+    });
+  }
+  GetProductFromDBById(id:any) {
+    return this.DBClient.get(this.productsURL + "/"+ id, {
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${localStorage.getItem('token')}`,
@@ -117,5 +130,10 @@ export class ProductsService {
     let review = this.reviews.find((r) => r.product_Id == id && r.customerEmail == userEmail);
     return review;
   }
-
+  StoreProductsFromAKeyword(keywordP:any){
+    this.keywordProducts =keywordP;
+  }
+  GetProductsFromAKeyword(){
+    return this.keywordProducts;
+  }
 }

@@ -1,10 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@ng-select/ng-select/themes/default.theme.css";
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  
+
   /* font-family: "Montserrat", sans-serif;
   font-family: "Roboto", sans-serif; */
   font-family: "Work Sans", sans-serif;
 }
+

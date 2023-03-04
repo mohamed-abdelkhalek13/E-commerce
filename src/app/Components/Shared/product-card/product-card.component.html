@@ -14,4 +14,5 @@
       <a href="#" class="btn btn-primary" routerLink="/categories/{{product.category}}/{{product.id}}">Go to details</a>
     </div>
   </div>
+  <h1 *ngIf="products.length == 0">No available products</h1>
 </div>
