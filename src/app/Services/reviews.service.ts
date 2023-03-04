@@ -27,7 +27,8 @@ return this.http.get(`${this.url}/${id}`)
         return this.http.post(this.url,body)
       }
 
-      deleteitem(id:any){
-        return this.http.delete(this.url+'/'+id)
+      deleteitem(id:any,mail:any){
+      
+        return this.http.delete(`${this.url}/${id}?userEmail=${mail}`)
       }
 }

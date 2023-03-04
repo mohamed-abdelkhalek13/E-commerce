@@ -6,7 +6,7 @@
 			<th scope="col">Email</th>
 			<th scope="col">Rating</th>
 			<th scope="col">Review</th>
-
+			<th scope="col">Remove</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -25,7 +25,7 @@
         "></ngb-rating></td>
 			<td>{{ s.review
       }}</td>
-			
+			<td><p  class="btn btn-danger" (click)="delete1(s.product_Id,s.customerEmail)">Remove</p></td>
 		</tr>
 	</tbody>
 </table>

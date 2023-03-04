@@ -59,4 +59,14 @@ export class ReviewsComponent {
 		config.max = 5;
 		config.readonly = true;
 	}
+
+  delete1(id:any,mail:any){
+    confirm("are you sure to delete");
+    if (true){
+  this.server.deleteitem(id,mail).subscribe()
+  window.location.reload();
+
+    }
+
+  }
 }
