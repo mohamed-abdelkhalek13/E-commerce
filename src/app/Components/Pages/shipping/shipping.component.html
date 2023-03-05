@@ -4,9 +4,9 @@
     <p>Find a single order with the form below</p>
   </div>
   <div class="row d-flex justify-content-center pt-4">
-    <form (submit)="onSubmit(emailValue.value, orderNumberValue.value)">
+    <form (submit)="onSubmit(orderNumberValue.value)">
       <div class="d-flex justify-content-evenly">
-        <div class="form-group d-flex align-items-center">
+        <!-- <div class="form-group d-flex align-items-center">
           <div class="col-auto px-3">
             <label for="email"
               ><strong>Email</strong><span class="text-danger">*</span></label
@@ -24,25 +24,22 @@
               [(ngModel)]="email"
             />
           </div>
-        </div>
-        <div class="form-group d-flex align-items-center">
-          <div class="col-auto px-3">
-            <label for="orderNumber"
-              ><strong>Order Number</strong><span class="text-danger">*</span>
-            </label>
-          </div>
-          <div class="col-auto">
-            <input
-              type="number"
-              class="form-control"
-              name="orderNumber"
-              id="orderNumber"
-              aria-describedby="helpId"
-              placeholder="Order Number"
-              #orderNumberValue="ngModel"
-              [(ngModel)]="orderNumber"
-            />
-          </div>
+        </div> -->
+        <div class="form-group align-items-center">
+          <label for="orderNumber"
+            ><strong>Order Number</strong><span class="text-danger"> *</span>
+          </label>
+
+          <input
+            type="number"
+            class="form-control"
+            name="orderNumber"
+            id="orderNumber"
+            aria-describedby="helpId"
+            placeholder="Order Number"
+            #orderNumberValue="ngModel"
+            [(ngModel)]="orderNumber"
+          />
         </div>
       </div>
       <div class="row d-flex justify-content-center pt-4">
@@ -57,7 +54,7 @@
         <thead class="thead-light">
           <tr>
             <th><i class="fa-solid fa-hashtag"></i> Tracking Number</th>
-            <th><i class="fas fa-shipping-fast"></i> Carrier</th>
+            <!-- <th><i class="fas fa-shipping-fast"></i> Carrier</th> -->
             <th><i class="fas fa-cart-plus"></i> Status</th>
             <th>
               <i class="fa-regular fa-calendar"></i> Expected Delivery Date
@@ -67,7 +64,7 @@
         <tbody>
           <tr *ngIf="searchResult">
             <td>{{ searchResult.trackingNumber }}</td>
-            <td>{{ searchResult.carrier }}</td>
+            <!-- <td>{{ searchResult.carrier }}</td> -->
             <td
               [ngClass]="{
                 'text-warning': searchResult.status === 'pending',

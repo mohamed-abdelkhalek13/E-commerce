@@ -1,6 +1,7 @@
 import { NgxSpinnerService } from 'ngx-spinner';
 import { Shipment } from './Shipment';
 import { Component, OnInit } from '@angular/core';
+import { OrdersService } from 'src/app/services/orders.service';
 
 @Component({
   selector: 'app-shipping',
@@ -14,8 +15,11 @@ export class ShippingComponent implements Shipment, OnInit {
   expectedDeliveryDate!: Date;
   email!: string;
   orderNumber!: string;
-  
-constructor(private spinner: NgxSpinnerService){}
+
+  constructor(
+    private spinner: NgxSpinnerService,
+    private orderService: OrdersService
+  ) {}
   ngOnInit(): void {
     this.spinner.show();
     setTimeout(() => {
@@ -25,21 +29,21 @@ constructor(private spinner: NgxSpinnerService){}
 
   shipments: Shipment[] = [
     {
-      trackingNumber: '1234567890',
+      trackingNumber: '1',
       carrier: 'FedEx',
       status: 'shipping',
       expectedDeliveryDate: new Date('2023-03-02'),
       email: 'hello1@gmail.com',
     },
     {
-      trackingNumber: '2345678901',
+      trackingNumber: '2',
       carrier: 'UPS',
       status: 'pending',
       expectedDeliveryDate: new Date('2023-03-01'),
       email: 'hello2@gmail.com',
     },
     {
-      trackingNumber: '3456789012',
+      trackingNumber: '3',
       carrier: 'USPS',
       status: 'delivered',
       expectedDeliveryDate: new Date('2023-02-28'),
@@ -47,18 +51,17 @@ constructor(private spinner: NgxSpinnerService){}
     },
   ];
 
-  search(email: string, orderNumber: string): Shipment | undefined {
+  search(orderNumber: string): Shipment | undefined {
     console.log('a7a 2');
     return this.shipments.find(
-      (shipment) =>
-        shipment.email === email && shipment.trackingNumber === orderNumber
+      (shipment) => shipment.trackingNumber === orderNumber
     );
   }
 
   searchResult: Shipment | undefined;
 
-  onSubmit(email: string, orderNumber: number) {
-    this.searchResult = this.search(email, String(orderNumber));
+  onSubmit(orderNumber: number) {
+    this.searchResult = this.search(String(orderNumber));
     console.log('a7a');
     if (!this.searchResult) {
       // clear the search result if no match is found
