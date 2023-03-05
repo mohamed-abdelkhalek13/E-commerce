@@ -204,13 +204,13 @@
                 <img [src]="item.images[0]" alt="image" />
               </td>
               <td class="align-middle">
-                {{ item.price | currency }}
+                {{ item.price  }} EGP
               </td>
               <td class="align-middle ps-5">
                 {{ item.quantity }}
               </td>
               <td class="align-middle">
-                {{ item.price * item.quantity | currency }}
+                {{ item.price * item.quantity  }} EGP
               </td>
               <td class="align-middle">
                 <button class="btn btn-danger" (click)="deleteItem(item)">
@@ -234,22 +234,22 @@
               <p>Subtotal:</p>
             </div>
             <div class="col-md-6 text-right">
-              <p>{{ subtotal() | currency }}</p>
+              <p>{{ subtotal() }} EGP</p>
             </div>
           </div>
           <div class="row">
-            <div class="col-md-6">
+            <!-- <div class="col-md-6">
               <p>Discount:</p>
-            </div>
+            </div> -->
             <div class="col-md-6 text-right">
               <p>
-                <input
+                <!-- <input
                   type="number"
                   [(ngModel)]="discount"
                   min="0"
                   step="0.5"
                   class="w-50 bg"
-                />
+                /> -->
               </p>
             </div>
           </div>
@@ -258,7 +258,7 @@
               <p>Shipping:</p>
             </div>
             <div class="col-md-6 text-right">
-              <p>{{ shipping | currency }}</p>
+              <p>{{ shipping }} EGP</p>
             </div>
           </div>
           <hr />
@@ -268,7 +268,7 @@
               <h4>Total:</h4>
             </div>
             <div class="col-md-6 text-right">
-              <h4>{{ total() | currency }}</h4>
+              <h4>{{ total() }} EGP</h4>
             </div>
           </div>
           <div class="row">

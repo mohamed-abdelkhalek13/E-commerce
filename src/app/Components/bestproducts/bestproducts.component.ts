@@ -10,7 +10,7 @@ import { ProductService } from '../core/services/prod';
 export class BestproductsComponent {
 
   path="";
-  products: any='';
+  products: any[]=[];
 
 
 
@@ -70,17 +70,11 @@ export class BestproductsComponent {
       }
     });
     this.productsService.DBProducts$.subscribe({
-      next:(data)=>{this.products=data,
-        this.products=this.products.slice(0,10),console.log(this.products)
-
-
+      next:(data:any)=>{
+        let newArray:any[]=data;
+        this.products = newArray.filter(p => p.avgRating > 3.5);
       }
-
-
-
     });
-
-
 }
 
 

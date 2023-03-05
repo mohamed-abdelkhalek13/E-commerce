@@ -76,6 +76,7 @@ const routes: Routes = [
     {path:"Customers",component:CustomersComponent},
     {path:"reviews",component:ReviewsComponent},
     {path:"EditUser",component:EditUserComponent},
+    {path:"Orders",component:OrdersdashboardComponent}
   ]},
   {path:"shipping", component:ShippingComponent},
   {path:"checkout", component:CheckoutComponent},

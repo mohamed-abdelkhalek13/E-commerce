@@ -33,7 +33,6 @@ export class AdminDashBoardComponent {
       {name: 'Orders',Path:"/Dashboard/Orders",icon:"shopping_cart",children:[]},
       {name:'Customers',Path:"/Dashboard/Customers",icon:"group",children:[]},
       {name:'Reviews',Path:"/Dashboard/reviews",icon:"reviews",children:[]},
-      {name:'Hot offers',Path:"/Dashboard/HotOffers",children:[]},
       {name:'Settings',Path:"/Dashboard/EditUser",children:[]}
     ]);
   }

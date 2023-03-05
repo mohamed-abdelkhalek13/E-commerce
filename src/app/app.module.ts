@@ -143,7 +143,6 @@ import { OrdersdashboardComponent } from './Components/Pages/ordersdashboard/ord
     NgxSpinnerModule,
     MatFormFieldModule,
     SlickCarouselModule
-
   ],
   providers: [
     NgbModal,
